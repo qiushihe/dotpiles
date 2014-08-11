@@ -1,0 +1,138 @@
+set nocompatible
+set autoread
+set cursorline " Highlight current line
+set encoding=utf-8 nobomb " Disable BOM
+set hidden " Remember histories and marks for background buffers
+set history=1000
+set laststatus=2 " Always show status line
+set magic " Extended regexp
+set nowrap
+set number " Show line number
+set title " Show filename in title bar
+set ttyfast " Send more characters
+
+" Ignore patterns
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd
+set wildignore+=*.o,*.obj,*.min.js,*.sassc,*.scssc,*.log
+set wildignore+=*~,.DS_Store,*.cache,*.tmp,*.swp
+set wildignore+=*/.svn/*,*/.git/*,*/.hg/*
+set wildignore+=*/tmp/*,*/log/*,*/build/*
+
+" Use 2 spaces for tab
+" Run :retab on existing files to convert tabs to spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Indent
+set autoindent
+set smartindent
+
+" Omni-Complete
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
+
+" Local directories
+set backupdir=$HOME/.vim/backups
+set directory=$HOME/.vim/swaps
+set undodir=$HOME/.vim/undo
+
+" Search
+set hlsearch
+set ignorecase " Ignore case
+set smartcase " Ignore ignore case if searching with upper case letter
+set incsearch
+set wrapscan
+
+" Scroling edge offset
+set scrolloff=3
+set sidescrolloff=3
+
+" New window
+set splitbelow
+set splitright
+
+" Mouse
+set mouse=a " Mouse in all mods
+set ttymouse=xterm
+
+" Bell
+set noerrorbells
+set visualbell
+
+" Command mode completion
+set wildmenu
+set wildmode=list:longest
+
+" Filetype associations
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Create .netrwhist in $HOME
+let g:netrw_home=$HOME
+
+" Disable folding
+set nofoldenable
+au BufRead,BufNewFile * set nofoldenable
+
+" Misc.
+syntax on
+filetype plugin indent on
+colorscheme desert
+
+" Keybindings
+if has("macunix")
+  map <D-w> :close<CR>  " Close
+  map <D-W> :bd<CR>     " Delete buffer
+  map <D-s> :w<CR>      " Save
+endif
+
+map <C-w><C-w> :close<CR>
+map <C-w><C-d> :bd<CR>
+
+" Window Split
+map <C-w><C-Right> :vsplit<CR>
+map <C-w><C-Down> :split<CR>
+
+" Window Resizing
+map <C-S-Up> <C-W>-
+map <C-S-Down> <C-W>+
+map <C-S-Left> <C-W><
+map <C-S-Right> <C-W>>
+
+" Window Navigation
+map <C-Up> <C-W>k
+map <C-Down> <C-W>j
+map <C-Left> <C-W>h
+map <C-Right> <C-W>l
+
+" Window Swap
+function! MarkWindowSwap()
+  " marked window number
+  let g:markedWinNum = winnr()
+  let g:markedBufNum = bufnr("%")
+endfunction
+
+function! DoWindowSwap()
+  let curWinNum = winnr()
+  let curBufNum = bufnr("%")
+  " Switch focus to marked window
+  exe g:markedWinNum . "wincmd w"
+
+  " Load current buffer on marked window
+  exe 'hide buf' curBufNum
+
+  " Switch focus to current window
+  exe curWinNum . "wincmd w"
+
+  " Load marked buffer on current window
+  exe 'hide buf' g:markedBufNum
+endfunction
+
+nnoremap <S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
+nnoremap <S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
+nnoremap <S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
+nnoremap <S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
+
+" Source bundle specific configurations
+source .vimrc.bundles
+
