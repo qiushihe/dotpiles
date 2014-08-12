@@ -8,10 +8,12 @@ $ [[ ! -d ~/.vim/swaps ]] && mkdir ~/.vim/swaps
 $ [[ ! -d ~/.vim/undo ]] && mkdir ~/.vim/undo
 ```
 
-### Setup `.vimrc` Symlinks
+### Setup Vi Symlinks
 
 ```
-$ ln -sf ./vim/vimrc.bundles ~/.vimrc.bundles
-$ ln -sf ./vim/vimrc ~/.vimrc
+$ ln -sf `pwd`/vim/vimrc.bundles ~/.vimrc.bundles
+$ ln -sf `pwd`/vim/vimrc ~/.vimrc
+$ rm -fr ~/.vim/autoload && ln -sf `pwd`/vim/autoload ~/.vim/autoload
+$ rm -fr ~/.vim/bundle && ln -sf `pwd`/vim/bundle ~/.vim/bundle
 ```
 

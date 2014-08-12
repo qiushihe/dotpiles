@@ -1,0 +1,6 @@
+" CtrlP
+nmap <C-t> :CtrlPMixed<CR>
+if has("macunix")
+  map <D-t> :CtrlPMixed<CR>
+endif
+
