@@ -134,5 +134,5 @@ nnoremap <S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
 nnoremap <S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
 
 " Source bundle specific configurations
-source .vimrc.bundles
+source ~/.vimrc.bundles
 
