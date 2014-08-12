@@ -4,3 +4,6 @@ if has("macunix")
   map <D-t> :CtrlPMixed<CR>
 endif
 
+" Vim NERDTree Tabs
+map <C-\> :NERDTreeTabsToggle<CR>
+
