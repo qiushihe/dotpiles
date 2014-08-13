@@ -7,3 +7,6 @@ endif
 " Vim NERDTree Tabs
 map <C-\> :NERDTreeTabsToggle<CR>
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+

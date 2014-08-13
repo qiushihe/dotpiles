@@ -128,10 +128,10 @@ function! DoWindowSwap()
   exe 'hide buf' g:markedBufNum
 endfunction
 
-nnoremap <S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
-nnoremap <S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
-nnoremap <S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
-nnoremap <S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
 
 " Start Pathogen
 execute pathogen#infect()

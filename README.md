@@ -1,5 +1,11 @@
 # dotpiles
 
+### Install Ack
+
+```
+$ brew install ack
+```
+
 ### Create Vi Support Directories
 
 ```
