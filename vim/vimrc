@@ -10,6 +10,7 @@ set nowrap
 set number " Show line number
 set title " Show filename in title bar
 set ttyfast " Send more characters
+set colorcolumn=100
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd
@@ -78,6 +79,7 @@ au BufRead,BufNewFile * set nofoldenable
 syntax on
 filetype plugin indent on
 colorscheme desert
+highlight ColorColumn ctermbg=DarkGray
 
 " Keybindings
 if has("macunix")
