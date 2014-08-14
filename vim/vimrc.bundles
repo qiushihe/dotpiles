@@ -31,3 +31,7 @@ map <C-\> :NERDTreeTabsToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 
+" Gitignore
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:load_global_gitignore_wildignore = $HOME . "/.gitignore_global"
+
