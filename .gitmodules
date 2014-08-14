@@ -22,6 +22,3 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/gitignore"]
-	path = vim/bundle/gitignore
-	url = https://github.com/qiushihe/gitignore.git
