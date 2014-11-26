@@ -1,25 +1,26 @@
 # dotpiles
 
-### Install Ack
+## Install Ack
 
-```
-$ brew install ack
-```
+    $ brew install ack
 
-### Create Vi Support Directories
+## Setup VI
 
-```
-$ [[ ! -d ~/.vim/backups ]] && mkdir ~/.vim/backups
-$ [[ ! -d ~/.vim/swaps ]] && mkdir ~/.vim/swaps
-$ [[ ! -d ~/.vim/undo ]] && mkdir ~/.vim/undo
-```
+**Ensure support directories exists**:
 
-### Setup Vi Symlinks
+    $ [[ ! -d ~/.vim/backups ]] && mkdir ~/.vim/backups
+    $ [[ ! -d ~/.vim/swaps ]] && mkdir ~/.vim/swaps
+    $ [[ ! -d ~/.vim/undo ]] && mkdir ~/.vim/undo
 
-```
-$ ln -sf `pwd`/vim/vimrc.bundles ~/.vimrc.bundles
-$ ln -sf `pwd`/vim/vimrc ~/.vimrc
-$ rm -fr ~/.vim/autoload && ln -sf `pwd`/vim/autoload ~/.vim/autoload
-$ rm -fr ~/.vim/bundle && ln -sf `pwd`/vim/bundle ~/.vim/bundle
-```
+**Setup symlinks**:
 
+    $ ln -sf `pwd`/vim/vimrc.bundles ~/.vimrc.bundles
+    $ ln -sf `pwd`/vim/vimrc ~/.vimrc
+    $ rm -fr ~/.vim/autoload && ln -sf `pwd`/vim/autoload ~/.vim/autoload
+    $ rm -fr ~/.vim/bundle && ln -sf `pwd`/vim/bundle ~/.vim/bundle
+
+## Setup Emacs
+
+**Setup symlinks**:
+
+    $ ln -sf `pwd`/emacs ~/.emacs.d
