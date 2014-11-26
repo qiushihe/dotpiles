@@ -24,3 +24,4 @@
 **Setup symlinks**:
 
     $ ln -sf `pwd`/emacs ~/.emacs.d
+    $ ln -sf `pwd`/emacs/gemacs.sh /usr/local/bin/gemacs
