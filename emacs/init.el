@@ -28,7 +28,7 @@ inhibit-startup-echo-area-message t)
 (when (display-graphic-p)
   (global-linum-mode 1))
 
-;; Setup el-get
+;; Managed packages via el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer

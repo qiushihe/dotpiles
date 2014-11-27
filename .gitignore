@@ -1,3 +1,3 @@
 emacs/ido.last
-emacs/el-get/.loaddefs.el
-emacs/el-get/.loaddefs.elc
+emacs/el-get
+!emacs/el-get/.status.el

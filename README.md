@@ -1,10 +1,10 @@
 # dotpiles
 
-## Install Ack
+## Setup VI
+
+**Install Ack**:
 
     $ brew install ack
-
-## Setup VI
 
 **Ensure support directories exists**:
 
@@ -21,7 +21,13 @@
 
 ## Setup Emacs
 
+**Install ag**
+
+    $ brew install the_silver_searcher
+
 **Setup symlinks**:
 
     $ ln -sf `pwd`/emacs ~/.emacs.d
     $ ln -sf `pwd`/emacs/gemacs.sh /usr/local/bin/gemacs
+
+_Upon first launch of Emacs, el-get will install itself and all previous installed pcakges._
