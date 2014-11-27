@@ -69,6 +69,9 @@ inhibit-startup-echo-area-message t)
 ;; Enable smooth scroll
 (smooth-scroll-mode t)
 
+;; Load theme
+(load-theme 'monokai t)
+
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
