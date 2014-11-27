@@ -12,4 +12,6 @@
 		       (add-to-list 'auto-mode-alist
 				    '("\\.\\(md\\|mdown\\|markdown\\)\\'" . markdown-mode))))
  (s status "installed" recipe
-    (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el")))
+    (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
+ (smooth-scroll status "installed" recipe
+		(:name smooth-scroll :description "Minor mode for smooth scrolling." :type emacswiki :features smooth-scroll)))

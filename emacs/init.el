@@ -29,6 +29,25 @@ inhibit-startup-echo-area-message t)
 (setq scroll-step 1)
 (setq hscroll-step 1)
 
+;; Mouse scrolling settings
+(setq mouse-wheel-follow-mouse 't)
+(setq mouse-wheel-progressive-speed nil)
+;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+
+;; Mouse wheel binding
+(global-set-key [wheel-up] 'scroll-down-1)
+(global-set-key [double-wheel-up] '(lambda () (interactive) (scroll-down-1 3)))
+(global-set-key [triple-wheel-up] '(lambda () (interactive) (scroll-down-1 5)))
+(global-set-key [wheel-down] 'scroll-up-1)
+(global-set-key [double-wheel-down] '(lambda () (interactive) (scroll-up-1 3)))
+(global-set-key [triple-wheel-down] '(lambda () (interactive) (scroll-up-1 5)))
+(global-set-key [S-wheel-right] 'scroll-left-1)
+(global-set-key [S-double-wheel-left] '(lambda () (interactive) (scroll-right-1 3)))
+(global-set-key [S-triple-wheel-left] '(lambda () (interactive) (scroll-right-1 5)))
+(global-set-key [S-wheel-left] 'scroll-right-1)
+(global-set-key [S-double-wheel-right] '(lambda () (interactive) (scroll-left-1 3)))
+(global-set-key [S-triple-wheel-right] '(lambda () (interactive) (scroll-left-1 5)))
+
 ;; Auto-indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
@@ -47,15 +66,9 @@ inhibit-startup-echo-area-message t)
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "White" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Monaco")))))
+;; Enable smooth scroll
+(smooth-scroll-mode t)
+
+;; Enable disabled commands
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
