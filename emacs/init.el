@@ -53,6 +53,11 @@ inhibit-startup-echo-area-message t)
 (unless (display-graphic-p) ; Only add space between line number and text in non-GUI mode
   (setq linum-format (lambda (line) (propertize (format (let ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum))))
 
+;; Thin cursor
+(defun cursor-shape-hook ()
+  (setq cursor-type '(bar . 1)))
+(add-hook 'post-command-hook 'cursor-shape-hook)
+
 ;; Managed packages via el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
