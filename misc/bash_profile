@@ -14,9 +14,6 @@ export PATH="${PATH}:./node_modules/.bin"
 # Sublime Text Alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -a"
 
-# Emacs GUI Alias
-alias gemacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-
 # Terminal Colour
 export CLICOLOR=1
 export LSCOLORS=gxfxgxgxcxegedabagacad
