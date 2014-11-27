@@ -27,6 +27,7 @@ inhibit-startup-echo-area-message t)
 (setq hscroll-step 1)
 
 ;; Mouse scrolling settings
+(setq mouse-autoselect-window t)
 (setq mouse-wheel-follow-mouse 't)
 (setq mouse-wheel-progressive-speed nil)
 ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
