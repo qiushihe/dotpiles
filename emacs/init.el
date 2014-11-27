@@ -1,10 +1,7 @@
 ;; Disable some UI features
-(when (display-graphic-p)
-  (menu-bar-mode -1))
-(when (display-graphic-p)
-  (tool-bar-mode -1))
-(when (display-graphic-p)
-  (scroll-bar-mode -1))
+(menu-bar-mode -1)
+(when (display-graphic-p) (tool-bar-mode -1))
+(when (display-graphic-p) (scroll-bar-mode -1))
 
 ;; IDO Mode
 (ido-mode 1)
@@ -52,8 +49,9 @@ inhibit-startup-echo-area-message t)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Line number
-(when (display-graphic-p)
-  (global-linum-mode 1))
+(global-linum-mode 1)
+(unless (display-graphic-p) ; Only add space between line number and text in non-GUI mode
+  (setq linum-format (lambda (line) (propertize (format (let ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum))))
 
 ;; Managed packages via el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
