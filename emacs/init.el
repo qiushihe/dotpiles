@@ -70,6 +70,9 @@ inhibit-startup-echo-area-message t)
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
+;; NEOTree
+(setq neo-window-width 50)
+
 ;; Enable smooth scroll
 (smooth-scroll-mode t)
 
