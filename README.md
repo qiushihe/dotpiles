@@ -1,5 +1,11 @@
 # dotpiles
 
+## Setup Bash
+
+**Linking bash_profile**:
+
+    $ rm -f ~/.bash_profile && ln -sf `pwd`/misc/bash_profile ~/.bash_profile
+
 ## Setup VI
 
 **Install Ack**:
