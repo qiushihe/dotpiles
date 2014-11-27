@@ -21,6 +21,14 @@ inhibit-startup-echo-area-message t)
 ;; Disable auto-save
 (setq auto-save-default nil)
 
+;; Disable line wrap
+(set-default 'truncate-lines t)
+(setq truncate-partial-width-windows nil)
+
+;; Scrolling
+(setq scroll-step 1)
+(setq hscroll-step 1)
+
 ;; Auto-indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
