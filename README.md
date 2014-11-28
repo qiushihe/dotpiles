@@ -25,6 +25,11 @@
     $ rm -fr ~/.vim/autoload && ln -sf `pwd`/vim/autoload ~/.vim/autoload
     $ rm -fr ~/.vim/bundle && ln -sf `pwd`/vim/bundle ~/.vim/bundle
 
+## Setup Git
+
+    $ rm -f ~/.gitconfig && ln -sf `pwd`/misc/gitconfig ~/.gitconfig
+    $ rm -f ~/.gitignore_global && ln -sf `pwd`/misc/gitignore_global ~/.gitignore_global
+
 ## Setup Emacs
 
 **Install ag**

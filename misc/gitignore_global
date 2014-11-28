@@ -1,0 +1,21 @@
+*~
+*.orig
+*.rej
+*.swp
+.#*
+*.o
+.DS_Store
+.*_cache
+.*-cache
+*.log
+*.scssc
+*.sassc
+vim/swaps
+vim/backups
+vim/undo
+
+# Workaround an issue with the silver searcher not working correctly
+# with nested .gitignore files
+js-dist-atlas
+js-dist-frontend
+webapp/gen
