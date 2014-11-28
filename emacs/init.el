@@ -3,11 +3,6 @@
 (when (display-graphic-p) (tool-bar-mode -1))
 (when (display-graphic-p) (scroll-bar-mode -1))
 
-;; IDO Mode
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-
 ;; Disable splash screen/message
 (setq inhibit-startup-message t
 inhibit-startup-echo-area-message t)
@@ -22,32 +17,46 @@ inhibit-startup-echo-area-message t)
 (set-default 'truncate-lines t)
 (setq truncate-partial-width-windows nil)
 
-;; Scrolling
-(setq scroll-step 1)
-(setq hscroll-step 1)
+;; Disable Electric indent mode
+(electric-indent-mode -1)
+(add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
 
-;; Mouse scrolling settings
-(setq mouse-autoselect-window t)
-(setq mouse-wheel-follow-mouse 't)
-(setq mouse-wheel-progressive-speed nil)
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;; IDO Mode
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 
-;; Mouse wheel binding
-(global-set-key [wheel-up] 'scroll-down-1)
-(global-set-key [double-wheel-up] '(lambda () (interactive) (scroll-down-1 3)))
-(global-set-key [triple-wheel-up] '(lambda () (interactive) (scroll-down-1 5)))
-(global-set-key [wheel-down] 'scroll-up-1)
-(global-set-key [double-wheel-down] '(lambda () (interactive) (scroll-up-1 3)))
-(global-set-key [triple-wheel-down] '(lambda () (interactive) (scroll-up-1 5)))
-(global-set-key [S-wheel-right] 'scroll-left-1)
-(global-set-key [S-double-wheel-left] '(lambda () (interactive) (scroll-right-1 3)))
-(global-set-key [S-triple-wheel-left] '(lambda () (interactive) (scroll-right-1 5)))
-(global-set-key [S-wheel-left] 'scroll-right-1)
-(global-set-key [S-double-wheel-right] '(lambda () (interactive) (scroll-left-1 3)))
-(global-set-key [S-triple-wheel-right] '(lambda () (interactive) (scroll-left-1 5)))
+;; Insert 2 spaces for tab
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 
-;; Auto-indent
-(define-key global-map (kbd "RET") 'newline-and-indent)
+;; Make tab behave "normally"
+(defun my-tab ()
+  (interactive)
+  (insert "  "))
+(global-set-key (kbd "<tab>") 'my-tab)
+(add-hook 'after-change-major-mode-hook (lambda () (local-set-key (kbd "<tab>") 'my-tab)))
+
+;; Make auto-indent behave "normally"
+(defun my-enter ()
+  (interactive)
+  (newline)
+  (indent-relative-maybe))
+(global-set-key (kbd "RET") 'my-enter)
+(add-hook 'after-change-major-mode-hook (lambda () (local-set-key (kbd "RET") 'my-enter)))
+
+;; Always end a file with a newline
+(setq require-final-newline nil)
+
+;; Remove extra whitespace on save
+(defun delete-trailing-whitespace-and-blank-lines ()
+  (interactive)
+  (let ((point (point)))
+    (delete-trailing-whitespace)
+    (goto-char (point-max))
+    (delete-blank-lines)
+    (goto-char (min point (point-max)))))
+(add-hook 'before-save-hook 'delete-trailing-whitespace-and-blank-lines)
 
 ;; Line number
 (global-linum-mode 1)
@@ -58,6 +67,29 @@ inhibit-startup-echo-area-message t)
 (defun cursor-shape-hook ()
   (setq cursor-type '(bar . 1)))
 (add-hook 'post-command-hook 'cursor-shape-hook)
+
+;; Keyboard scrolling speed
+(setq scroll-step 1)
+(setq hscroll-step 1)
+
+;; Mouse scrolling settings
+(setq mouse-autoselect-window t)
+(setq mouse-wheel-follow-mouse 't)
+;; (setq mouse-wheel-progressive-speed nil)
+
+;; Mouse wheel binding
+(global-set-key [wheel-up] 'scroll-down-1)
+(global-set-key [double-wheel-up] '(lambda () (interactive) (scroll-down-1 5)))
+(global-set-key [triple-wheel-up] '(lambda () (interactive) (scroll-down-1 10)))
+(global-set-key [wheel-down] 'scroll-up-1)
+(global-set-key [double-wheel-down] '(lambda () (interactive) (scroll-up-1 5)))
+(global-set-key [triple-wheel-down] '(lambda () (interactive) (scroll-up-1 10)))
+(global-set-key [S-wheel-right] 'scroll-left-1)
+(global-set-key [S-double-wheel-left] '(lambda () (interactive) (scroll-right-1 5)))
+(global-set-key [S-triple-wheel-left] '(lambda () (interactive) (scroll-right-1 10)))
+(global-set-key [S-wheel-left] 'scroll-right-1)
+(global-set-key [S-double-wheel-right] '(lambda () (interactive) (scroll-left-1 5)))
+(global-set-key [S-triple-wheel-right] '(lambda () (interactive) (scroll-left-1 10)))
 
 ;; Managed packages via el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
