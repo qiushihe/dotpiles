@@ -78,6 +78,9 @@ inhibit-startup-echo-area-message t)
   (setq cursor-type '(bar . 1)))
 (add-hook 'post-command-hook 'cursor-shape-hook)
 
+;; Auto revert to changes made by external programs
+(global-auto-revert-mode t)
+
 ;; Keyboard scrolling speed
 (setq scroll-step 1)
 (setq hscroll-step 1)
