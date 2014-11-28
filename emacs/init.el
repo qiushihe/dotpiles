@@ -26,6 +26,11 @@ inhibit-startup-echo-area-message t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
+;; Always show matching parenthesis
+(setq show-paren-delay 0)
+(show-paren-mode t)
+(setq blink-matching-paren t)
+
 ;; Insert 2 spaces for tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
