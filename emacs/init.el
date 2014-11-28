@@ -137,6 +137,13 @@ inhibit-startup-echo-area-message t)
 ;; Enable smooth scroll
 (smooth-scroll-mode t)
 
+;; Set page guide
+(setq fci-rule-column 100)
+(setq fci-rule-width 1)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda ()
+  (fci-mode 1)))
+(global-fci-mode 1)
+
 ;; Load theme
 (load-theme 'monokai t)
 
