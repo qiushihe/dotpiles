@@ -39,8 +39,8 @@ inhibit-startup-echo-area-message t)
 (defun my-tab ()
   (interactive)
   (insert "  "))
-(global-set-key (kbd "<tab>") 'my-tab)
-(add-hook 'after-change-major-mode-hook (lambda () (local-set-key (kbd "<tab>") 'my-tab)))
+(global-set-key "\t" 'my-tab)
+(add-hook 'after-change-major-mode-hook (lambda () (local-set-key "\t" 'my-tab)))
 
 ;; Make auto-indent behave "normally"
 (defun my-enter ()
