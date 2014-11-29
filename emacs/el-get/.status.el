@@ -9,6 +9,8 @@
                 :load "el-get.el"))
  (fill-column-indicator status "installed" recipe
                         (:name fill-column-indicator :type github :website "https://github.com/alpaker/Fill-Column-Indicator#readme" :description "An Emacs minor mode that graphically indicates the fill column." :pkgname "alpaker/Fill-Column-Indicator"))
+ (hbs-mode status "installed" recipe
+           (:name hbs-mode :website "https://github.com/danielevans/handlebars-mode" :description "Emacs Major Mode for Handlebars" :type github :pkgname "danielevans/handlebars-mode"))
  (markdown-mode status "installed" recipe
                 (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :prepare
                        (add-to-list 'auto-mode-alist
