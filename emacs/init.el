@@ -109,6 +109,12 @@ inhibit-startup-echo-area-message t)
 (global-set-key [wheel-down] 'my-scroll-down-single)
 (global-set-key [double-wheel-down] 'my-scroll-down-double)
 (global-set-key [triple-wheel-down] 'my-scroll-down-triple)
+(global-set-key [wheel-right] 'my-scroll-right-single)
+(global-set-key [double-wheel-right] 'my-scroll-right-double)
+(global-set-key [triple-wheel-right] 'my-scroll-right-triple)
+(global-set-key [wheel-left] 'my-scroll-left-single)
+(global-set-key [double-wheel-left] 'my-scroll-left-double)
+(global-set-key [triple-wheel-left] 'my-scroll-left-triple)
 (global-set-key [S-wheel-right] 'my-scroll-right-single)
 (global-set-key [S-double-wheel-right] 'my-scroll-right-double)
 (global-set-key [S-triple-wheel-right] 'my-scroll-right-triple)
@@ -143,6 +149,9 @@ inhibit-startup-echo-area-message t)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda ()
   (fci-mode 1)))
 (global-fci-mode 1)
+
+;; Org mode
+(setq org-support-shift-select t)
 
 ;; Load theme
 (load-theme 'monokai t)
