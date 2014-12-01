@@ -140,7 +140,7 @@ inhibit-startup-echo-area-message t)
 (el-get 'sync)
 
 ;; NEOTree
-(setq neo-window-width 50)
+(setq neo-window-width 39)
 
 ;; ag.el (the silver searcher)
 (setq ag-reuse-buffers t)
