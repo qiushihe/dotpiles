@@ -81,6 +81,12 @@ inhibit-startup-echo-area-message t)
 ;; Auto revert to changes made by external programs
 (global-auto-revert-mode t)
 
+;; Resize window
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
 ;; Keyboard scrolling speed
 (setq scroll-step 10)
 (setq hscroll-step 10)
