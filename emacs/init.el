@@ -141,8 +141,9 @@ inhibit-startup-echo-area-message t)
 
 ;; NEOTree
 (setq neo-window-width 39)
+(global-set-key (kbd "M-]") 'neotree-toggle)
 
-;; ag.el (the silver searcher)
+;; Ag.el (the silver searcher)
 (setq ag-reuse-buffers t)
 (setq ag-reuse-window t)
 
