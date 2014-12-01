@@ -82,8 +82,8 @@ inhibit-startup-echo-area-message t)
 (global-auto-revert-mode t)
 
 ;; Keyboard scrolling speed
-(setq scroll-step 1)
-(setq hscroll-step 1)
+(setq scroll-step 10)
+(setq hscroll-step 10)
 
 ;; Mouse scrolling settings
 (setq mouse-autoselect-window t)
