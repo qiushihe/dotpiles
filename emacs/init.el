@@ -155,11 +155,9 @@ inhibit-startup-echo-area-message t)
 (smooth-scroll-mode t)
 
 ;; Set page guide
-(setq fci-rule-column 100)
-(setq fci-rule-width 1)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda ()
-  (fci-mode 1)))
-(global-fci-mode 1)
+(add-hook 'after-change-major-mode-hook (lambda ()
+  (interactive)
+  (column-marker-1 100)))
 
 ;; Org mode
 (setq org-support-shift-select t)

@@ -1,6 +1,8 @@
 ((ag status "installed" recipe
      (:name ag :description "A simple ag frontend, loosely based on ack-and-half.el." :type github :pkgname "Wilfred/ag.el" :depends
             (dash s)))
+ (column-marker status "installed" recipe
+                (:name column-marker :description "Highlight certain character columns" :type emacswiki :features column-marker))
  (dash status "installed" recipe
        (:name dash :description "A modern list api for Emacs. No 'cl required." :type github :pkgname "magnars/dash.el"))
  (el-get status "installed" recipe
@@ -13,8 +15,6 @@
     (:name f :website "https://github.com/rejeep/f.el" :description "Modern API for working with files and directories in Emacs" :depends
            (s dash)
            :type github :pkgname "rejeep/f.el"))
- (fill-column-indicator status "installed" recipe
-                        (:name fill-column-indicator :type github :website "https://github.com/alpaker/Fill-Column-Indicator#readme" :description "An Emacs minor mode that graphically indicates the fill column." :pkgname "alpaker/Fill-Column-Indicator"))
  (hbs-mode status "installed" recipe
            (:name hbs-mode :website "https://github.com/danielevans/handlebars-mode" :description "Emacs Major Mode for Handlebars" :type github :pkgname "danielevans/handlebars-mode"))
  (markdown-mode status "installed" recipe
