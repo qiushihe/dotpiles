@@ -78,6 +78,10 @@ inhibit-startup-echo-area-message t)
   (setq cursor-type '(bar . 1)))
 (add-hook 'post-command-hook 'cursor-shape-hook)
 
+;; Mode Line
+(setq line-number-mode t)
+(setq column-number-mode t)
+
 ;; Auto revert to changes made by external programs
 (global-auto-revert-mode t)
 
