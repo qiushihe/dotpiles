@@ -167,6 +167,9 @@ inhibit-startup-echo-area-message t)
 ;; Projectile
 (setq projectile-enable-caching t)
 
+;; Sml Mode Line
+(sml-modeline-mode)
+
 ;; Load theme
 (load-theme 'monokai t)
 
