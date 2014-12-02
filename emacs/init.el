@@ -165,6 +165,7 @@ inhibit-startup-echo-area-message t)
 (setq org-support-shift-select t)
 
 ;; Projectile
+(projectile-global-mode)
 (setq projectile-enable-caching t)
 
 ;; Sml Mode Line
