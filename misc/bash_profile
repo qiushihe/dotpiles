@@ -14,6 +14,9 @@ export PATH="${PATH}:./node_modules/.bin"
 # Sublime Text Alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -a"
 
+# Increase opened file limit
+ulimit -n 10000
+
 # Terminal Colour
 export CLICOLOR=1
 export LSCOLORS=gxfxgxgxcxegedabagacad
