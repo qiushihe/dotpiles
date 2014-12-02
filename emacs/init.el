@@ -51,7 +51,7 @@ inhibit-startup-echo-area-message t)
 (add-hook 'after-change-major-mode-hook (lambda () (local-set-key (kbd "RET") 'my-enter)))
 
 ;; Always end a file with a newline
-(setq require-final-newline nil)
+(setq require-final-newline t)
 
 ;; Remove extra whitespace on save
 (defun delete-trailing-whitespace-and-blank-lines ()
