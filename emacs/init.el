@@ -160,6 +160,9 @@ inhibit-startup-echo-area-message t)
 ;; Org mode
 (setq org-support-shift-select t)
 
+;; Projectile
+(setq projectile-enable-caching t)
+
 ;; Load theme
 (load-theme 'monokai t)
 

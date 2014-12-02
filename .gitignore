@@ -2,3 +2,5 @@ emacs/ido.last
 emacs/el-get
 !emacs/el-get/.status.el
 emacs/elpa
+emacs/projectile.cache
+emacs/projectile-bookmarks.eld
