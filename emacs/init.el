@@ -31,6 +31,15 @@ inhibit-startup-echo-area-message t)
 (show-paren-mode t)
 (setq blink-matching-paren t)
 
+;; Auto-insert matching parenthesis
+(electric-pair-mode 1)
+
+;; Delete selection when typing
+(delete-selection-mode 1)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
 ;; Insert 2 spaces for tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
