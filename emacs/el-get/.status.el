@@ -24,6 +24,9 @@
               `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
               :build/windows-nt
               (with-temp-file "helm-autoload.el" nil)))
+ (helm-cmd-t status "installed" recipe
+             (:name helm-cmd-t :description "Cmd-t style completion of files in repository." :type github :pkgname "lewang/helm-cmd-t" :depends
+                    (helm)))
  (markdown-mode status "installed" recipe
                 (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :prepare
                        (add-to-list 'auto-mode-alist
@@ -79,9 +82,6 @@
  (pkg-info status "installed" recipe
            (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
                   (dash epl)))
- (projectile status "installed" recipe
-             (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
-                    (dash s f pkg-info)))
  (s status "installed" recipe
     (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
  (sml-modeline status "installed" recipe

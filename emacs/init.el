@@ -171,13 +171,9 @@ inhibit-startup-echo-area-message t)
 ;; Org mode
 (setq org-support-shift-select t)
 
-;; Projectile
-(projectile-global-mode)
-(setq projectile-enable-caching t)
-(global-set-key (kbd "C-t") 'projectile-find-file)
-
 ;; Helm
 (helm-mode 1)
+(global-set-key (kbd "C-t") 'helm-cmd-t)
 
 ;; Sml Mode Line
 (sml-modeline-mode)
