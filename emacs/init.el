@@ -176,6 +176,9 @@ inhibit-startup-echo-area-message t)
 (setq projectile-enable-caching t)
 (global-set-key (kbd "C-t") 'projectile-find-file)
 
+;; Helm
+(helm-mode 1)
+
 ;; Sml Mode Line
 (sml-modeline-mode)
 

@@ -17,6 +17,13 @@
            :type github :pkgname "rejeep/f.el"))
  (hbs-mode status "installed" recipe
            (:name hbs-mode :website "https://github.com/danielevans/handlebars-mode" :description "Emacs Major Mode for Handlebars" :type github :pkgname "danielevans/handlebars-mode"))
+ (helm status "installed" recipe
+       (:name helm :description "Emacs incremental and narrowing framework" :type github :pkgname "emacs-helm/helm" :build
+              ("make")
+              :build/darwin
+              `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
+              :build/windows-nt
+              (with-temp-file "helm-autoload.el" nil)))
  (markdown-mode status "installed" recipe
                 (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type git :url "git://jblevins.org/git/markdown-mode.git" :prepare
                        (add-to-list 'auto-mode-alist
