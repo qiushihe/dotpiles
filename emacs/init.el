@@ -21,11 +21,6 @@ inhibit-startup-echo-area-message t)
 (electric-indent-mode -1)
 (add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
 
-;; IDO Mode
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-
 ;; Always show matching parenthesis
 (setq show-paren-delay 0)
 (show-paren-mode t)
@@ -36,9 +31,6 @@ inhibit-startup-echo-area-message t)
 
 ;; Delete selection when typing
 (delete-selection-mode 1)
-
-;; Highlight current line
-(global-hl-line-mode 1)
 
 ;; Insert 2 spaces for tab
 (setq-default indent-tabs-mode nil)
@@ -159,6 +151,7 @@ inhibit-startup-echo-area-message t)
 ;; Ag.el (the silver searcher)
 (setq ag-reuse-buffers t)
 (setq ag-reuse-window t)
+(global-set-key (kbd "M-r") 'ag-project)
 
 ;; Enable smooth scroll
 (smooth-scroll-mode t)
@@ -166,7 +159,7 @@ inhibit-startup-echo-area-message t)
 ;; Set page guide
 (add-hook 'after-change-major-mode-hook (lambda ()
   (interactive)
-  (column-marker-1 100)))
+  (column-marker-3 100)))
 
 ;; Org mode
 (setq org-support-shift-select t)
