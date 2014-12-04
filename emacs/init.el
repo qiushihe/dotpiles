@@ -166,6 +166,9 @@ inhibit-startup-echo-area-message t)
 
 ;; Helm
 (helm-mode 1)
+(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-t") 'helm-cmd-t)
 
 ;; Sml Mode Line
