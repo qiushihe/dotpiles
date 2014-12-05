@@ -84,6 +84,9 @@
  (pkg-info status "installed" recipe
            (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
                   (dash epl)))
+ (projectile status "installed" recipe
+             (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
+                    (dash s f pkg-info)))
  (s status "installed" recipe
     (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
  (sml-modeline status "installed" recipe
