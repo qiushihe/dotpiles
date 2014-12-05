@@ -175,6 +175,9 @@ inhibit-startup-echo-area-message t)
 ;; Sml Mode Line
 (sml-modeline-mode)
 
+;; Multiple cursors
+(global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
+
 ;; Load theme
 (load-theme 'monokai t)
 

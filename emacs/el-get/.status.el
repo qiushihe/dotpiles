@@ -34,6 +34,8 @@
  (monokai-theme status "installed" recipe
                 (:name monokai-theme :website "https://github.com/oneKelvinSmith/monokai-emacs" :description "A fruity color theme for Emacs." :type elpa :prepare
                        (add-to-list 'custom-theme-load-path default-directory)))
+ (multiple-cursors status "installed" recipe
+                   (:name multiple-cursors :description "An experiment in adding multiple cursors to emacs" :type github :pkgname "magnars/multiple-cursors.el"))
  (neotree status "installed" recipe
           (:name neotree :website "https://github.com/jaypei/emacs-neotree" :description "An Emacs tree plugin like NerdTree for Vim." :type github :branch "master" :pkgname "jaypei/emacs-neotree"))
  (org-mode status "installed" recipe
