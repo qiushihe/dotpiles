@@ -198,7 +198,7 @@ inhibit-startup-echo-area-message t)
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/Dropbox/OrgMode/MetaLab.org" "~/Dropbox/OrgMode/Personal.org" "~/Dropbox/OrgMode/test.org"))))
+    ("~/Dropbox/OrgMode/Walmart.org" "~/Dropbox/OrgMode/MetaLab.org" "~/Dropbox/OrgMode/Personal.org" "~/Dropbox/OrgMode/test.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
