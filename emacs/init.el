@@ -177,7 +177,6 @@ inhibit-startup-echo-area-message t)
 ;; Projectile
 (projectile-global-mode)
 (setq projectile-enable-caching t)
-(setq projectile-require-project-root nil)
 
 ;; Sml Mode Line
 (sml-modeline-mode)

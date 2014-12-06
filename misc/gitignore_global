@@ -13,6 +13,7 @@
 vim/swaps
 vim/backups
 vim/undo
+.projectile
 
 # Workaround an issue with the silver searcher not working correctly
 # with nested .gitignore files
