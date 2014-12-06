@@ -92,12 +92,6 @@ inhibit-startup-echo-area-message t)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-; Cursor movement
-(global-set-key (kbd "s-<left>") 'move-beginning-of-line)
-(global-set-key (kbd "s-<right>") 'move-end-of-line)
-(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
-(global-set-key (kbd "s-<down>") 'end-of-buffer)
-
 ;; Keyboard scrolling speed
 (setq scroll-step 10)
 (setq hscroll-step 10)
@@ -197,6 +191,23 @@ inhibit-startup-echo-area-message t)
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
+;; OSX Bindings
+(global-set-key (kbd "s-<left>") 'move-beginning-of-line)
+(global-set-key (kbd "s-<right>") 'move-end-of-line)
+(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") 'end-of-buffer)
+(global-set-key (kbd "s-w") 'kill-this-buffer)
+(global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "s-x") 'kill-region)
+(global-set-key (kbd "s-c") 'kill-ring-save)
+(global-set-key (kbd "s-v") 'yank)
+(global-set-key (kbd "s-o") 'helm-find-files)
+(global-set-key (kbd "s-z") 'undo)
+(global-set-key (kbd "s-Z") (kbd "C-g C-_"))
+(global-set-key (kbd "s-t") 'helm-projectile)
+(global-set-key (kbd "s-R") 'ag-project)
+
+;; Customize variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
