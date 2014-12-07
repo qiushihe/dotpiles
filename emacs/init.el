@@ -4,8 +4,8 @@
 (when (display-graphic-p) (scroll-bar-mode -1))
 
 ;; Disable splash screen/message
-(setq inhibit-startup-message t
-inhibit-startup-echo-area-message t)
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
 
 ;; Disable backup
 (setq backup-inhibited t)
@@ -86,25 +86,16 @@ inhibit-startup-echo-area-message t)
 ;; Auto revert to changes made by external programs
 (global-auto-revert-mode t)
 
+;; Unbind some OSX-specific bindings
+(global-unset-key (kbd "s-s"))
+(global-unset-key (kbd "s-z"))
+(global-unset-key (kbd "s-Z"))
+
 ;; Resize window
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
-
-;; Custom key bindings
-(global-set-key (kbd "s-<left>") 'move-beginning-of-line)
-(global-set-key (kbd "s-<right>") 'move-end-of-line)
-(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
-(global-set-key (kbd "s-<down>") 'end-of-buffer)
-(global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "s-w") 'kill-this-buffer)
-(global-set-key (kbd "s-s") 'save-buffer)
-(global-set-key (kbd "s-x") 'kill-region)
-(global-set-key (kbd "s-c") 'kill-ring-save)
-(global-set-key (kbd "s-v") 'yank)
-(global-set-key (kbd "s-z") 'undo)
-(global-set-key (kbd "s-Z") (kbd "C-g C-_"))
 
 ;; Keyboard scrolling speed
 (setq scroll-step 10)
