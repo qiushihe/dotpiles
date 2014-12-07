@@ -1,6 +1,14 @@
 ((ag status "installed" recipe
      (:name ag :description "A simple ag frontend, loosely based on ack-and-half.el." :type github :pkgname "Wilfred/ag.el" :depends
             (dash s)))
+ (coffee-mode status "installed" recipe
+              (:name coffee-mode :website "http://ozmm.org/posts/coffee_mode.html" :description "Emacs Major Mode for CoffeeScript" :type github :pkgname "defunkt/coffee-mode" :features coffee-mode :post-init
+                     (progn
+                       (add-to-list 'auto-mode-alist
+                                    '("\\.coffee$" . coffee-mode))
+                       (add-to-list 'auto-mode-alist
+                                    '("Cakefile" . coffee-mode))
+                       (setq coffee-js-mode 'javascript-mode))))
  (column-marker status "installed" recipe
                 (:name column-marker :description "Highlight certain character columns" :type emacswiki :features column-marker))
  (dash status "installed" recipe
