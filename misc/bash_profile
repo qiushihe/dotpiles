@@ -21,7 +21,7 @@ ulimit -n 10000
 export CLICOLOR=1
 export LSCOLORS=gxfxgxgxcxegedabagacad
 export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-export TERM=xterm-256color
+export TERM=xterm-color
 
 alias ls='ls -G'
 alias ll='ls -hl'
