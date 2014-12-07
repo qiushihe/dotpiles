@@ -36,48 +36,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 
-;; Make tab behave "normally"
-(defun my-tab ()
-  (interactive)
-  (insert "  "))
-(global-set-key "\t" 'my-tab)
-(add-hook 'after-change-major-mode-hook (lambda () (local-set-key "\t" 'my-tab)))
-
-;; Make auto-indent behave "normally"
-(defun my-enter ()
-  (interactive)
-  (newline)
-  (indent-relative-maybe))
-(global-set-key (kbd "RET") 'my-enter)
-(add-hook 'after-change-major-mode-hook (lambda () (local-set-key (kbd "RET") 'my-enter)))
-
 ;; Always end a file with a newline
 (setq require-final-newline t)
-
-;; Remove extra whitespace on save
-(defun delete-trailing-whitespace-and-blank-lines ()
-  (interactive)
-  (let ((point (point)))
-    (delete-trailing-whitespace)
-    (goto-char (point-max))
-    (delete-blank-lines)
-    (goto-char (min point (point-max)))))
-(add-hook 'before-save-hook 'delete-trailing-whitespace-and-blank-lines)
-
-;; Line number
-(global-linum-mode 1)
-(unless (display-graphic-p) ; Only add space between line number and text in non-GUI mode
-  (setq linum-format (lambda (line)
-    (propertize
-      (format
-        (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-          (concat "%" (number-to-string w) "d "))
-        line) 'face 'linum))))
-
-;; Thin cursor
-(defun cursor-shape-hook ()
-  (setq cursor-type '(bar . 1)))
-(add-hook 'post-command-hook 'cursor-shape-hook)
 
 ;; Mode Line
 (setq line-number-mode t)
@@ -88,6 +48,10 @@
 
 ;; Load non-managed packages
 (add-to-list 'load-path "~/.emacs.d/user-packages")
+(load-library "fix-enter-tab")
+(load-library "line-number")
+(load-library "trim-white-space")
+(load-library "thin-cursor")
 (load-library "bindings")
 
 ;; Managed packages via el-get
