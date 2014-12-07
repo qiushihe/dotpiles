@@ -1,0 +1,1 @@
+(sml-modeline-mode)

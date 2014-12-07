@@ -142,54 +142,8 @@ inhibit-startup-echo-area-message t)
     (goto-char (point-max))
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(setq el-get-user-package-directory "~/.emacs.d/el-get-user/init-files")
 (el-get 'sync)
-
-;; NEOTree
-(setq neo-window-width 39)
-(setq neo-persist-show nil)
-(global-set-key (kbd "M-]") 'neotree-toggle)
-
-;; Ag.el (the silver searcher)
-(setq ag-reuse-buffers t)
-(setq ag-reuse-window t)
-(global-set-key (kbd "M-r") 'ag-project)
-
-;; Enable smooth scroll
-(smooth-scroll-mode t)
-
-;; Set page guide
-(add-hook 'after-change-major-mode-hook (lambda ()
-  (interactive)
-  (column-marker-3 100)))
-
-;; Org mode
-(setq org-support-shift-select t)
-
-;; Helm
-(helm-mode 1)
-(global-set-key (kbd "C-s") 'helm-occur)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-mini)
-;;(global-set-key (kbd "C-t") 'helm-cmd-t)
-(global-set-key (kbd "C-t") 'helm-projectile)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-;; Projectile
-(projectile-global-mode)
-(setq projectile-enable-caching t)
-
-;; Sml Mode Line
-(sml-modeline-mode)
-
-;; Multiple cursors
-(global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
-
-;; Load theme
-(load-theme 'monokai t)
-
-;; Enable disabled commands
-(put 'scroll-left 'disabled nil)
-(put 'scroll-right 'disabled nil)
 
 ;; OSX Bindings
 (global-set-key (kbd "s-<left>") 'move-beginning-of-line)
@@ -207,6 +161,14 @@ inhibit-startup-echo-area-message t)
 (global-set-key (kbd "s-Z") (kbd "C-g C-_"))
 (global-set-key (kbd "s-t") 'helm-projectile)
 (global-set-key (kbd "s-R") 'ag-project)
+(global-set-key (kbd "s-\\") 'neotree-toggle)
+
+;; Load theme
+(load-theme 'monokai t)
+
+;; Enable disabled commands
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
 
 ;; Customize variables
 (custom-set-variables
