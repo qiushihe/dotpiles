@@ -98,4 +98,6 @@
  (sml-modeline status "installed" recipe
                (:name sml-modeline :description "Show position in a scrollbar like way in mode-line" :type http :url "http://bazaar.launchpad.net/~nxhtml/nxhtml/main/download/head%3A/smlmodeline.el-20100318165023-n7kkswg6dlq8l6b3-1/sml-modeline.el" :features "sml-modeline"))
  (smooth-scroll status "installed" recipe
-                (:name smooth-scroll :description "Minor mode for smooth scrolling." :type emacswiki :features smooth-scroll)))
+                (:name smooth-scroll :description "Minor mode for smooth scrolling." :type emacswiki :features smooth-scroll))
+ (yaml-mode status "installed" recipe
+            (:name yaml-mode :description "Simple major mode to edit YAML file for emacs" :type github :pkgname "yoshiki/yaml-mode")))
