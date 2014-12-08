@@ -23,6 +23,8 @@
     (:name f :website "https://github.com/rejeep/f.el" :description "Modern API for working with files and directories in Emacs" :depends
            (s dash)
            :type github :pkgname "rejeep/f.el"))
+ (flyspell status "installed" recipe
+           (:name flyspell :website "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html" :description "On-the-fly spell checker." :type http :url "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell-1.7q.el"))
  (haml-mode status "installed" recipe
             (:name haml-mode :description "Major mode for editing Haml files" :type github :pkgname "nex3/haml-mode"))
  (hbs-mode status "installed" recipe

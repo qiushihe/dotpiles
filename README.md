@@ -36,9 +36,13 @@
 
     $ brew install the_silver_searcher
 
+**Install ispell**
+
+    $ brew install ispell
+
 **Setup symlinks**:
 
     $ ln -sf `pwd`/emacs ~/.emacs.d
     $ ln -sf `pwd`/emacs/gemacs.sh /usr/local/bin/gemacs
 
-_Upon first launch of Emacs, el-get will install itself and all previous installed pcakges._
+_Upon first launch of Emacs, el-get will install itself and all previous installed packages._
