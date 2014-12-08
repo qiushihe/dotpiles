@@ -1,3 +1,3 @@
 #!/bin/bash
 
-`/Applications/Emacs.app/Contents/MacOS/Emacs --name \`pwd\`  "$@"` &
+`/Applications/Emacs.app/Contents/MacOS/Emacs "$@"` &

@@ -43,6 +43,9 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Show full file path in frame title
+(setq frame-title-format '(buffer-file-name "%f" (dired-directory dired-directory "%b")))
+
 ;; Auto revert to changes made by external programs
 (global-auto-revert-mode t)
 
