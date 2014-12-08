@@ -2,6 +2,9 @@
 (global-unset-key (kbd "s-s"))
 (global-unset-key (kbd "s-z"))
 (global-unset-key (kbd "s-Z"))
+(global-unset-key (kbd "s-c"))
+(global-unset-key (kbd "s-x"))
+(global-unset-key (kbd "s-v"))
 
 ;; Resize window
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
