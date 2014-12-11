@@ -7,6 +7,9 @@
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 
+;; Disable lockfile for unsaved buffers
+(setq create-lockfiles nil)
+
 ;; Disable backup
 (setq backup-inhibited t)
 
