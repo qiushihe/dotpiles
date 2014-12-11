@@ -54,12 +54,14 @@
 
 ;; Load non-managed packages
 (add-to-list 'load-path "~/.emacs.d/user-packages")
-(load-library "fix-enter-tab")
 (load-library "fix-indent-outdent")
 (load-library "line-number")
 (load-library "trim-white-space")
 (load-library "thin-cursor")
 (load-library "bindings")
+(load-library "normalize-indent")
+
+(normalize-indent-global-mode)
 
 ;; Managed packages via el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
