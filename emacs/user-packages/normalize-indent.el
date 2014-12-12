@@ -58,11 +58,6 @@
       (next-line 1)
       (normalize-indent-indent-region-r (point) (+ re 2)))))
 
-;; TODO: This function (as well as 'normalize-indent-indent-region) needs to be smarter about
-;;       deactivating the selection. Currently deactivate-mark is set to nil so that repeated
-;;       (in/out)dent can be performed without having to re-select the region. However currently
-;;       the mark is silently left in place and need to be manually deactivated (C-space)
-;;       otherwise unexpected behaviors may happen.
 (defun normalize-indent-outdent-region ()
   (interactive)
   (save-excursion
