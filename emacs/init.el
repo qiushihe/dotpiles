@@ -3,6 +3,9 @@
 (when (display-graphic-p) (tool-bar-mode -1))
 (when (display-graphic-p) (scroll-bar-mode -1))
 
+;; Disable srgb to avoid some colour issues (i.e. with powerline)
+(setq ns-use-srgb-colorspace nil)
+
 ;; Disable splash screen/message
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)

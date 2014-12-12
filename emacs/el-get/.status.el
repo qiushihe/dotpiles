@@ -1,6 +1,8 @@
 ((ag status "installed" recipe
      (:name ag :description "A simple ag frontend, loosely based on ack-and-half.el." :type github :pkgname "Wilfred/ag.el" :depends
             (dash s)))
+ (cl-lib status "installed" recipe
+         (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
  (coffee-mode status "installed" recipe
               (:name coffee-mode :website "http://ozmm.org/posts/coffee_mode.html" :description "Emacs Major Mode for CoffeeScript" :type github :pkgname "defunkt/coffee-mode" :features coffee-mode :post-init
                      (progn
@@ -96,6 +98,10 @@
  (pkg-info status "installed" recipe
            (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
                   (dash epl)))
+ (powerline status "installed" recipe
+            (:name powerline :website "https://github.com/milkypostman/powerline" :depends
+                   (cl-lib)
+                   :description "Powerline for Emacs" :type github :pkgname "milkypostman/powerline" :load-path "." :features powerline))
  (projectile status "installed" recipe
              (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
                     (dash s f pkg-info)))
