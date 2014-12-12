@@ -61,6 +61,7 @@
 (load-library "trim-white-space")
 (load-library "thin-cursor")
 (load-library "bindings")
+(load-library "matching-parenthesis")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
