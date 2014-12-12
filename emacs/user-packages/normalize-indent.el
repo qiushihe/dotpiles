@@ -80,7 +80,7 @@
 (define-minor-mode normalize-indent-mode
   "Toggle normalized indentation mode"
   :init-value nil
-  :lighter " N.Indent"
+  :lighter " NIndent"
   :global nil
   (if normalize-indent-mode
     (progn
