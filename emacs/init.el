@@ -49,6 +49,9 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Thin cursor
+(setq-default cursor-type 'bar)
+
 ;; Show full file path in frame title
 (setq frame-title-format '(buffer-file-name "%f" (dired-directory dired-directory "%b")))
 
@@ -59,7 +62,6 @@
 (add-to-list 'load-path "~/.emacs.d/user-packages")
 (load-library "line-number")
 (load-library "trim-white-space")
-(load-library "thin-cursor")
 (load-library "bindings")
 (load-library "matching-parenthesis")
 
