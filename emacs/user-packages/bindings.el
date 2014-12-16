@@ -7,6 +7,9 @@
 (global-unset-key (kbd "s-x"))
 (global-unset-key (kbd "s-v"))
 
+;; Rebind kill-this-buffer
+(global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+
 ;; Resize window
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
