@@ -64,6 +64,7 @@
 (load-library "trim-white-space")
 (load-library "bindings")
 (load-library "matching-parenthesis")
+(load-library "switch-to-previous-buffer")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
