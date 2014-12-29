@@ -1,16 +1,33 @@
-set nocompatible
-set autoread
-set cursorline " Highlight current line
-set encoding=utf-8 nobomb " Disable BOM
-set hidden " Remember histories and marks for background buffers
+" Highlight current line
+set cursorline
+
+" Disable BOM
+set encoding=utf-8 nobomb
+
+" Remember histories and marks for background buffers
+set hidden
 set history=1000
-set laststatus=2 " Always show status line
-set magic " Extended regexp
+
+" Always show status line
+set laststatus=2
+
+" Use extended regexp
+set magic
+
+" Disable line wrap
 set nowrap
-set number " Show line number
-set title " Show filename in title bar
-set ttyfast " Send more characters
+
+" Show line number
+set number
+
+" Show filename in title bar
+set title
+
+" Set column guide
 set colorcolumn=100
+
+" Set font
+set guifont=Monaco:h12
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd
@@ -19,8 +36,7 @@ set wildignore+=*~,.DS_Store,*.cache,*.tmp,*.swp
 set wildignore+=*/.svn/*,*/.git/*,*/.hg/*
 set wildignore+=*/tmp/*,*/log/*,*/build/*
 
-" Use 2 spaces for tab
-" Run :retab on existing files to convert tabs to spaces
+" Use 2 spaces for tab (run :retab on existing files to convert tabs to spaces)
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -40,8 +56,8 @@ set undodir=$HOME/.vim/undo
 
 " Search
 set hlsearch
-set ignorecase " Ignore case
-set smartcase " Ignore ignore case if searching with upper case letter
+set ignorecase
+set smartcase " Don't ignore case if searching with upper case letter
 set incsearch
 set wrapscan
 
@@ -75,7 +91,10 @@ let g:netrw_home=$HOME
 set nofoldenable
 au BufRead,BufNewFile * set nofoldenable
 
-" Misc.
+" Misc. configs
+set nocompatible
+set autoread
+set ttyfast
 syntax on
 filetype plugin indent on
 colorscheme desert
@@ -134,5 +153,4 @@ nnoremap <C-S-W><C-S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap(
 nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
 nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
 nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
-
 
