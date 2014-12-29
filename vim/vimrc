@@ -165,5 +165,8 @@ filetype off
 set rtp+=~/.vim/vundle/Vundle.vim
 call vundle#begin("~/.vim/vundle")
 Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
+let g:airline_powerline_fonts = 1

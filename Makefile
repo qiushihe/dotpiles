@@ -29,3 +29,5 @@ vim:
 	rm -fr ~/.vim
 	rm -fr ~/.vimrc
 	ln -sf $(dotpiles_root)/vim ~/.vim
+	@echo "Post-setup instructions:"
+	@echo "* Install fonts for ailine from https://github.com/powerline/fonts"
