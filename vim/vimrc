@@ -135,9 +135,4 @@ nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<
 nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
 nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
 
-" Start Pathogen
-execute pathogen#infect()
-
-" Source bundle specific configurations
-source ~/.vimrc.bundles
 
