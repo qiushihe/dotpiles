@@ -26,10 +26,6 @@ emacs:
 	ln -sf `pwd`/emacs/gemacs.sh /usr/local/bin/gemacs
 
 vim:
-	brew install ack
-	rm -f ~/.vim ~/.vimrc ~/.vimrc.bundles
-	mkdir ~/.vim ~/.vim/backups ~/.vim/swaps ~/.vim/undo
-	ln -sf $(dotpiles_root)/vim/vimrc.bundles ~/.vimrc.bundles
-	ln -sf $(dotpiles_root)/vim/vimrc ~/.vimrc
-	ln -sf $(dotpiles_root)/vim/autoload ~/.vim/autoload
-	ln -sf $(dotpiles_root)/vim/bundle ~/.vim/bundle
+	rm -fr ~/.vim
+	rm -fr ~/.vimrc
+	ln -sf $(dotpiles_root)/vim ~/.vim
