@@ -37,7 +37,6 @@ map <leader>] :NERDTreeTabsToggle<CR>
 map <C-f><C-g> :Ag 
 
 " Configure VimWiki
-let g:vimwiki_autowriteall = 0
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{
   \ 'path': '~/Dropbox/Wiki/',

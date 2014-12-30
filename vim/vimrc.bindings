@@ -1,3 +1,6 @@
+" Switch to last buffer
+map <C-b><C-b> :b#<CR>
+
 " Delete buffer
 map <C-b><C-d> :bd<CR>
 
@@ -47,12 +50,3 @@ nnoremap <C-S-W><C-S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap(
 nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
 nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
 nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
-
-" Switch to last buffer
-" map <C-b><C-b> :b#<CR>
-
-" Switch to last tab
-let g:lasttab = 1
-nmap <C-b><C-b> :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
