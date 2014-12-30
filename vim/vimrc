@@ -78,7 +78,8 @@ set splitbelow
 set splitright
 
 " Mouse
-set mouse=a " Mouse in all mods
+set mouse=a
+set mousefocus
 set ttymouse=xterm
 
 " Bell
