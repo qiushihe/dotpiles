@@ -19,6 +19,7 @@ filetype plugin indent on
 let g:airline_powerline_fonts = 1
 
 " Configure CtrlP
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_map = '<c-t>'
 map <C-s><C-t> :CtrlPMixed<CR>
 map <C-s><C-b> :CtrlPBuffer<CR>
