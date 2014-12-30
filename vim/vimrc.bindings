@@ -24,13 +24,13 @@ map <C-S-Left> <C-W><
 map <C-S-Right> <C-W>>
 
 " Window Swap
-function! MarkWindowSwap()
+function! <SID>MarkWindowSwap()
   " marked window number
   let g:markedWinNum = winnr()
   let g:markedBufNum = bufnr("%")
 endfunction
 
-function! DoWindowSwap()
+function! <SID>DoWindowSwap()
   let curWinNum = winnr()
   let curBufNum = bufnr("%")
   " Switch focus to marked window
@@ -46,7 +46,7 @@ function! DoWindowSwap()
   exe "hide buf" g:markedBufNum
 endfunction
 
-nnoremap <C-S-W><C-S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
+nnoremap <C-S-W><C-S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
