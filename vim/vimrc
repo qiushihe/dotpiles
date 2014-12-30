@@ -105,68 +105,9 @@ filetype plugin indent on
 colorscheme desert
 highlight ColorColumn ctermbg=DarkGray
 
-" Keybindings
-if has("macunix")
-  map <D-w> :close<CR>  " Close
-  map <D-W> :bd<CR>     " Delete buffer
-  map <D-s> :w<CR>      " Save
-endif
-
-map <C-w><C-w> :close<CR>
-map <C-w><C-d> :bd<CR>
-
-" Window Split
-map <C-w><C-Right> :vsplit<CR>
-map <C-w><C-Down> :split<CR>
-
-" Window Resizing
-map <C-S-Up> <C-W>-
-map <C-S-Down> <C-W>+
-map <C-S-Left> <C-W><
-map <C-S-Right> <C-W>>
-
-" Window Navigation
-map <C-Up> <C-W>k
-map <C-Down> <C-W>j
-map <C-Left> <C-W>h
-map <C-Right> <C-W>l
-
-" Window Swap
-function! MarkWindowSwap()
-  " marked window number
-  let g:markedWinNum = winnr()
-  let g:markedBufNum = bufnr("%")
-endfunction
-
-function! DoWindowSwap()
-  let curWinNum = winnr()
-  let curBufNum = bufnr("%")
-  " Switch focus to marked window
-  exe g:markedWinNum . "wincmd w"
-
-  " Load current buffer on marked window
-  exe "hide buf" curBufNum
-
-  " Switch focus to current window
-  exe curWinNum . "wincmd w"
-
-  " Load marked buffer on current window
-  exe "hide buf" g:markedBufNum
-endfunction
-
-nnoremap <C-S-W><C-S-Down> :call MarkWindowSwap()<CR> <C-w>j :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Up> :call MarkWindowSwap()<CR> <C-w>k :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Left> :call MarkWindowSwap()<CR> <C-w>h :call DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Right> :call MarkWindowSwap()<CR> <C-w>l :call DoWindowSwap()<CR>
-
 " Setup bundles managed by Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/vundle/Vundle.vim
-call vundle#begin("~/.vim/vundle")
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-call vundle#end()
-filetype plugin indent on
-let g:airline_powerline_fonts = 1
+so ~/.vim/vimrc.vundle
+
+" Setup key bindings
+so ~/.vim/vimrc.bindings
+

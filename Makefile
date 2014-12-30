@@ -26,6 +26,7 @@ emacs:
 	ln -sf `pwd`/emacs/gemacs.sh /usr/local/bin/gemacs
 
 vim:
+	brew install the_silver_searcher
 	rm -fr ~/.vim
 	rm -fr ~/.vimrc
 	ln -sf $(dotpiles_root)/vim ~/.vim

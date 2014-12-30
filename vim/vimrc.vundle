@@ -1,0 +1,29 @@
+" Configure Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/vundle/Vundle.vim
+call vundle#begin("~/.vim/vundle")
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'qiushihe/gitignore'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'rking/ag.vim'
+call vundle#end()
+filetype plugin indent on
+
+" Configure airline
+let g:airline_powerline_fonts = 1
+
+" Configure CtrlP
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" Configure NerdTree/Tabs
+let g:nerdtree_tabs_open_on_gui_startup = 0
+map <C-]> <plug>NERDTreeTabsToggle<CR>
+
+" Configure Ag
+map <C-S-f> :Ag 
+
