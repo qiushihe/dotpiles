@@ -36,10 +36,13 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd
-set wildignore+=*.o,*.obj,*.min.js,*.sassc,*.scssc,*.log
-set wildignore+=*~,.DS_Store,*.cache,*.tmp,*.swp
-set wildignore+=*/.svn/*,*/.git/*,*/.hg/*
-set wildignore+=*/tmp/*,*/log/*,*/build/*
+set wildignore+=*.o,*.obj,*.min.js,*.sassc,*.scssc,*.elc,*.log,*.jar
+set wildignore+=*~*.cache,*.tmp,*.swp
+set wildignore+=.DS_Store,.AppleDouble,.Spotlight-V100,.Trashes
+set wildignore+=*/.svn,*/.git,*/.hg
+set wildignore+=*/tmp,*/log,*/build,*/buildSrc
+set wildignore+=*/node_modules
+set wildignore+=*/js-dist-*
 
 " Use 2 spaces for tab (run :retab on existing files to convert tabs to spaces)
 set tabstop=2
