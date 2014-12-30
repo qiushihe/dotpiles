@@ -19,7 +19,9 @@ let g:airline_powerline_fonts = 1
 
 " Configure CtrlP
 let g:ctrlp_map = '<c-t>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+map <C-s><C-t> :CtrlPMixed<CR>
+map <C-s><C-b> :CtrlPBuffer<CR>
+map <C-s><C-r> :CtrlPMRU<CR>
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -27,10 +29,10 @@ let NERDTreeMouseMode = 3
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeWinSize = 36
 let NERDTreeShowHidden = 1
-map <C-]> <plug>NERDTreeTabsToggle<CR>
+map <leader>] :NERDTreeTabsToggle<CR>
 
 " Configure Ag
-map <C-S-f> :Ag 
+map <C-f><C-g> :Ag 
 
 " Configure VimWiki
 let g:vimwiki_global_ext = 0

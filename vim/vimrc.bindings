@@ -1,12 +1,15 @@
 " Delete buffer
 map <C-w><C-d> :bd<CR>
 
-" Window Split
-map <C-w><C-v> :vsplit<CR>
-map <C-w><C-s> :split<CR>
+" Switch to last buffer
+map <C-b><C-b> :b#<CR>
 
 " Close window
 map <C-w><C-w> :close<CR>
+
+" Window Split
+map <C-w><C-v> :vsplit<CR>
+map <C-w><C-s> :split<CR>
 
 " Window Navigation
 map <C-Up> <C-W>k
