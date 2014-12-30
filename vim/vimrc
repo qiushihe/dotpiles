@@ -89,6 +89,9 @@ set visualbell
 set wildmenu
 set wildmode=list:longest
 
+" Open each buffer in its own tab page
+au BufAdd,BufNewFile * nested tab sball
+
 " Filetype associations
 au BufRead,BufNewFile *.md set filetype=markdown
 
