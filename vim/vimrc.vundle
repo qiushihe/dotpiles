@@ -23,6 +23,10 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
+let NERDTreeMouseMode = 3
+let NERDTreeRespectWildIgnore = 1
+let NERDTreeWinSize = 36
+let NERDTreeShowHidden = 1
 map <C-]> <plug>NERDTreeTabsToggle<CR>
 
 " Configure Ag
