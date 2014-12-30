@@ -11,7 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
 Plugin 'vimwiki/vimwiki'
-Plugin 'sickill/vim-monokai'
+Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 
@@ -42,6 +42,6 @@ let g:vimwiki_list = [{
   \ 'syntax': 'markdown',
   \ 'ext': '.md' }]
 
-" Configure monokai
-colorscheme monokai
-
+" Configure badwolf
+let g:badwolf_darkgutter = 1
+colorscheme badwolf
