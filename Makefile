@@ -32,4 +32,7 @@ vim:
 	ln -sf $(dotpiles_root)/vim ~/.vim
 	ln -sf $(dotpiles_root)/vim/vimrc ~/.vimrc
 	@echo "Post-setup instructions:"
+	@echo "* Run:"
+	@echo "    $ vim +PluginInstall +qall"
+	@echo "  to setup plugins"
 	@echo "* Install fonts for ailine from https://github.com/powerline/fonts"
