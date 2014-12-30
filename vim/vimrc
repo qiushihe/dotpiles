@@ -92,18 +92,12 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Create .netrwhist in $HOME
 let g:netrw_home=$HOME
 
-" Disable folding
-set nofoldenable
-au BufRead,BufNewFile * set nofoldenable
-
 " Misc. configs
 set nocompatible
 set autoread
 set ttyfast
 syntax on
 filetype plugin indent on
-colorscheme desert
-highlight ColorColumn ctermbg=DarkGray
 
 " Setup bundles managed by Vundle
 so ~/.vim/vimrc.vundle

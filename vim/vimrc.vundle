@@ -10,6 +10,7 @@ Plugin 'qiushihe/gitignore'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 filetype plugin indent on
 
@@ -26,4 +27,11 @@ map <C-]> <plug>NERDTreeTabsToggle<CR>
 
 " Configure Ag
 map <C-S-f> :Ag 
+
+" Configure VimWiki
+let g:vimwiki_global_ext = 0
+let g:vimwiki_list = [{
+  \ 'path': '~/Dropbox/Wiki/',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md' }]
 
