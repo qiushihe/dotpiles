@@ -102,6 +102,15 @@ set ttyfast
 syntax on
 filetype plugin indent on
 
+" Trim trailing whitespaces
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 " Setup bundles managed by Vundle
 so ~/.vim/vimrc.vundle
 
