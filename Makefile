@@ -27,6 +27,7 @@ emacs:
 
 vim:
 	brew install the_silver_searcher
+	brew install cmake
 	rm -fr ~/.vim
 	rm -fr ~/.vimrc
 	ln -sf $(dotpiles_root)/vim ~/.vim
@@ -35,4 +36,8 @@ vim:
 	@echo "* Run:"
 	@echo "    $ vim +PluginInstall +qall"
 	@echo "  to setup plugins"
+	@echo "* Run:"
+	@echo "    $ cd ~/.vim/bundle/YouCompleteMe"
+	@echo "    $ ./install.sh --clang-completer"
+	@echo "  to setup YouCompleteMe"
 	@echo "* Install fonts for ailine from https://github.com/powerline/fonts"

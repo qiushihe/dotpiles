@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/vundle/Vundle.vim
 call vundle#begin("~/.vim/vundle")
 Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/L9'
+"Plugin 'vim-scripts/L9'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -12,7 +12,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
-Plugin 'othree/vim-autocomplpop'
+"Plugin 'othree/vim-autocomplpop'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
