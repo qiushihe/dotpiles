@@ -1,7 +1,7 @@
 # dotpiles
 
-For setup instruction, run:
+To setup individual dotpiles components, run
 
-    $ make
-
-For more information, see source of `Makefile`.
+```
+  $ setup.sh [bash|git|vim|emacs]
+```
