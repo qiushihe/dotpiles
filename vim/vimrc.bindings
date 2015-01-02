@@ -7,9 +7,6 @@ imap § <Esc>
 " Switch to last buffer
 map <C-b><C-b> :b#<CR>
 
-" Delete buffer
-map <C-b><C-d> :bd<CR>
-
 " Close window
 map <C-w><C-d> :close<CR>
 
