@@ -32,6 +32,7 @@ set title
 set colorcolumn=100
 
 " Set font
+" Install custom airline fonts from https://github.com/powerline/fonts
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 " Ignore patterns
