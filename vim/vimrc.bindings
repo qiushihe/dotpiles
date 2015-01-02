@@ -2,7 +2,7 @@
 " For OSX, use https://pqrs.org/osx/karabiner/seil.html.en to remap cap-lock
 " to keycode '10' which is the '§' symbol.
 nmap § i
-imap § <Esc>
+imap § <Esc><Right>
 
 " Switch to last buffer
 map <C-b><C-b> :b#<CR>
