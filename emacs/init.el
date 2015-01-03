@@ -81,6 +81,9 @@
 (setq el-get-user-package-directory "~/.emacs.d/el-get-user/init-files")
 (el-get 'sync)
 
+;; Set font
+(set-default-font "Monaco 12")
+
 ;; Load theme
 (load-theme 'monokai t)
 
