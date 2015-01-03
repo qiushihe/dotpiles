@@ -25,7 +25,7 @@
 
 ;; Disable Electric indent mode
 (electric-indent-mode -1)
-(add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
+(add-hook 'after-change-major-mode-hook (lambda () (electric-indent-mode -1)))
 
 ;; Always show matching parenthesis
 (setq show-paren-delay 0)

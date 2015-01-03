@@ -37,6 +37,12 @@
                           (feat feats)
                         (unload-feature feat t))))
                   (require 'el-get))))
+ (epl status "installed" recipe
+      (:name epl :description "EPL provides a convenient high-level API for various package.el versions, and aims to overcome its most striking idiocies." :type github :pkgname "cask/epl"))
+ (f status "installed" recipe
+    (:name f :website "https://github.com/rejeep/f.el" :description "Modern API for working with files and directories in Emacs" :depends
+           (s dash)
+           :type github :pkgname "rejeep/f.el"))
  (flyspell status "installed" recipe
            (:name flyspell :website "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html" :description "On-the-fly spell checker." :type http :url "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell-1.7q.el"))
  (haml-mode status "installed" recipe
@@ -105,10 +111,16 @@
                       ("gnu" . "http://elpa.gnu.org/packages/")
                       ("marmalade" . "http://marmalade-repo.org/packages/")
                       ("SC" . "http://joseito.republika.pl/sunrise-commander/"))))))
+ (pkg-info status "installed" recipe
+           (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
+                  (dash epl)))
  (powerline status "installed" recipe
             (:name powerline :website "https://github.com/milkypostman/powerline" :depends
                    (cl-lib)
                    :description "Powerline for Emacs" :type github :pkgname "milkypostman/powerline" :load-path "." :features powerline))
+ (projectile status "installed" recipe
+             (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
+                    (dash s f pkg-info)))
  (s status "installed" recipe
     (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
  (sass-mode status "installed" recipe
