@@ -44,7 +44,7 @@
  (handlebars-mode status "installed" recipe
                   (:name handlebars-mode :website "https://github.com/danielevans/handlebars-mode" :description "Emacs Major Mode for Handlebars" :type github :pkgname "danielevans/handlebars-mode"))
  (helm status "installed" recipe
-       (:name helm :description "Emacs incremental and narrowing framework" :type github :pkgname "emacs-helm/helm" :checkout "2fa8e112001b03ecb2e2fba880acecc63dafa928" :build
+       (:name helm :description "Emacs incremental and narrowing framework" :type github :pkgname "emacs-helm/helm" :checkout "v1.6.5" :build
               ("make")
               :build/darwin
               `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
