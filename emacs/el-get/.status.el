@@ -19,4 +19,11 @@
                       (dolist
                           (feat feats)
                         (unload-feature feat t))))
-                  (require 'el-get)))))
+                  (require 'el-get))))
+ (helm status "installed" recipe
+       (:name helm :description "Emacs incremental and narrowing framework" :type github :pkgname "emacs-helm/helm" :checkout "2fa8e112001b03ecb2e2fba880acecc63dafa928" :build
+              ("make")
+              :build/darwin
+              `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
+              :build/windows-nt
+              (with-temp-file "helm-autoload.el" nil))))
