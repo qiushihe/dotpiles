@@ -82,7 +82,7 @@
 (el-get 'sync)
 
 ;; Load theme
-;; (load-theme 'monokai t)
+(load-theme 'monokai t)
 
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
