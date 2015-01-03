@@ -26,4 +26,7 @@
               :build/darwin
               `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
               :build/windows-nt
-              (with-temp-file "helm-autoload.el" nil))))
+              (with-temp-file "helm-autoload.el" nil)))
+ (helm-cmd-t status "installed" recipe
+             (:name helm-cmd-t :description "Cmd-t style completion of files in repository." :type github :pkgname "lewang/helm-cmd-t" :depends
+                    (helm))))
