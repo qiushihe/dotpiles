@@ -83,4 +83,6 @@
  (powerline status "installed" recipe
             (:name powerline :website "https://github.com/milkypostman/powerline" :depends
                    (cl-lib)
-                   :description "Powerline for Emacs" :type github :pkgname "milkypostman/powerline" :load-path "." :features powerline)))
+                   :description "Powerline for Emacs" :type github :pkgname "milkypostman/powerline" :load-path "." :features powerline))
+ (smooth-scroll status "installed" recipe
+                (:name smooth-scroll :description "Minor mode for smooth scrolling." :type emacswiki :features smooth-scroll)))
