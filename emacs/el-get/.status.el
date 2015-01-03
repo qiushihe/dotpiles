@@ -22,6 +22,8 @@
                           (feat feats)
                         (unload-feature feat t))))
                   (require 'el-get))))
+ (flyspell status "installed" recipe
+           (:name flyspell :website "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html" :description "On-the-fly spell checker." :type http :url "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell-1.7q.el"))
  (helm status "installed" recipe
        (:name helm :description "Emacs incremental and narrowing framework" :type github :pkgname "emacs-helm/helm" :checkout "2fa8e112001b03ecb2e2fba880acecc63dafa928" :build
               ("make")
