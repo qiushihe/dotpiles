@@ -1,4 +1,6 @@
-((el-get status "installed" recipe
+((cl-lib status "installed" recipe
+         (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
+ (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
                 ("el-get.*\\.el$" "methods/")
                 :load "el-get.el" :post-init
@@ -56,4 +58,8 @@
                       ("melpa" . "http://melpa.org/packages/")
                       ("gnu" . "http://elpa.gnu.org/packages/")
                       ("marmalade" . "http://marmalade-repo.org/packages/")
-                      ("SC" . "http://joseito.republika.pl/sunrise-commander/")))))))
+                      ("SC" . "http://joseito.republika.pl/sunrise-commander/"))))))
+ (powerline status "installed" recipe
+            (:name powerline :website "https://github.com/milkypostman/powerline" :depends
+                   (cl-lib)
+                   :description "Powerline for Emacs" :type github :pkgname "milkypostman/powerline" :load-path "." :features powerline)))
