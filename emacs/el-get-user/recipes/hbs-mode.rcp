@@ -1,5 +1,0 @@
-(:name hbs-mode
-  :website "https://github.com/danielevans/handlebars-mode"
-  :description "Emacs Major Mode for Handlebars"
-  :type github
-  :pkgname "danielevans/handlebars-mode")
