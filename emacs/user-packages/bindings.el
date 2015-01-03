@@ -10,6 +10,9 @@
 ;; Rebind kill-this-buffer
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 
+;; Rebind delete-window
+(global-set-key (kbd "C-x C-w") 'delete-window)
+
 ;; Resize window
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
