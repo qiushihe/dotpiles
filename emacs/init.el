@@ -84,6 +84,11 @@
 ;; Load theme
 (load-theme 'monokai t)
 
+;; Set startup (initial) frame size/position
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'initial-frame-alist '(top . 0))
+(add-to-list 'initial-frame-alist '(left . 0))
+
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
@@ -96,7 +101,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/Dropbox/OrgMode/Walmart.org" "~/Dropbox/OrgMode/MetaLab.org" "~/Dropbox/OrgMode/Personal.org" "~/Dropbox/OrgMode/test.org"))))
+    ("~/Dropbox/Org/index.org" "~/Dropbox/Org/MetaLab.org" "~/Dropbox/Org/Walmart.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
