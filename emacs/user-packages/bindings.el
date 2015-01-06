@@ -7,6 +7,9 @@
 (global-unset-key (kbd "s-x"))
 (global-unset-key (kbd "s-v"))
 
+;; Rebind delete-frame
+(global-set-key (kbd "C-c f d") 'delete-frame)
+
 ;; Rebind kill-this-buffer
 (global-set-key (kbd "C-c b d") 'kill-this-buffer)
 
