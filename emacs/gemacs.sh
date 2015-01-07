@@ -47,9 +47,15 @@ restart_server ()
   start_server
 }
 
-if [ $1 = "--start-server" ]; then start_server;
-elif [ $1 = "--stop-server" ]; then stop_server;
-elif [ $1 = "--restart-server" ]; then restart_server;
+if [ "$1" = "--start-server" ]; then start_server;
+elif [ "$1" = "--stop-server" ]; then stop_server;
+elif [ "$1" = "--restart-server" ]; then restart_server;
 else
+  get_server
+  if [ -z "$SERVER_PID" ]; then WAIT_FOR_START=1; fi
+
+  start_server
+  if [ -n "$WAIT_FOR_START" ]; then sleep 1; fi
+
   /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c $@
 fi
