@@ -1,7 +1,5 @@
-;; Disable some UI features
-(menu-bar-mode -1)
-(when (display-graphic-p) (tool-bar-mode -1))
-(when (display-graphic-p) (scroll-bar-mode -1))
+;; Disable menu bar
+(menu-bar-mode nil)
 
 ;; Disable srgb to avoid some colour issues (i.e. with powerline)
 (setq ns-use-srgb-colorspace nil)
@@ -87,7 +85,12 @@
 ;; Load theme
 (load-theme 'monokai t)
 
-;; Set startup (initial) frame size/position
+;; Set default frame properties
+(add-to-list 'default-frame-alist '(menu-bar-lines . 0))
+(add-to-list 'default-frame-alist '(tool-bar-lines . 0))
+(add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
+
+;; Set startup (initial) frame properties
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'initial-frame-alist '(top . 0))
 (add-to-list 'initial-frame-alist '(left . 0))
