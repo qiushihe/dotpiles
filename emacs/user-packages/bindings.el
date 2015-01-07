@@ -6,6 +6,8 @@
 (global-unset-key (kbd "s-c"))
 (global-unset-key (kbd "s-x"))
 (global-unset-key (kbd "s-v"))
+(global-unset-key (kbd "s-w"))
+(global-unset-key (kbd "s-q"))
 
 ;; Rebind delete-frame
 (global-set-key (kbd "C-c f d") 'delete-frame)
