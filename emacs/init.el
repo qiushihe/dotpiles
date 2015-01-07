@@ -90,11 +90,6 @@
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
 
-;; Set startup (initial) frame properties
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(add-to-list 'initial-frame-alist '(top . 0))
-(add-to-list 'initial-frame-alist '(left . 0))
-
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
