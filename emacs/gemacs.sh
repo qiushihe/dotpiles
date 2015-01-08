@@ -60,8 +60,13 @@ else
   if [ -z "$1" ]; then
     STARTUP="(progn"
     STARTUP+="  (switch-to-buffer \"*scratch*\")"
+    # Ensure the newly created frame has docus
     STARTUP+="  (select-frame-set-input-focus (selected-frame))"
-    STARTUP+="  (cd \"`pwd`\")"
+    # Declare that 'working-directory' is a frame-local variable (and it's okay to do that
+    # multiple times)
+    STARTUP+="  (make-variable-frame-local 'working-directory)"
+    STARTUP+="  (modify-frame-parameters nil '((working-directory . \"`pwd`\")))"
+    STARTUP+="  (cd working-directory)"
     STARTUP+=")"
 
     /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -e "$STARTUP" $@ > /dev/null
