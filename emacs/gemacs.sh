@@ -57,22 +57,19 @@ else
   start_server
   if [ -n "$WAIT_FOR_START" ]; then sleep 1; fi
 
-  if [ -z "$1" ] || [[ "$1" =~ ^- ]]; then
-    # If the first argument is empty or that it start with dash (i.e. a option such as "-t")
-    # then we launch emacsclient:
-    # * with a new frame; and ...
-    # * switch to the scratch buffer; and ...
-    # * focus the frame; and ...
-    # * switch to the current working directory
-    # Also redirect output to avoid displaying the result of the script evaluation in stdout
+  if [ -z "$1" ]; then
     STARTUP="(progn"
     STARTUP+="  (switch-to-buffer \"*scratch*\")"
     STARTUP+="  (select-frame-set-input-focus (selected-frame))"
     STARTUP+="  (cd \"`pwd`\")"
     STARTUP+=")"
+
     /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -e "$STARTUP" $@ > /dev/null
   else
-    # Otherwise just launch with a new frame and pass in all the arguments
-    /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c $@
+    if [[ "$1" =~ ^- ]]; then
+      /Applications/Emacs.app/Contents/MacOS/bin/emacsclient $@
+    else
+      /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c $1
+    fi
   fi
 fi
