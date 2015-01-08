@@ -1,3 +1,17 @@
 (setq neo-window-width 39)
 (setq neo-persist-show nil)
-(global-set-key (kbd "M-]") 'neotree-toggle)
+
+(defun my-neotree-toggle ()
+  (interactive)
+  (if (boundp 'working-directory)
+    (progn
+      (neotree-toggle)
+      (neo-buffer--change-root working-directory)
+    )
+    (progn
+      (neotree-toggle)
+    )
+  )
+)
+
+(global-set-key (kbd "M-]") 'my-neotree-toggle)
