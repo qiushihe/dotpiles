@@ -41,6 +41,8 @@
                 (powerline-raw "%l" nil 'l)
                 (powerline-raw ": " nil 'l)
                 (powerline-raw "%c" nil 'r)
+                (powerline-raw " ")
+                (powerline-raw "%p" nil 'r)
                 (powerline-hud face2 face1)
               )
             )
