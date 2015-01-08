@@ -67,6 +67,10 @@ else
     STARTUP+="  (make-variable-frame-local 'working-directory)"
     STARTUP+="  (modify-frame-parameters nil '((working-directory . \"`pwd`\")))"
     STARTUP+="  (cd working-directory)"
+    # Maximize the frame and ensure it's top-left aligned
+    STARTUP+="  (set-frame-parameter nil 'fullscreen 'maximized)"
+    STARTUP+="  (set-frame-parameter nil 'top 0)"
+    STARTUP+="  (set-frame-parameter nil 'left 0)"
     STARTUP+=")"
 
     /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -e "$STARTUP" $@ > /dev/null
