@@ -17,6 +17,7 @@
               (list
                 (powerline-raw "%*" nil 'l)
                 (powerline-raw mode-line-mule-info nil 'l)
+                (powerline-raw "%p" nil 'l)
                 (powerline-buffer-id nil 'l)
                 (when (and (boundp 'which-func-mode) which-func-mode) (powerline-raw which-func-format nil 'l))
                 (powerline-raw " ")
@@ -42,7 +43,6 @@
                 (powerline-raw ": " nil 'l)
                 (powerline-raw "%c" nil 'r)
                 (powerline-raw " ")
-                (powerline-raw "%p" nil 'r)
                 (powerline-hud face2 face1)
               )
             )
