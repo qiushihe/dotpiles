@@ -8,6 +8,7 @@
 (global-unset-key (kbd "s-v"))
 (global-unset-key (kbd "s-w"))
 (global-unset-key (kbd "s-q"))
+(global-unset-key (kbd "s-k"))
 
 ;; Rebind kill-this-buffer
 (global-set-key (kbd "C-c b d") 'kill-this-buffer)
@@ -59,3 +60,7 @@
     )
   )
 )
+
+;; Remove triple Esc binding and replace it with single Esc instead
+(global-unset-key (kbd "M-ESC ESC"))
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
