@@ -60,7 +60,3 @@
     )
   )
 )
-
-;; Remove triple Esc binding and replace it with single Esc instead
-(global-unset-key (kbd "M-ESC ESC"))
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
