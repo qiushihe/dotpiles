@@ -64,6 +64,7 @@
 (load-library "matching-parenthesis")
 (load-library "switch-to-previous-buffer")
 (load-library "skip-esc-close-split")
+(load-library "smarter-move-beginning-of-line")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
