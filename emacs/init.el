@@ -63,6 +63,7 @@
 (load-library "bindings")
 (load-library "matching-parenthesis")
 (load-library "switch-to-previous-buffer")
+(load-library "skip-esc-close-split")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
