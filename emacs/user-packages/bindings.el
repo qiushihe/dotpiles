@@ -13,7 +13,8 @@
 ;; Rebind kill-this-buffer
 (global-set-key (kbd "C-c b d") 'kill-this-buffer)
 
-;; Rebind delete-frame
+;; Rebind create/delete frame
+(global-set-key (kbd "C-c f c") 'new-frame)
 (global-set-key (kbd "C-c f d") 'delete-frame)
 
 ;; Rebind delete-window
