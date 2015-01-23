@@ -5,20 +5,20 @@ nmap § i
 imap § <Esc>
 
 " Switch to last buffer
-map <C-b><C-b> :b#<CR>
+map <C-x>b :b#<CR>
 
 " Close window
-map <C-w><C-d> :close<CR>
+map <C-c>wd :close<CR>
 
 " Window Split
-map <C-w><C-v> :vsplit<CR>
-map <C-w><C-s> :split<CR>
+map <C-c>sv :vsplit<CR>
+map <C-c>sh :split<CR>
 
 " Window Navigation
-map <C-Up> <C-W>k
-map <C-Down> <C-W>j
-map <C-Left> <C-W>h
-map <C-Right> <C-W>l
+map <C-c><Up> <C-W>k
+map <C-c><Down> <C-W>j
+map <C-c><Left> <C-W>h
+map <C-c><Right> <C-W>l
 
 " Window Resizing
 map <C-S-Up> <C-W>-
@@ -49,7 +49,7 @@ function! <SID>DoWindowSwap()
   exe "hide buf" g:markedBufNum
 endfunction
 
-nnoremap <C-S-W><C-S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
-nnoremap <C-S-W><C-S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
+nnoremap <C-c><S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
+nnoremap <C-c><S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
+nnoremap <C-c><S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
+nnoremap <C-c><S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
