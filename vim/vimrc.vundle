@@ -29,6 +29,7 @@ endif
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'
+map <C-x><C-b> :CtrlPBuffer<CR>
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0

@@ -10,6 +10,9 @@ map <C-x>b :b#<CR>
 " Close window
 map <C-c>wd :close<CR>
 
+" Close all windows
+map <C-x><C-c> :qall<CR>
+
 " Window Split
 map <C-c>sv :vsplit<CR>
 map <C-c>sh :split<CR>
