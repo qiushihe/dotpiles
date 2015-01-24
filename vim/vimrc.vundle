@@ -14,6 +14,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-bbye'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mtth/scratch.vim'
 Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
