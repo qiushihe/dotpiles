@@ -35,10 +35,7 @@ set title
 set colorcolumn=100
 
 " Set font
-" Install custom airline fonts from https://github.com/powerline/fonts
-" "DejaVu Sans Mono for Powerline" is only one in the set that has good
-" Powerline divider-arrow at 12pt.
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set guifont=Monaco:h12
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd

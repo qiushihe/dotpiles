@@ -29,8 +29,6 @@
   $ ./install.sh --clang-completer
 ```
 
-Besure to install fonts for airline from: https://github.com/powerline/fonts
-
 ## Setup emacs
 
 ```

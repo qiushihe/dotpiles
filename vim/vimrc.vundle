@@ -19,11 +19,12 @@ call vundle#end()
 filetype plugin indent on
 
 " Configure airline
-let g:airline_powerline_fonts = 1
-if !has("gui_running")
-  " Disable airline in terminal
-  let g:loaded_airline = 1
-endif
+" Disable left/right pointing arrow so we don't have
+" to worry about installing custom fonts
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
 
 " Configure CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
