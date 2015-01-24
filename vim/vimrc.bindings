@@ -7,6 +7,9 @@ imap § <Esc>
 " Switch to last buffer
 map <C-x>b :b#<CR>
 
+" Open quickfix window
+map <C-c>wq :copen<CR>
+
 " Close window
 map <C-c>wd :close<CR>
 
