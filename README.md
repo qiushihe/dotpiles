@@ -26,8 +26,6 @@
   $ vim +PluginInstall +qall
 ```
 
-Also install patched powerline font in `vim` directory.
-
 ## Setup emacs
 
 ```
