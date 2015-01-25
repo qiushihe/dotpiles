@@ -35,7 +35,7 @@ set title
 set colorcolumn=100
 
 " Set font
-set guifont=Monaco:h12
+set guifont=Monaco\ for\ Powerline:h12
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd

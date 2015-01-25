@@ -11,21 +11,16 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'moll/vim-bbye'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtth/scratch.vim'
 Plugin 'sjl/badwolf'
+Plugin 'vim-scripts/AutoComplPop'
 call vundle#end()
 filetype plugin indent on
 
 " Configure airline
-" Disable left/right pointing arrow so we don't have
-" to worry about installing custom fonts
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
-let g:airline_left_sep = ''
+let g:airline_powerline_fonts = 1
 
 " Configure CtrlP
 let g:ctrlp_clear_cache_on_exit = 0

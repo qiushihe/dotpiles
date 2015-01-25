@@ -23,11 +23,10 @@
   $ ln -sf [DOTPILE]/vim ~/.vim
   $ ln -sf [DOTPILE]/vim/vimrc ~/.vimrc
   $ brew install the_silver_searcher
-  $ brew install cmake
   $ vim +PluginInstall +qall
-  $ cd [DOTPILE]/vim/vundle/YouCompleteMe
-  $ ./install.sh --clang-completer
 ```
+
+Also install patched powerline font in `vim` directory.
 
 ## Setup emacs
 
