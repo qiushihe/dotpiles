@@ -54,6 +54,10 @@ let g:vimwiki_list = [{
 " Configure Bbye
 map <C-c>bd :Bdelete<CR>
 
+" Configure scratch
+map <C-c>ss :Scratch<CR>
+map <C-c>sc :ScratchSelection<CR>
+
 " Configure badwolf
 let g:badwolf_darkgutter = 1
 colorscheme badwolf
