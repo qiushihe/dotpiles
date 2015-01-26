@@ -3,6 +3,7 @@
 " to keycode '10' which is the '§' symbol.
 nmap § i
 imap § <Esc>
+vmap § <Esc>
 
 " Switch to last buffer
 map <C-x>b :b#<CR>
