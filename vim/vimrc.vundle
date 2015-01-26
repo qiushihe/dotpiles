@@ -56,6 +56,7 @@ map <C-c>bd :Bdelete<CR>
 
 " Configure scratch
 map <C-c>ss :Scratch<CR>
+map <C-c>si :ScratchInsert<CR>
 map <C-c>sc :ScratchSelection<CR>
 
 " Configure badwolf
