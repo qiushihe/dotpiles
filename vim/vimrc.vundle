@@ -16,6 +16,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtth/scratch.vim'
 Plugin 'sjl/badwolf'
 Plugin 'vim-scripts/AutoComplPop'
+Plugin 'terryma/vim-expand-region'
 call vundle#end()
 filetype plugin indent on
 
@@ -55,6 +56,8 @@ let g:vimwiki_list = [{
 map <C-c>bd :Bdelete<CR>
 
 " Configure scratch
+let g:scratch_autohide = 0
+let g:scratch_height = 0.36
 map <C-c>ss :Scratch<CR>
 map <C-c>si :ScratchInsert<CR>
 map <C-c>sc :ScratchSelection<CR>

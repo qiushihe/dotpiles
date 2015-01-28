@@ -17,3 +17,4 @@ vim/vundle
 !vim/vundle/.gitkeep
 !vim/vundle/Vundle.vim
 
+vim/swaps/*.swo
