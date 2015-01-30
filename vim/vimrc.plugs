@@ -5,7 +5,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'rking/ag.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
 Plug 'kchmck/vim-coffee-script'
