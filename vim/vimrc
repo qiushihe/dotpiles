@@ -118,8 +118,8 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" Setup bundles managed by Vundle
-so ~/.vim/vimrc.vundle
+" Setup plugins managed by vim-plug
+so ~/.vim/vimrc.plugs
 
 " Setup key bindings
 so ~/.vim/vimrc.bindings

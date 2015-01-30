@@ -11,10 +11,9 @@ emacs/el-get
 # ... but don't ignore the status file
 !emacs/el-get/.status.el
 
-# Ignore all managed plugins by Vundle
-vim/vundle
-# ... but don't ignore the directory and Vundle
-!vim/vundle/.gitkeep
-!vim/vundle/Vundle.vim
-
 vim/swaps/*.swo
+
+# Ignore all managed plugins by vim-plug
+vim/plugged
+# ... but fon't ignore the directory
+vim/plugged/.gitkeep

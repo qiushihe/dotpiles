@@ -1,24 +1,18 @@
-" Configure Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/vundle/Vundle.vim
-call vundle#begin("~/.vim/vundle")
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'rking/ag.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'tpope/vim-fugitive'
-Plugin 'moll/vim-bbye'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mtth/scratch.vim'
-Plugin 'sjl/badwolf'
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'terryma/vim-expand-region'
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'rking/ag.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-fugitive'
+Plug 'moll/vim-bbye'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mtth/scratch.vim'
+Plug 'sjl/badwolf'
+Plug 'vim-scripts/AutoComplPop'
+call plug#end()
 
 " Configure airline
 " Disable left/right pointing arrow so we don't have
@@ -56,8 +50,6 @@ let g:vimwiki_list = [{
 map <C-c>bd :Bdelete<CR>
 
 " Configure scratch
-let g:scratch_autohide = 0
-let g:scratch_height = 0.36
 map <C-c>ss :Scratch<CR>
 map <C-c>si :ScratchInsert<CR>
 map <C-c>sc :ScratchSelection<CR>
