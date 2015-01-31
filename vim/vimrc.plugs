@@ -60,6 +60,6 @@ let g:badwolf_darkgutter = 1
 colorscheme badwolf
 
 " Configure indentLine
-let g:indentLine_char = '︙'
-let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char = '│'
+let g:indentLine_color_gui = '#333333'
 let g:indentLine_color_term = 239
