@@ -13,6 +13,7 @@ Plug 'mtth/scratch.vim'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Configure airline
