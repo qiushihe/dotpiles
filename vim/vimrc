@@ -6,6 +6,9 @@ set guioptions-=L
 set guioptions-=T
 set guioptions-=r
 
+" Disable GUI tabs
+set guioptions-=e
+
 " Disable BOM
 set encoding=utf-8 nobomb
 

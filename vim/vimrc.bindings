@@ -60,3 +60,7 @@ nnoremap <C-c><S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindo
 nnoremap <C-c><S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
 nnoremap <C-c><S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
 nnoremap <C-c><S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
+
+" Switching tabs
+map <C-c>] :tabnext<CR>
+map <C-c>[ :tabprev<CR>

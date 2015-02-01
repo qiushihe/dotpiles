@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Configure airline
+let g:airline#extensions#tabline#enabled = 1
 " Disable left/right pointing arrow so we don't have
 " to worry about installing custom fonts
 let g:airline_right_alt_sep = ''
