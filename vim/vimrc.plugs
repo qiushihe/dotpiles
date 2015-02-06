@@ -12,11 +12,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mtth/scratch.vim'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/unite.vim'
+Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 " Configure airline
@@ -63,43 +60,3 @@ map <C-c>sc :ScratchSelection<CR>
 " Configure badwolf
 let g:badwolf_darkgutter = 1
 colorscheme badwolf
-
-" Configure indentLine
-let g:indentLine_char = '│'
-let g:indentLine_color_gui = '#333333'
-let g:indentLine_color_term = 239
-
-" Configure unite
-call unite#custom#source('file,file_rec,file_rec/async,file_mru,grep', 'ignore_globs', split(&wildignore, ','))
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nocolor --nogroup --column'
-  let g:unite_source_grep_recursive_opt = ''
-
-  let g:unite_source_rec_async_command  = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
-  let g:unite_source_file_async_command = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
-endif
-nmap <leader>t :Unite -no-split -start-insert file_rec/async<CR>
-
-" function! s:lala_meets()
-"   return 0
-" endfunction
-"
-" function! s:lala_popupclose()
-"   return 0
-" endfunction
-"
-" let behavs = { 'unite': [] }
-" call add(behavs.unite, {
-" \ 'command' : "\<C-x>\<C-o>",
-" \ 'meets': 'acp#meetsForKeyword',
-" \ 'repeat' : 0,
-" \ 'onPopupClose': 's:lala_popupclose'
-" \})
-" let g:acp_behavior = {}
-" call extend(g:acp_behavior, behavs, 'keep')
-
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-endfunction
