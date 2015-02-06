@@ -12,7 +12,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mtth/scratch.vim'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
-Plug 'airblade/vim-gitgutter'
 Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
