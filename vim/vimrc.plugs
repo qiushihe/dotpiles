@@ -31,7 +31,7 @@ let g:airline_left_sep = ''
 let g:ctrlp_clear_cache_on_exit = 0
 " let g:ctrlp_map = '<c-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'
-map <C-x><C-b> :CtrlPBuffer<CR>
+" map <C-x><C-b> :CtrlPBuffer<CR>
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -84,6 +84,7 @@ if executable('ag')
   let g:unite_source_file_async_command = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
 endif
 nmap <C-t> :Unite -no-split -start-insert file_rec/async<CR>
+nmap <C-x><C-b> :Unite buffer<CR>
 " nmap <C-c>sp :Unite -no-split grep:.<CR>
 
 autocmd FileType unite call s:unite_settings()
