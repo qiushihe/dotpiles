@@ -13,6 +13,9 @@ Plug 'mtth/scratch.vim'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/unite.vim'
 call plug#end()
 
 " Configure airline
@@ -26,7 +29,7 @@ let g:airline_left_sep = ''
 
 " Configure CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_map = '<c-t>'
+" let g:ctrlp_map = '<c-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 map <C-x><C-b> :CtrlPBuffer<CR>
 
@@ -59,3 +62,31 @@ map <C-c>sc :ScratchSelection<CR>
 " Configure badwolf
 let g:badwolf_darkgutter = 1
 colorscheme badwolf
+
+" Configure AutoComplPop
+" Disable AutoComplpop in unite buffers
+function NoOps(context)
+  return 0
+endfunction
+let behavs = { 'unite': [] }
+call add(behavs.unite, { 'command': "", 'meets': 'NoOps', 'repeat' : 0, 'onPopupClose': 'NoOps' })
+let g:acp_behavior = {}
+call extend(g:acp_behavior, behavs, 'keep')
+
+" Configure unite
+call unite#custom#source('file,file_rec,file_rec/async,file_mru,grep', 'ignore_globs', split(&wildignore, ','))
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup --column'
+  let g:unite_source_grep_recursive_opt = ''
+
+  let g:unite_source_rec_async_command  = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
+  let g:unite_source_file_async_command = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
+endif
+nmap <C-t> :Unite -no-split -start-insert file_rec/async<CR>
+" nmap <C-c>sp :Unite -no-split grep:.<CR>
+
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
