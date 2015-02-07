@@ -14,7 +14,7 @@ nmap <SPACE> <leader>
 vmap <SPACE> <leader>
 
 " Switch to last buffers/tabs
-map <C-x>b :b#<CR>
+map <leader>bb :b#<CR>
 map <C-c>} :tabnext<CR>
 map <C-c>{ :tabprev<CR>
 map <C-c>] :bnext<CR>
