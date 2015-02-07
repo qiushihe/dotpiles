@@ -1,5 +1,9 @@
-" Highlight current line
-set cursorline
+set nocompatible
+
+" Disable swap files
+set noswapfile
+set nobackup
+set nowb
 
 " Disable GUI scrollbar
 set guioptions-=L
@@ -12,9 +16,18 @@ set guioptions-=e
 " Disable BOM
 set encoding=utf-8 nobomb
 
+" Disable code folding
+set nofoldenable
+
 " Remember histories and marks for background buffers
 set hidden
 set history=1000
+
+" Allow backspace in insert mode
+set backspace=indent,eol,start
+
+" Highlight current line
+set cursorline
 
 " Always ues system clipbaord by default
 set clipboard=unnamed,unnamedplus
@@ -42,6 +55,9 @@ set guifont=Monaco:h12
 
 " Set terminal color
 set t_Co=256
+
+" Auto reload when files are changed
+set autoread
 
 " Ignore patterns
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd
@@ -99,18 +115,16 @@ set visualbell
 set wildmenu
 set wildmode=list:longest
 
+" Misc. configs
+set ttyfast
+syntax on
+filetype plugin indent on
+
 " Filetype associations
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Create .netrwhist in $HOME
 let g:netrw_home=$HOME
-
-" Misc. configs
-set nocompatible
-set autoread
-set ttyfast
-syntax on
-filetype plugin indent on
 
 " Trim trailing whitespaces
 fun! <SID>StripTrailingWhitespaces()

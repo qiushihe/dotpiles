@@ -1,9 +1,17 @@
+" Disable key combo timeout
+set notimeout
+set ttimeout
+
 " Remap cap-lock to toggle insert mode
 " For OSX, use https://pqrs.org/osx/karabiner/seil.html.en to remap cap-lock
 " to keycode '10' which is the '§' symbol.
 nmap § i
 imap § <Esc>
 vmap § <Esc>
+
+" Remap leader to space
+nmap <SPACE> <leader>
+vmap <SPACE> <leader>
 
 " Switch to last buffers/tabs
 map <C-x>b :b#<CR>
