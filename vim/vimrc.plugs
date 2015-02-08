@@ -83,7 +83,8 @@ if executable('ag')
   let g:unite_source_rec_async_command  = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
   let g:unite_source_file_async_command = 'ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --ignore ".meteor" --hidden -g ""'
 endif
-nmap <leader>t :Unite -no-split -start-insert file_rec/async<CR>
+" nmap <leader>t :Unite -no-split -start-insert file_rec/async<CR>
+nmap <leader>t :Unite -no-split -start-insert filelist<CR>
 nmap <leader>bl :Unite buffer<CR>
 " nmap <C-c>sp :Unite -no-split grep:.<CR>
 
