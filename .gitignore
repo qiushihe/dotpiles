@@ -4,16 +4,11 @@ emacs/projectile-bookmarks.eld
 emacs/recentf
 emacs/.mc-lists.el
 emacs/**/*.elc
-
-# Ignore all installed packages by el-get
 emacs/elpa
-emacs/el-get
-# ... but don't ignore the status file
+emacs/el-get/*
 !emacs/el-get/.status.el
 
 vim/swaps/*.swo
+vim/plugged/*
+!vim/plugged/.gitkeep
 
-# Ignore all managed plugins by vim-plug
-vim/plugged
-# ... but fon't ignore the directory
-vim/plugged/.gitkeep
