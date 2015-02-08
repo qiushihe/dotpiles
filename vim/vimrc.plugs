@@ -85,10 +85,11 @@ if executable('ag')
 endif
 " nmap <leader>t :Unite -no-split -start-insert file_rec/async<CR>
 nmap <leader>t :Unite -no-split -start-insert filelist<CR>
-nmap <leader>bl :Unite buffer<CR>
+nmap <leader>bl :Unite -no-split buffer<CR>
 " nmap <C-c>sp :Unite -no-split grep:.<CR>
 
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
   nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction
+

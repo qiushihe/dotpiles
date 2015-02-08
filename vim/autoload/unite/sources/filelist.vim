@@ -1,36 +1,36 @@
+" Define filelist source
 let s:unite_source = { 'name': 'filelist' }
 
 function! s:unite_source.gather_candidates(args, context)
   let cwd = getcwd()
   let cwd_l = strlen(cwd)
 
-  let list_filename = substitute(cwd, "^/", "", "")
-  let list_filename = substitute(list_filename, "/", "##", "g")
+  let filename = <SID>GetFilelistFilename()
+  let lists_dir = expand("~/.vim/filelists/")
+  let filepath = lists_dir . filename
 
-  let list_filepath = expand("~/.vim/filelists/" . list_filename)
+  if findfile(filename, lists_dir) != lists_dir . filename
+    " TODO: Need better pattern processing
+    " http://vimdoc.sourceforge.net/htmldoc/autocmd.html#autocmd-patterns
+    let ignores = &wildignore
+    let patterns = map(split(ignores, ","), '"\"" .
+      \ substitute(substitute(substitute(v:val,
+        \ "\\.", "\\\\.", "g"),
+        \ "\\/", "\\\\/", "g"),
+        \ "*", "\\.*", "g")
+    \ . "\""')
 
-  " let list = split(globpath(cwd, '**'), '\n')
-  " let files = filter(list, '!isdirectory(v:val)')
+    " Incorporate support for git ls-files
+    let cmd = "find " . cwd . " -type f " .
+      \ join(map(patterns, '"-not -regex " . v:val'), " -and ") .
+        \ " | cut -c " . (cwd_l + 1) . "-" .
+        \ " | sed 's/^/\./'" .
+        \ " > " . filepath
 
-  let ignores = &wildignore
-  " TODO: Need better pattern processing
-  " http://vimdoc.sourceforge.net/htmldoc/autocmd.html#autocmd-patterns
-  let find_patterns = map(split(ignores, ","), '"\"" .
-    \ substitute(substitute(substitute(v:val,
-      \ "\\.", "\\\\.", "g"),
-      \ "\\/", "\\\\/", "g"),
-      \ "*", "\\.*", "g")
-  \ . "\""')
-  let find_options = join(map(find_patterns, '
-    \ "-not -regex " . v:val
-  \ '), " -and ")
+    call system(cmd)
+  endif
 
-  " Incorporate support for git ls-files
-  let cmd = "find " . cwd . " -type f " . find_options
-  let cmd = cmd . " | cut -c " . (cwd_l + 1) . "- | sed 's/^/\./' > " . list_filepath
-  " let result = system(cmd)
-
-  let files = readfile(list_filepath)
+  let files = readfile(filepath)
 
   return map(files, '{
     \ "word": substitute(v:val, cwd, ".", ""),
@@ -42,3 +42,22 @@ endfunction
 function! unite#sources#filelist#define()
   return s:unite_source
 endfunction
+
+" Return the filelist file name for the current working directory.
+" For CWD '/path/to/directory' this function returns 'path##to##directory'
+function! <SID>GetFilelistFilename()
+  let cwd = getcwd()
+  return substitute(substitute(cwd,
+    \ "^/", "", ""),
+    \ "/", "##", "g")
+endfunction
+
+" Delete the filelist file
+function! <SID>DeleteFilelist()
+  let filename = <SID>GetFilelistFilename()
+  call system("rm -f " . expand("~/.vim/filelists/" . filename))
+endfunction
+
+" Define editor command to delete the filelist file
+command DeleteUniteFilelist call <SID>DeleteFilelist()
+
