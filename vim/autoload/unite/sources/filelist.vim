@@ -5,7 +5,7 @@ function! s:unite_source.gather_candidates(args, context)
   let cwd = getcwd()
   let cwd_l = strlen(cwd)
 
-  let filename = <SID>GetFilelistFilename()
+  let filename = s:get_filelist_filename()
   let lists_dir = expand("~/.vim/filelists/")
   let filepath = lists_dir . filename
 
@@ -45,7 +45,7 @@ endfunction
 
 " Return the filelist file name for the current working directory.
 " For CWD '/path/to/directory' this function returns 'path##to##directory'
-function! <SID>GetFilelistFilename()
+function! s:get_filelist_filename()
   let cwd = getcwd()
   return substitute(substitute(cwd,
     \ "^/", "", ""),
@@ -53,11 +53,11 @@ function! <SID>GetFilelistFilename()
 endfunction
 
 " Delete the filelist file
-function! <SID>DeleteFilelist()
-  let filename = <SID>GetFilelistFilename()
+function! s:delete_filelist()
+  let filename = s:get_filelist_filename()
   call system("rm -f " . expand("~/.vim/filelists/" . filename))
 endfunction
 
 " Define editor command to delete the filelist file
-command DeleteUniteFilelist call <SID>DeleteFilelist()
+command DeleteUniteFilelist call s:delete_filelist()
 
