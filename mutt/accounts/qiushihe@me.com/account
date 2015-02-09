@@ -20,6 +20,6 @@ set ssl_starttls     = yes
 set imap_pipeline_depth = 0
 set smtp_authenticators = 'gssapi:login'
 
-set status_format    = "%>═[Folder:$imap_user/%f Msgs:%m%?n? New:%n?%?d? Del:%d?%?t? Tag:%t?%?l??]%?p?---- .: %p waiting to send :. ? [%P]"
+set status_format    = "%>═[Folder:iCloud/%f Msgs:%m%?n? New:%n?%?d? Del:%d?%?t? Tag:%t?%?l??]%?p?---- .: %p waiting to send :. ? [%P]"
 
 set signature        = "$HOME/.mutt/accounts/qiushihe@me.com/signature"
