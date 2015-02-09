@@ -41,7 +41,8 @@
 ```
   $ brew install mutt
   $ brew install Gnupg
-  $ brew install lynx
+  $ brew install html2text
+  $ ln -sf [DOTPILE]/mutt ~/.mutt
   $ ln -sf [DOTPILE]/mutt/mailcap ~/.mailcap
 ```
 
