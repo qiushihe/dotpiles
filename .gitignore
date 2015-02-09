@@ -14,3 +14,15 @@ vim/plugged/*
 vim/filelists/*
 !vim/filelists/.gitkeep
 
+# Should never check in plain text password file
+mutt/accounts/passwords
+# Should not track the temporarily decrypted file
+mutt/accounts/passwords.gpg.tmp
+# Also do not check in encrypted password file neither since
+# each machine should have its own device specific password anyway
+mutt/accounts/passwords.gpg
+
+mutt/cache/*
+!mutt/cache/.gitkeep
+mutt/certificates/*
+!mutt/certificates/.gitkeep

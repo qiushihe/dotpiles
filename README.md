@@ -36,3 +36,12 @@
   $ brew install ispell
 ```
 
+## Setup mutt
+
+```
+  $ brew install mutt
+  $ brew install Gnupg
+  $ brew install lynx
+  $ ln -sf [DOTPILE]/mutt/mailcap ~/.mailcap
+```
+
