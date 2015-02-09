@@ -36,7 +36,7 @@ user2@email.com: pAzzw0rD2
 Encrypt the password file:
 
 ```
-$ gpg -r "<USER-ID>" -r mutt/accounts/passwords
+$ gpg -r "<USER-ID>" -e mutt/accounts/passwords
 ```
 
 ... this will create `mutt/accounts/passwords.gpg`.
