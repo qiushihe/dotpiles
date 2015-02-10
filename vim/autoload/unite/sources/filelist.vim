@@ -1,7 +1,6 @@
 " TODO: Refactor filelist caching and deleting functions into standalone commands
 " TODO: Update wildignore pattern processing according to the rules defined
 "       here: http://vimdoc.sourceforge.net/htmldoc/autocmd.html#autocmd-patterns
-" TODO: Incorporate support for git ls-iles
 
 " Define filelist source
 let s:unite_source = { 'name': 'filelist' }
@@ -15,21 +14,30 @@ function! s:unite_source.gather_candidates(args, context)
   let filepath = lists_dir . filename
 
   if findfile(filename, lists_dir) != lists_dir . filename
-    let ignores = &wildignore
-    let patterns = map(split(ignores, ","), '
-      \ substitute(substitute(substitute(v:val,
-        \ "\\.", "\\\\.", "g"),
-        \ "\\/", "\\\\/", "g"),
-        \ "*", "\\.*", "g")
-    \')
+    let in_git = strlen(system("git rev-parse")) <= 0
+    if in_git
+      let cmd = "git ls-files" .
+        \ " | sed 's/^/\\.\\//'" .
+        \ " > " . filepath
 
-    let cmd = "find " . cwd . " -type f" .
-      \ " | grep --invert-match -E \"" . join(patterns, "|") . "\"" .
-      \ " | cut -c " . (cwd_l + 1) . "-" .
-      \ " | sed 's/^/\./'" .
-      \ " > " . filepath
+      call system(cmd)
+    else
+      let ignores = &wildignore
+      let patterns = map(split(ignores, ","), '
+        \ substitute(substitute(substitute(v:val,
+          \ "\\.", "\\\\.", "g"),
+          \ "\\/", "\\\\/", "g"),
+          \ "*", "\\.*", "g")
+      \')
 
-    call system(cmd)
+      let cmd = "find " . cwd . " -type f" .
+        \ " | grep --invert-match -E \"" . join(patterns, "|") . "\"" .
+        \ " | cut -c " . (cwd_l + 1) . "-" .
+        \ " | sed 's/^/\\./'" .
+        \ " > " . filepath
+
+      call system(cmd)
+    endif
   endif
 
   let files = readfile(filepath)
