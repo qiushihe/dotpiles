@@ -42,7 +42,7 @@ let NERDTreeShowHidden = 1
 map <leader>T :NERDTreeTabsToggle<CR>
 
 " Configure Ag
-map <leader>sp :Ag<Space>
+map <leader>sp :Ag!<Space>
 
 " Configure VimWiki
 let g:vimwiki_global_ext = 0
