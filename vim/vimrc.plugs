@@ -39,10 +39,10 @@ let NERDTreeMouseMode = 3
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeWinSize = 36
 let NERDTreeShowHidden = 1
-map <leader>] :NERDTreeTabsToggle<CR>
+map <leader>T :NERDTreeTabsToggle<CR>
 
 " Configure Ag
-map <C-c>sp :Ag<Space>
+map <leader>sp :Ag<Space>
 
 " Configure VimWiki
 let g:vimwiki_global_ext = 0
@@ -55,9 +55,9 @@ let g:vimwiki_list = [{
 map <leader>bd :Bdelete<CR>
 
 " Configure scratch
-map <C-c>ss :Scratch<CR>
-map <C-c>si :ScratchInsert<CR>
-map <C-c>sc :ScratchSelection<CR>
+map <leader>ss :Scratch<CR>
+map <leader>si :ScratchInsert<CR>
+map <leader>sc :ScratchSelection<CR>
 
 " Configure badwolf
 let g:badwolf_darkgutter = 1

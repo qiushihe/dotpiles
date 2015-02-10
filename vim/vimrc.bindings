@@ -15,29 +15,29 @@ vmap <SPACE> <leader>
 
 " Switch to last buffers/tabs
 map <leader>bb :b#<CR>
-map <C-c>} :tabnext<CR>
-map <C-c>{ :tabprev<CR>
-map <C-c>] :bnext<CR>
-map <C-c>[ :bprevious<CR>
+map <leader>} :tabnext<CR>
+map <leader>{ :tabprev<CR>
+map <leader>] :bnext<CR>
+map <leader>[ :bprevious<CR>
 
 " Open quickfix window
-map <C-c>wq :copen<CR>
+map <leader>wq :copen<CR>
 
 " Close window
-map <C-c>wd :close<CR>
+map <leader>wd :close<CR>
 
 " Close all windows
-map <C-x><C-c> :qall<CR>
+map <leader> :qall<CR>
 
 " Window Split
-map <C-c>sv :vsplit<CR>
-map <C-c>sh :split<CR>
+map <leader>sv :vsplit<CR>
+map <leader>sh :split<CR>
 
 " Window Navigation
-map <C-c><Up> <C-W>k
-map <C-c><Down> <C-W>j
-map <C-c><Left> <C-W>h
-map <C-c><Right> <C-W>l
+map <leader><Up> <C-W>k
+map <leader><Down> <C-W>j
+map <leader><Left> <C-W>h
+map <leader><Right> <C-W>l
 
 " Window Resizing
 map <C-S-Up> <C-W>-
@@ -68,7 +68,7 @@ function! <SID>DoWindowSwap()
   exe "hide buf" g:markedBufNum
 endfunction
 
-nnoremap <C-c><S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
-nnoremap <C-c><S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
-nnoremap <C-c><S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
-nnoremap <C-c><S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
+nnoremap <leader><S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
+nnoremap <leader><S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
+nnoremap <leader><S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
+nnoremap <leader><S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
