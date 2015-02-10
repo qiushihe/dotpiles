@@ -1,7 +1,3 @@
-### Notes
-
-My USER-ID: "Billy He <qiushihe@me.com>"
-
 ### Setup Instructions
 
 Ensure `gnupg` is installed via homebrew:
