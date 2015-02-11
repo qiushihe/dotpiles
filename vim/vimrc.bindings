@@ -8,6 +8,7 @@ set ttimeout
 nmap § i
 imap § <Esc>
 vmap § <Esc>
+cmap § <Esc>
 
 " Remap leader to space
 nmap <SPACE> <leader>
