@@ -16,6 +16,9 @@ Plug 'mustache/vim-mustache-handlebars'
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
+
+"Plug '~/Projects/unite-filelist'
+Plug 'qiushihe/unite-filelist'
 call plug#end()
 
 " Configure airline
