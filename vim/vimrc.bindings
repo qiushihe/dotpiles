@@ -5,8 +5,12 @@ set ttimeout
 " Remap cap-lock to toggle insert mode
 " For OSX, use https://pqrs.org/osx/karabiner/seil.html.en to remap cap-lock
 " to keycode '10' which is the '§' symbol.
+
+" Cap lock toggle insert mode
 nmap § i
 imap § <Esc>
+
+" Cap lock to Esc in visual and command mode
 vmap § <Esc>
 cmap § <Esc>
 
