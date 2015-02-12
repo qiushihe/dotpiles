@@ -32,7 +32,7 @@ map <leader>wq :copen<CR>
 map <leader>wd :close<CR>
 
 " Close all windows
-map <leader> :qall<CR>
+map <leader>xc :qall<CR>
 
 " Window Split
 map <leader>sv :vsplit<CR>
