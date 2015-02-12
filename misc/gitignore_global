@@ -11,10 +11,3 @@
 *.scssc
 *.sassc
 .projectile
-
-# Workaround an issue with the silver searcher not working correctly
-# with nested .gitignore files
-js-dist-atlas
-js-dist-frontend
-webapp/gen
-frontend/coverage

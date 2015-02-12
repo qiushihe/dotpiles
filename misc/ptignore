@@ -1,0 +1,3 @@
+# This file has to exist otherwise pt wont work correctly (this is probably
+# a bug)
+
