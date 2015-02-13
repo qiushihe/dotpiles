@@ -27,6 +27,28 @@
   $ vim +PluginInstall +qall
 ```
 
+## Setup NeoVim
+
+```
+  $ rm -fr ~/.nvim
+  $ rm -fr ~/.nvimrc
+  $ ln -sf [DOTPILE]/nvim ~/.nvim
+  $ ln -sf [DOTPILE]/nvim/nvimrc ~/.nvimrc
+  $ ln -sf [DOTPILE]/misc/ptignore ~/.ptignore
+  $ brew tap neovim/homebrew-neovim
+  $ brew install --HEAD neovim
+  $ brew install pt python
+  $ pip install neovim
+  $ vim +PluginInstall +qall
+```
+
+Update NeoVim:
+
+```
+  $ brew update
+  $ brew reinstall --HEAD neovim
+```
+
 ## Setup emacs
 
 ```

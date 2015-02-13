@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
@@ -67,6 +67,7 @@ let g:acp_behavior = {}
 call extend(g:acp_behavior, behavs, 'keep')
 
 " Configure unite
+let g:unite_filelist_cache_dir = '~/.nvim/filelists'
 call unite#custom#source('file,file_rec,file_rec/async,file_mru,grep', 'ignore_globs', split(&wildignore, ','))
 
 if executable('pt')

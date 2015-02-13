@@ -1,3 +1,7 @@
+##########################
+# Emacs
+##########################
+
 emacs/ido.last
 emacs/projectile.cache
 emacs/projectile-bookmarks.eld
@@ -8,11 +12,29 @@ emacs/elpa
 emacs/el-get/*
 !emacs/el-get/.status.el
 
+##########################
+# Vim
+##########################
+
 vim/swaps/*.swo
 vim/plugged/*
 !vim/plugged/.gitkeep
 vim/filelists/*
 !vim/filelists/.gitkeep
+
+##########################
+# NeoVim
+##########################
+
+nvim/swaps/*.swo
+nvim/plugged/*
+!nvim/plugged/.gitkeep
+nvim/filelists/*
+!nvim/filelists/.gitkeep
+
+##########################
+# Mutt
+##########################
 
 # Should never check in plain text password file
 mutt/accounts/passwords
@@ -26,3 +48,4 @@ mutt/cache/*
 !mutt/cache/.gitkeep
 mutt/certificates/*
 !mutt/certificates/.gitkeep
+
