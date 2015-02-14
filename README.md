@@ -24,7 +24,7 @@
   $ ln -sf [DOTPILE]/vim/vimrc ~/.vimrc
   $ ln -sf [DOTPILE]/misc/ptignore ~/.ptignore
   $ brew install pt
-  $ vim +PluginInstall +qall
+  $ vim +PlugInstall +qall
 ```
 
 ## Setup NeoVim
@@ -39,7 +39,7 @@
   $ brew install --HEAD neovim
   $ brew install pt python
   $ pip install neovim
-  $ vim +PluginInstall +qall
+  $ nvim +PlugInstall +qall
 ```
 
 Update NeoVim:
