@@ -18,6 +18,9 @@ Plug 'Shougo/unite.vim'
 
 "Plug '~/Projects/unite-filelist'
 Plug 'qiushihe/unite-filelist'
+
+Plug '~/Projects/wmyy'
+"Plug 'qiushihe/wmyy'
 call plug#end()
 
 " Configure airline
