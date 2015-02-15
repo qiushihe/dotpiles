@@ -97,3 +97,9 @@ let g:signify_sign_changedelete = '~'
 let g:signify_sign_add = '+'
 let g:signify_sign_delete = '_'
 let g:signify_sign_delete_first_line = '‾'
+
+" Configure Wmyy
+nnoremap <leader><S-Up> :WmyySwapUp<CR>
+nnoremap <leader><S-Down> :WmyySwapDown<CR>
+nnoremap <leader><S-Left> :WmyySwapLeft<CR>
+nnoremap <leader><S-Right> :WmyySwapRight<CR>

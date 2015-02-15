@@ -50,30 +50,3 @@ map <C-S-Down> <C-W>+
 map <C-S-Left> <C-W><
 map <C-S-Right> <C-W>>
 
-" Window Swap
-function! <SID>MarkWindowSwap()
-  " marked window number
-  let g:markedWinNum = winnr()
-  let g:markedBufNum = bufnr("%")
-endfunction
-
-function! <SID>DoWindowSwap()
-  let curWinNum = winnr()
-  let curBufNum = bufnr("%")
-  " Switch focus to marked window
-  exe g:markedWinNum . "wincmd w"
-
-  " Load current buffer on marked window
-  exe "hide buf" curBufNum
-
-  " Switch focus to current window
-  exe curWinNum . "wincmd w"
-
-  " Load marked buffer on current window
-  exe "hide buf" g:markedBufNum
-endfunction
-
-nnoremap <leader><S-Down> :call <SID>MarkWindowSwap()<CR> <C-w>j :call <SID>DoWindowSwap()<CR>
-nnoremap <leader><S-Up> :call <SID>MarkWindowSwap()<CR> <C-w>k :call <SID>DoWindowSwap()<CR>
-nnoremap <leader><S-Left> :call <SID>MarkWindowSwap()<CR> <C-w>h :call <SID>DoWindowSwap()<CR>
-nnoremap <leader><S-Right> :call <SID>MarkWindowSwap()<CR> <C-w>l :call <SID>DoWindowSwap()<CR>
