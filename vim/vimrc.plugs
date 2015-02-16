@@ -41,6 +41,7 @@ let NERDTreeShowHidden = 1
 map <leader>T :NERDTreeTabsToggle<CR>
 
 " Configure VimWiki
+let g:vimwiki_map_prefix = '<leader>vw'
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{
   \ 'path': '~/Dropbox/Wiki/',
