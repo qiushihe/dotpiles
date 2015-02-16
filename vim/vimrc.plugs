@@ -120,3 +120,8 @@ nnoremap <leader><Right> :WmyyFocusRight<CR>
 nnoremap <leader>wn :WmyyNewWindow<CR>
 nnoremap <leader>wd :WmyyCloseWindow<CR>
 
+nnoremap <leader>wl :WmyyNewWindow<CR>:Unite -no-split buffer<CR>
+nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -start-insert filelist<CR>
+nnoremap <leader>wg :WmyyNewWindow<CR>:Unite -no-split grep:.<CR>
+nnoremap <leader>wr :WmyyNewWindow<CR>:UniteResume -no-split<CR>
+
