@@ -19,8 +19,8 @@ Plug 'Shougo/unite.vim'
 "Plug '~/Projects/unite-filelist'
 Plug 'qiushihe/unite-filelist'
 
-Plug '~/Projects/wmyy'
-"Plug 'qiushihe/wmyy'
+Plug '~/Projects/wmyy.vim'
+" Plug 'qiushihe/wmyy.vim'
 call plug#end()
 
 " Configure airline
@@ -103,3 +103,7 @@ nnoremap <leader><S-Up> :WmyySwapUp<CR>
 nnoremap <leader><S-Down> :WmyySwapDown<CR>
 nnoremap <leader><S-Left> :WmyySwapLeft<CR>
 nnoremap <leader><S-Right> :WmyySwapRight<CR>
+
+nnoremap <leader><C-Left> :WmyyMoveLeft<CR>
+nnoremap <leader><C-Right> :WmyyMoveRight<CR>
+
