@@ -111,6 +111,10 @@ set ttymouse=xterm
 set noerrorbells
 set visualbell
 
+" Spelling
+set spell
+set spelllang=en_ca
+
 " Command mode completion
 set wildmenu
 set wildmode=list:longest
