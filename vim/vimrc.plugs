@@ -79,11 +79,12 @@ if executable('pt')
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_source_grep_encoding = 'utf-8'
 endif
+let g:unite_source_grep_max_candidates = 99999
 
-nmap <leader>t :Unite -no-split -start-insert filelist<CR>
-nmap <leader>bl :Unite -no-split buffer<CR>
-nmap <leader>sp :Unite -direction=botright grep:.<CR>
-nmap <leader>re :UniteResume<CR>
+nmap <leader>t :Unite -no-split -no-resize -start-insert filelist<CR>
+nmap <leader>bl :Unite -no-split -no-resize -start-insert buffer<CR>
+nmap <leader>sp :Unite -no-split -no-resize grep:.<CR>
+nmap <leader>re :UniteResume -no-split -no-resize<CR>
 
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
@@ -120,8 +121,8 @@ nnoremap <leader><Right> :WmyyFocusRight<CR>
 nnoremap <leader>wn :WmyyNewWindow<CR>
 nnoremap <leader>wd :WmyyCloseWindow<CR>
 
-nnoremap <leader>wl :WmyyNewWindow<CR>:Unite -no-split buffer<CR>
-nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -start-insert filelist<CR>
-nnoremap <leader>wg :WmyyNewWindow<CR>:Unite -no-split grep:.<CR>
-nnoremap <leader>wr :WmyyNewWindow<CR>:UniteResume -no-split<CR>
+nnoremap <leader>wl :WmyyNewWindow<CR>:Unite -no-split -no-resize -start-insert buffer<CR>
+nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -no-reisze -start-insert filelist<CR>
+nnoremap <leader>wg :WmyyNewWindow<CR>:Unite -no-split -no-resize grep:.<CR>
+nnoremap <leader>wr :WmyyNewWindow<CR>:UniteResume -no-split -no-resize<CR>
 
