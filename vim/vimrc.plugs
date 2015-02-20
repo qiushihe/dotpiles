@@ -7,7 +7,6 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
 Plug 'kchmck/vim-coffee-script'
-Plug 'mtth/scratch.vim'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mustache/vim-mustache-handlebars'
@@ -49,12 +48,7 @@ let g:vimwiki_list = [{
   \ 'ext': '.md' }]
 
 " Configure Bbye
-map <leader>bd :Bdelete<CR>
-
-" Configure scratch
-map <leader>ss :Scratch<CR>
-map <leader>si :ScratchInsert<CR>
-map <leader>sc :ScratchSelection<CR>
+map <leader>bd :Bdelete!<CR>
 
 " Configure badwolf
 let g:badwolf_darkgutter = 1
@@ -120,9 +114,10 @@ nnoremap <leader><Right> :WmyyFocusRight<CR>
 
 nnoremap <leader>wn :WmyyNewWindow<CR>
 nnoremap <leader>wd :WmyyCloseWindow<CR>
+nnoremap <leader>wq :Bdelete!<CR>:WmyyCloseWindow<CR>
 
 nnoremap <leader>wl :WmyyNewWindow<CR>:Unite -no-split -no-resize -start-insert buffer<CR>
-nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -no-reisze -start-insert filelist<CR>
+nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -no-resize -start-insert filelist<CR>
 nnoremap <leader>wg :WmyyNewWindow<CR>:Unite -no-split -no-resize grep:.<CR>
 nnoremap <leader>wr :WmyyNewWindow<CR>:UniteResume -no-split -no-resize<CR>
 

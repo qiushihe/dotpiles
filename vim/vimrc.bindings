@@ -25,8 +25,5 @@ map <leader>{ :tabprev<CR>
 map <leader>] :bnext<CR>
 map <leader>[ :bprevious<CR>
 
-" Open quickfix window
-map <leader>wq :copen<CR>
-
 " Close all windows
 map <leader>xc :qall<CR>
