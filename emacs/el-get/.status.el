@@ -20,7 +20,7 @@
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
                 ("el-get.*\\.el$" "methods/")
-                :load "el-get.el" :post-init
+                :features el-get :post-init
                 (when
                     (memq 'el-get
                           (bound-and-true-p package-activated-list))
@@ -66,7 +66,7 @@
                        (add-to-list 'auto-mode-alist
                                     '("\\.\\(md\\|mdown\\|markdown\\)\\'" . markdown-mode))))
  (monokai-theme status "installed" recipe
-                (:name monokai-theme :website "https://github.com/oneKelvinSmith/monokai-emacs" :description "A fruity color theme for Emacs." :type elpa :prepare
+                (:name monokai-theme :website "https://github.com/oneKelvinSmith/monokai-emacs" :description "A fruity color theme for Emacs." :type github :pkgname "oneKelvinSmith/monokai-emacs" :prepare
                        (add-to-list 'custom-theme-load-path default-directory)))
  (neotree status "installed" recipe
           (:name neotree :website "https://github.com/jaypei/emacs-neotree" :description "An Emacs tree plugin like NerdTree for Vim." :type github :branch "master" :pkgname "jaypei/emacs-neotree"))
