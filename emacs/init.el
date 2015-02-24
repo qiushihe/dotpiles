@@ -25,6 +25,9 @@
 (electric-indent-mode -1)
 (add-hook 'after-change-major-mode-hook (lambda () (electric-indent-mode -1)))
 
+;; Disable bell
+(setq ring-bell-function 'ignore)
+
 ;; Always show matching parenthesis
 (setq show-paren-delay 0)
 (show-paren-mode t)

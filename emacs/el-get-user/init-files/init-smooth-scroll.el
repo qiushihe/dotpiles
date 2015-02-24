@@ -1,5 +1,5 @@
 ;; Enable smooth scroll mode
-(smooth-scroll-mode t)
+;; (smooth-scroll-mode t)
 
 ;; Setup mouse wheel binding
 (defun my-scroll-up-single () (interactive) (scroll-down-1 2))
