@@ -27,3 +27,20 @@ map <leader>[ :bprevious<CR>
 
 " Close all windows
 map <leader>xc :qall<CR>
+
+" Window Split
+map <leader>sv :vsplit<CR>
+map <leader>sh :split<CR>
+
+" Window Navigation
+map <leader><Up> <C-W>k
+map <leader><Down> <C-W>j
+map <leader><Left> <C-W>h
+map <leader><Right> <C-W>l
+
+" Window Resizing
+map <C-S-Up> <C-W>-
+map <C-S-Down> <C-W>+
+map <C-S-Left> <C-W><
+map <C-S-Right> <C-W>>
+

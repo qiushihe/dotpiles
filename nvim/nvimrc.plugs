@@ -95,29 +95,7 @@ let g:signify_sign_delete = '_'
 let g:signify_sign_delete_first_line = '‾'
 
 " Configure Wmyy
-set winminheight=0
-
 nnoremap <leader><S-Up> :WmyySwapUp<CR>
 nnoremap <leader><S-Down> :WmyySwapDown<CR>
 nnoremap <leader><S-Left> :WmyySwapLeft<CR>
 nnoremap <leader><S-Right> :WmyySwapRight<CR>
-
-nnoremap <leader><C-Up> :WmyyMoveUp<CR>
-nnoremap <leader><C-Down> :WmyyMoveDown<CR>
-nnoremap <leader><C-Left> :WmyyMoveLeft<CR>
-nnoremap <leader><C-Right> :WmyyMoveRight<CR>
-
-nnoremap <leader><Up> :WmyyFocusUp<CR>
-nnoremap <leader><Down> :WmyyFocusDown<CR>
-nnoremap <leader><Left> :WmyyFocusLeft<CR>
-nnoremap <leader><Right> :WmyyFocusRight<CR>
-
-nnoremap <leader>wn :WmyyNewWindow<CR>
-nnoremap <leader>wd :WmyyCloseWindow<CR>
-nnoremap <leader>wq :Bdelete!<CR>:WmyyCloseWindow<CR>
-
-nnoremap <leader>wl :WmyyNewWindow<CR>:Unite -no-split -no-resize -start-insert buffer<CR>
-nnoremap <leader>wt :WmyyNewWindow<CR>:Unite -no-split -no-resize -start-insert filelist<CR>
-nnoremap <leader>wg :WmyyNewWindow<CR>:Unite -no-split -no-resize grep:.<CR>
-nnoremap <leader>wr :WmyyNewWindow<CR>:UniteResume -no-split -no-resize<CR>
-
