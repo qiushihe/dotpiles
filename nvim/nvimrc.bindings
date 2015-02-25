@@ -28,6 +28,9 @@ map <leader>[ :bprevious<CR>
 " Close all windows
 map <leader>xc :qall<CR>
 
+" Close window
+map <leader>wd :close<CR>
+
 " Window Split
 map <leader>sv :vsplit<CR>
 map <leader>sh :split<CR>
