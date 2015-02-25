@@ -27,7 +27,7 @@ call plug#end()
 " Configure lightline/vim-gitbranch
 let g:lightline = {
   \ 'component': {
-    \ 'gitbranch': '%{gitbranch#name()}',
+    \ 'gitbranch': '%{"\u2387 " . gitbranch#name()}',
   \ }
 \ }
 
