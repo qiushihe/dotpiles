@@ -1,6 +1,5 @@
 call plug#begin('~/.nvim/plugged')
 Plug 'gmarik/Vundle.vim'
-Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
@@ -12,6 +11,9 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mhinz/vim-signify'
 
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 
@@ -22,14 +24,24 @@ Plug 'qiushihe/unite-filelist'
 Plug 'qiushihe/wmyy.vim'
 call plug#end()
 
-" Configure airline
-let g:airline#extensions#tabline#enabled = 1
-" Disable left/right pointing arrow so we don't have
-" to worry about installing custom fonts
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
-let g:airline_left_sep = ''
+" Configure lightline/vim-gitbranch
+let g:lightline = {
+  \ 'component': {
+    \ 'gitbranch': '%{gitbranch#name()}',
+  \ }
+\ }
+
+let g:lightline.active = {
+  \ 'left': [
+    \ [ 'mode', 'paste' ],
+    \ [ 'gitbranch' ],
+    \ [ 'readonly', 'filename', 'modified' ]
+  \ ], 'right': [
+    \ [ 'lineinfo' ],
+	  \ [ 'percent' ],
+		\ [ 'fileformat', 'fileencoding', 'filetype' ]
+  \ ]
+\ }
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
