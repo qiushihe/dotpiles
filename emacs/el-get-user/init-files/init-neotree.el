@@ -14,4 +14,4 @@
   )
 )
 
-(global-set-key (kbd "M-]") 'my-neotree-toggle)
+(global-set-key (kbd "C-c T") 'my-neotree-toggle)

@@ -1,7 +1,4 @@
-((ag status "installed" recipe
-     (:name ag :description "A simple ag frontend, loosely based on ack-and-half.el." :type github :pkgname "Wilfred/ag.el" :depends
-            (dash s)))
- (buffer-move status "installed" recipe
+((buffer-move status "installed" recipe
               (:name buffer-move :description "Swap buffers without typing C-x b on each window" :type emacswiki :features buffer-move))
  (cl-lib status "installed" recipe
          (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
@@ -20,7 +17,7 @@
  (el-get status "installed" recipe
          (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
                 ("el-get.*\\.el$" "methods/")
-                :features el-get :post-init
+                :load "el-get.el" :post-init
                 (when
                     (memq 'el-get
                           (bound-and-true-p package-activated-list))
@@ -58,6 +55,9 @@
               `(("make" ,(format "EMACS_COMMAND=%s" el-get-emacs)))
               :build/windows-nt
               (with-temp-file "helm-autoload.el" nil)))
+ (helm-ag status "installed" recipe
+          (:name helm-ag :description "The silver search with helm interface." :type github :pkgname "syohex/emacs-helm-ag" :depends
+                 (helm)))
  (helm-cmd-t status "installed" recipe
              (:name helm-cmd-t :description "Cmd-t style completion of files in repository." :type github :pkgname "lewang/helm-cmd-t" :depends
                     (helm)))
