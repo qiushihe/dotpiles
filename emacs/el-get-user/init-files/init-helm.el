@@ -13,7 +13,11 @@
 
 ;; Create helm split inside the current window instead of seemingly randomly
 ;; taking over a different window
-(setq helm-split-window-in-side-p t)
+;(setq helm-split-window-in-side-p t)
+
+;; Instead of creating a split for helm buffer, just temporarily take over the
+;; current window instead
+(setq helm-split-window-default-side 'same)
 
 ;; Override helm fuzzy matching function to disable the feature
 (defun helm-fuzzy-match (candidate))
