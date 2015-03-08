@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Emacs Launcher
+# This script will ensure emacs is running in server mode before launching emacsclient
+#
 
 get_server ()
 {

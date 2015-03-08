@@ -22,4 +22,5 @@
     (back-to-indentation)
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
+
 (global-set-key [remap move-beginning-of-line] 'sacha/smarter-move-beginning-of-line)

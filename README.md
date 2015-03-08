@@ -52,9 +52,9 @@ Update NeoVim:
 ## Setup emacs
 
 ```
-  $ rm -f ~/.emacs.d /usr/local/bin/gemacs
+  $ rm -f ~/.emacs.d /usr/local/bin/emacsl
   $ ln -sf [DOTPILE]/emacs ~/.emacs.d
-  $ ln -sf [DOTPILE]/emacs/gemacs.sh /usr/local/bin/gemacs
+  $ ln -sf [DOTPILE]/emacs/emacsl.sh /usr/local/bin/emacsl
   $ brew install the_silver_searcher
   $ brew install ispell
 ```
@@ -68,4 +68,3 @@ Update NeoVim:
   $ ln -sf [DOTPILE]/mutt ~/.mutt
   $ ln -sf [DOTPILE]/mutt/mailcap ~/.mailcap
 ```
-

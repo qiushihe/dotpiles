@@ -12,15 +12,21 @@
   :group 'normalize-indent)
 
 (defun normalize-indent-indent-with-space ()
+  "Simply insert 2 spaces for indentation. May be bound to TAB."
   (interactive)
   (insert "  "))
 
 (defun normalize-indent-enter ()
+  "Simplified line-break bahaviour. May be bound to ENTER."
   (interactive)
   (newline)
   (indent-relative-maybe))
 
 (defun normalize-indent-normalize-region (rs re fn)
+  "Fully extend the region enclosed by rs and re. At the start of the region (indicated by rs),
+  extend it to the beginning of line; At the end of the region (indicated by re), extend it to
+  the end of line. And once both the start and end of the region are extended, call fn with the
+  updated rs and re that matches the extended start and end of the region."
   (goto-char rs)
   (if (> rs (line-beginning-position))
     (normalize-indent-normalize-region (line-beginning-position) re fn)
@@ -31,6 +37,7 @@
         (funcall fn rs re)))))
 
 (defun normalize-indent-outdent-region-r (rs re)
+  "Outdent lines touched by the given region by 2 spaces."
   (goto-char rs)
   (if (<= (point) re)
     (progn
@@ -50,6 +57,7 @@
             (normalize-indent-outdent-region-r (point) re)))))))
 
 (defun normalize-indent-indent-region-r (rs re)
+  "Indent lines touched by the given region by 2 spaces."
   (goto-char rs)
   (if (<= (point) re)
     (progn
@@ -59,6 +67,7 @@
       (normalize-indent-indent-region-r (point) (+ re 2)))))
 
 (defun normalize-indent-outdent-region ()
+  "Outdent lines touched by the given region."
   (interactive)
   (save-excursion
 	  (if (< (point) (mark)) (exchange-point-and-mark))
@@ -66,6 +75,7 @@
   (setq deactivate-mark nil))
 
 (defun normalize-indent-indent-region ()
+  "Indent lines touched by the given region."
   (interactive)
   (save-excursion
     (if (< (point) (mark)) (exchange-point-and-mark))
@@ -89,6 +99,7 @@
       (local-unset-key (kbd "C-{"))
       (local-unset-key (kbd "C-}")))))
 
+;; Define normalize-indent minor mode
 (define-globalized-minor-mode normalize-indent-global-mode
   normalize-indent-mode
   (lambda ()

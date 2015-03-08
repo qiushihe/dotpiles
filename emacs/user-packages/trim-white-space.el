@@ -6,4 +6,5 @@
     (goto-char (point-max))
     (delete-blank-lines)
     (goto-char (min point (point-max)))))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace-and-blank-lines)
