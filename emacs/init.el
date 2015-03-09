@@ -85,6 +85,7 @@
 
 (el-get-bundle el-get)
 
+(el-get-bundle coffee-mode)
 (el-get-bundle handlebars-mode)
 (el-get-bundle markdown-mode)
 (el-get-bundle sass-mode)

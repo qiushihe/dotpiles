@@ -55,7 +55,7 @@ Update NeoVim:
   $ rm -f ~/.emacs.d /usr/local/bin/emacsl
   $ ln -sf [DOTPILE]/emacs ~/.emacs.d
   $ ln -sf [DOTPILE]/emacs/emacsl.sh /usr/local/bin/emacsl
-  $ brew install the_silver_searcher
+  $ brew install gnutls the_silver_searcher
   $ brew install ispell
 ```
 
