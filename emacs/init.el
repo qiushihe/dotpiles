@@ -82,7 +82,29 @@
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (setq el-get-user-package-directory "~/.emacs.d/el-get-user/init-files")
-(el-get 'sync)
+
+(el-get-bundle el-get)
+
+(el-get-bundle handlebars-mode)
+(el-get-bundle markdown-mode)
+(el-get-bundle sass-mode)
+(el-get-bundle yaml-mode)
+(el-get-bundle company-mode)
+(el-get-bundle org-mode)
+
+(el-get-bundle helm)
+(el-get-bundle helm-ag)
+(el-get-bundle helm-cmd-t)
+
+(el-get-bundle column-marker)
+(el-get-bundle expand-region)
+(el-get-bundle flyspell)
+(el-get-bundle multiple-cursors)
+(el-get-bundle neotree)
+(el-get-bundle powerline)
+(el-get-bundle projectile)
+(el-get-bundle smooth-scroll)
+(el-get-bundle monokai-theme)
 
 ;; Set font
 (set-default-font "Monaco 12")
