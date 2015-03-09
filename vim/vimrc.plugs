@@ -6,6 +6,7 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
 Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-haml'
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mustache/vim-mustache-handlebars'
