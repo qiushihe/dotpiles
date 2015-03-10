@@ -101,9 +101,9 @@
 (el-get-bundle powerline)
 (el-get-bundle projectile)
 (el-get-bundle smooth-scroll)
+(el-get-bundle monokai-theme)
 (el-get-bundle buffer-move)
 (el-get-bundle hiwin)
-(el-get-bundle color-theme-solarized)
 
 (el-get-bundle helm)
 (el-get-bundle helm-ag)
@@ -113,7 +113,7 @@
 (set-default-font "Monaco 12")
 
 ;; Load theme
-(load-theme 'solarized t)
+(load-theme 'monokai t)
 
 ;; Set default frame properties
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
