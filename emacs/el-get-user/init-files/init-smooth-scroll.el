@@ -1,19 +1,24 @@
 ;; Enable smooth scroll mode
 (smooth-scroll-mode t)
 
+;; Make these numbers large to avoid the "animation" of scrolling
+(setq smooth-scroll/vscroll-step-size 100)
+(setq smooth-scroll/hscroll-step-size 100)
+
 ;; Setup mouse wheel binding
-(defun my-scroll-up-single () (interactive) (scroll-down-1 2))
-(defun my-scroll-up-double () (interactive) (scroll-down-1 6))
-(defun my-scroll-up-triple () (interactive) (scroll-down-1 12))
-(defun my-scroll-down-single () (interactive) (scroll-up-1 2))
-(defun my-scroll-down-double () (interactive) (scroll-up-1 6))
-(defun my-scroll-down-triple () (interactive) (scroll-up-1 12))
-(defun my-scroll-left-single () (interactive) (scroll-right-1 2))
-(defun my-scroll-left-double () (interactive) (scroll-right-1 6))
-(defun my-scroll-left-triple () (interactive) (scroll-right-1 12))
-(defun my-scroll-right-single () (interactive) (scroll-left-1 2))
-(defun my-scroll-right-double () (interactive) (scroll-left-1 6))
-(defun my-scroll-right-triple () (interactive) (scroll-left-1 12))
+(defun my-scroll-up-single () (interactive) (scroll-down-1 1))
+(defun my-scroll-up-double () (interactive) (scroll-down-1 3))
+(defun my-scroll-up-triple () (interactive) (scroll-down-1 5))
+(defun my-scroll-down-single () (interactive) (scroll-up-1 1))
+(defun my-scroll-down-double () (interactive) (scroll-up-1 3))
+(defun my-scroll-down-triple () (interactive) (scroll-up-1 5))
+(defun my-scroll-left-single () (interactive) (scroll-right-1 1))
+(defun my-scroll-left-double () (interactive) (scroll-right-1 3))
+(defun my-scroll-left-triple () (interactive) (scroll-right-1 5))
+(defun my-scroll-right-single () (interactive) (scroll-left-1 1))
+(defun my-scroll-right-double () (interactive) (scroll-left-1 3))
+(defun my-scroll-right-triple () (interactive) (scroll-left-1 5))
+
 (global-set-key [wheel-up] 'my-scroll-up-single)
 (global-set-key [double-wheel-up] 'my-scroll-up-double)
 (global-set-key [triple-wheel-up] 'my-scroll-up-triple)
