@@ -1,5 +1,0 @@
-(:name hiwin
-  :website "https://github.com/yoshida-mediba/hiwin-mode"
-  :description "Visible active window mode."
-  :type github
-  :pkgname "yoshida-mediba/hiwin-mode")

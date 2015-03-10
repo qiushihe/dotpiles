@@ -103,7 +103,6 @@
 (el-get-bundle smooth-scroll)
 (el-get-bundle monokai-theme)
 (el-get-bundle buffer-move)
-(el-get-bundle hiwin)
 
 (el-get-bundle helm)
 (el-get-bundle helm-ag)
