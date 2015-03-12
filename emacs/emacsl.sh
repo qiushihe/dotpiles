@@ -74,7 +74,7 @@ elif [ "$1" = "--stop-server" ]; then stop_server;
 elif [ "$1" = "--restart-server" ]; then restart_server;
 else
   # Relaunch client after restarting the server
-  if [ "$1" = "--relaunch" ]; then
+  if [ "$1" = "--restart" ]; then
     restart_server
     # Also remove the first argument
     shift
