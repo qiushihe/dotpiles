@@ -73,6 +73,13 @@ if [ "$1" = "--start-server" ]; then start_server;
 elif [ "$1" = "--stop-server" ]; then stop_server;
 elif [ "$1" = "--restart-server" ]; then restart_server;
 else
+  # Relaunch client after restarting the server
+  if [ "$1" = "--relaunch" ]; then
+    restart_server
+    # Also remove the first argument
+    shift
+  fi
+
   # First check if the server is running or not
   get_server
   # ... and if the server is not running, indicates that we want to wait for the server to finish
