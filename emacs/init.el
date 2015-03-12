@@ -101,6 +101,9 @@
 (el-get-bundle helm-ag)
 (el-get-bundle helm-cmd-t)
 
+(el-get-bundle elscreen)
+(el-get-bundle elscreen-persist)
+
 (el-get-bundle monokai-theme)
 
 ;; Set font
