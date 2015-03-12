@@ -1,9 +1,6 @@
 ;; Disable menu bar
 (menu-bar-mode nil)
 
-;; Disable srgb to avoid some colour issues (i.e. with powerline)
-(setq ns-use-srgb-colorspace nil)
-
 ;; Disable splash screen/message
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
@@ -98,7 +95,7 @@
 (el-get-bundle flyspell)
 (el-get-bundle multiple-cursors)
 (el-get-bundle neotree)
-(el-get-bundle powerline)
+(el-get-bundle smart-mode-line)
 (el-get-bundle projectile)
 (el-get-bundle smooth-scroll)
 (el-get-bundle monokai-theme)
