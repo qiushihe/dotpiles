@@ -4,9 +4,21 @@
 # This script will ensure emacs is running in server mode before launching emacsclient
 #
 
+if [ -z "$EMACSL_EMACS_PATH" ]; then
+  EMACSL_EMACS_PATH="/Applications/Emacs.app/Contents/MacOS/Emacs"
+fi
+
+if [ -z "$EMACSL_EMACSCLIENT_PATH" ]; then
+  EMACSL_EMACSCLIENT_PATH="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+fi
+
+if [ -z "$EMACSL_PID_PATH" ]; then
+  EMACSL_PID_PATH="$HOME/.emacs-daemon.pid"
+fi
+
 get_server ()
 {
-  SERVER_PID=`ps -A | grep -e "\/Applications\/Emacs\.app\/Contents\/MacOS\/Emacs.\+--daemon" | awk '{if ($1) print $1}'`
+  SERVER_PID=`cat $EMACSL_PID_PATH 2> /dev/null`
 }
 
 stop_server ()
@@ -15,6 +27,7 @@ stop_server ()
   if [ -n "$SERVER_PID" ]; then
     echo "Stopping Emacs server ..."
     kill -KILL $SERVER_PID
+    rm -f $EMACSL_PID_PATH
 
     get_server
     if [ -n "$SERVER_PID" ]; then
@@ -34,7 +47,12 @@ start_server ()
     echo "Emacs server is already running. PID: $SERVER_PID"
   else
     echo "Starting Emacs server ..."
-    /Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+
+    # Start Emacs in server mode
+    $EMACSL_EMACS_PATH --daemon
+
+    # Query Emacs server PID and keep that in a file
+    $EMACSL_EMACSCLIENT_PATH -e "(emacs-pid)" > $EMACSL_PID_PATH
 
     get_server
     if [ -n "$SERVER_PID" ]; then
@@ -94,17 +112,17 @@ else
     STARTUP+=")"
 
     # ... and launch emacsclient with the startup script
-    /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -e "$STARTUP" $@ > /dev/null
+    $EMACSL_EMACSCLIENT_PATH -n -c -e "$STARTUP" $@ > /dev/null
   else
     # If this script is called with arguments, but the first argument starts with a "-", which means
     # it's an option of sort, then launch emacsclient without any default arguments (i.e. in this
     # case all arguments to emacsclient must be passed in manually).
     if [[ "$1" =~ ^- ]]; then
-      /Applications/Emacs.app/Contents/MacOS/bin/emacsclient $@
+      $EMACSL_EMACSCLIENT_PATH $@
     else
       # If this script is called with non-options argument, then assume the first argument is the
       # file to open and launch emacsclient to open that file.
-      /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c $1
+      $EMACSL_EMACSCLIENT_PATH -n -c $1
     fi
   fi
 fi
