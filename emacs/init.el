@@ -87,23 +87,21 @@
 (el-get-bundle markdown-mode)
 (el-get-bundle sass-mode)
 (el-get-bundle yaml-mode)
-(el-get-bundle company-mode)
 (el-get-bundle org-mode)
 
 (el-get-bundle column-marker)
-(el-get-bundle expand-region)
 (el-get-bundle flyspell)
-(el-get-bundle multiple-cursors)
 (el-get-bundle neotree)
-(el-get-bundle smart-mode-line)
 (el-get-bundle projectile)
 (el-get-bundle smooth-scroll)
-(el-get-bundle monokai-theme)
 (el-get-bundle buffer-move)
+(el-get-bundle company-mode)
 
 (el-get-bundle helm)
 (el-get-bundle helm-ag)
 (el-get-bundle helm-cmd-t)
+
+(el-get-bundle monokai-theme)
 
 ;; Set font
 (set-default-font "Monaco 12")
