@@ -10,6 +10,8 @@ emacs/.mc-lists.el
 emacs/**/*.elc
 emacs/elpa
 emacs/el-get
+emacs/elscreen
+emacs/eshell/history
 
 ##########################
 # Vim
@@ -47,4 +49,3 @@ mutt/cache/*
 !mutt/cache/.gitkeep
 mutt/certificates/*
 !mutt/certificates/.gitkeep
-
