@@ -12,13 +12,12 @@ if [ -z "$EMACSL_EMACSCLIENT_PATH" ]; then
   EMACSL_EMACSCLIENT_PATH="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 fi
 
-if [ -z "$EMACSL_PID_PATH" ]; then
-  EMACSL_PID_PATH="$HOME/.emacs-daemon.pid"
-fi
-
 get_server ()
 {
-  SERVER_PID=`cat $EMACSL_PID_PATH 2> /dev/null`
+  SERVER_PID=`$EMACSL_EMACSCLIENT_PATH -e "(emacs-pid)" 2> /dev/null`
+  if ! [[ $SERVER_PID =~ ^[0-9]+$ ]]; then
+    SERVER_PID=""
+  fi
 }
 
 stop_server ()
@@ -27,7 +26,6 @@ stop_server ()
   if [ -n "$SERVER_PID" ]; then
     echo "Stopping Emacs server ..."
     kill -KILL $SERVER_PID
-    rm -f $EMACSL_PID_PATH
 
     get_server
     if [ -n "$SERVER_PID" ]; then
@@ -50,9 +48,6 @@ start_server ()
 
     # Start Emacs in server mode
     $EMACSL_EMACS_PATH --daemon
-
-    # Query Emacs server PID and keep that in a file
-    $EMACSL_EMACSCLIENT_PATH -e "(emacs-pid)" > $EMACSL_PID_PATH
 
     get_server
     if [ -n "$SERVER_PID" ]; then
