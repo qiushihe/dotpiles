@@ -106,8 +106,6 @@
 
 (el-get-bundle monokai-theme)
 
-;; Set font
-(set-default-font "Monaco 12")
 
 ;; Load theme
 (load-theme 'monokai t)
@@ -116,6 +114,7 @@
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
+(add-to-list 'default-frame-alist '(font . "Monaco-12"))
 
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
