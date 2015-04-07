@@ -96,6 +96,7 @@
 (el-get-bundle smooth-scroll)
 (el-get-bundle buffer-move)
 (el-get-bundle company-mode)
+(el-get-bundle expand-region)
 
 (el-get-bundle helm)
 (el-get-bundle helm-ag)
@@ -105,7 +106,6 @@
 (el-get-bundle elscreen-persist)
 
 (el-get-bundle monokai-theme)
-
 
 ;; Load theme
 (load-theme 'monokai t)
