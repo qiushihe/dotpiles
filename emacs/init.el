@@ -25,6 +25,9 @@
 ;; Disable bell
 (setq ring-bell-function 'ignore)
 
+;; Disable theme safety check
+(setq custom-safe-themes t)
+
 ;; Always show matching parenthesis
 (setq show-paren-delay 0)
 (show-paren-mode t)
@@ -105,10 +108,22 @@
 (el-get-bundle elscreen)
 (el-get-bundle elscreen-persist)
 
-(el-get-bundle monokai-theme)
+(el-get-bundle color-theme-solarized)
+
+;; Solarized - Set to dark theme
+(setq frame-background-mode 'dark)
 
 ;; Load theme
-(load-theme 'monokai t)
+(load-theme 'solarized t)
+
+;; Solarized - Unify fringe and line number background colour
+(add-hook 'after-make-frame-functions
+  (lambda (frame)
+    (select-frame frame)
+    (set-face-attribute 'fringe nil :background (face-attribute 'default :background) :foreground (face-attribute 'fringe :foreground))
+    (set-face-attribute 'linum nil :background (face-attribute 'default :background) :foreground (face-attribute 'linum :foreground) :slant 'normal)
+  )
+)
 
 ;; Set default frame properties
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
