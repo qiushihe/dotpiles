@@ -14,4 +14,4 @@
   )
 )
 
-(global-set-key (kbd "C-c t t") 'my-neotree-toggle)
+(bind-key* "C-c t t" 'my-neotree-toggle)

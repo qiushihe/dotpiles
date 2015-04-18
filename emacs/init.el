@@ -61,6 +61,7 @@
 
 ;; Load non-managed packages
 (add-to-list 'load-path "~/.emacs.d/user-packages")
+(load-library "bind-key")
 (load-library "line-number")
 (load-library "trim-white-space")
 (load-library "bindings")

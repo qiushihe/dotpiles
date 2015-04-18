@@ -1,1 +1,1 @@
-;; (global-set-key (kbd "C-t") 'helm-cmd-t)
+;; (bind-key* "C-t" 'helm-cmd-t)

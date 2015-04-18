@@ -11,36 +11,36 @@
 (global-unset-key (kbd "s-k"))
 
 ;; Rebind kill-this-buffer
-(global-set-key (kbd "C-c b d") 'kill-this-buffer)
+(bind-key* "C-c b d" 'kill-this-buffer)
 
 ;; Rebind create/delete frame
-(global-set-key (kbd "C-c f c") 'new-frame)
-(global-set-key (kbd "C-c f d") 'delete-frame)
+(bind-key* "C-c f c" 'new-frame)
+(bind-key* "C-c f d" 'delete-frame)
 
 ;; Rebind delete-window
-(global-set-key (kbd "C-c w d") 'delete-window)
+(bind-key* "C-c w d" 'delete-window)
 
 ;; Split window
-(global-set-key (kbd "C-c s v") 'split-window-right)
-(global-set-key (kbd "C-c s h") 'split-window-below)
+(bind-key* "C-c s v" 'split-window-right)
+(bind-key* "C-c s h" 'split-window-below)
 
 ;; Switch window focus
-(global-set-key (kbd "C-c <left>") 'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
+(bind-key* "C-c <left>" 'windmove-left)
+(bind-key* "C-c <right>" 'windmove-right)
+(bind-key* "C-c <down>" 'windmove-down)
+(bind-key* "C-c <up>" 'windmove-up)
 
 ;; Resize window
-(global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-S-<down>") 'shrink-window)
-(global-set-key (kbd "C-S-<up>") 'enlarge-window)
+(bind-key* "C-S-<left>" 'shrink-window-horizontally)
+(bind-key* "C-S-<right>" 'enlarge-window-horizontally)
+(bind-key* "C-S-<down>" 'shrink-window)
+(bind-key* "C-S-<up>" 'enlarge-window)
 
 ;; Swap window
-(global-set-key (kbd "C-c S-<right>") 'buf-move-right)
-(global-set-key (kbd "C-c S-<left>") 'buf-move-left)
-(global-set-key (kbd "C-c S-<down>") 'buf-move-down)
-(global-set-key (kbd "C-c S-<up>") 'buf-move-up)
+(bind-key* "C-c S-<right>" 'buf-move-right)
+(bind-key* "C-c S-<left>" 'buf-move-left)
+(bind-key* "C-c S-<down>" 'buf-move-down)
+(bind-key* "C-c S-<up>" 'buf-move-up)
 
 ;; Keyboard scrolling speed
 (setq scroll-step 10)

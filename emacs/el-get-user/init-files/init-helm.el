@@ -2,14 +2,14 @@
 (helm-mode 1)
 
 ;; Setup helm key bindings/overrides
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x f") 'helm-find-files)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x C-b") 'helm-mini)
+(bind-key* "M-x" 'helm-M-x)
+(bind-key* "C-x f" 'helm-find-files)
+(bind-key* "C-x C-f" 'helm-find-files)
+(bind-key* "C-x C-b" 'helm-mini)
 
-(global-set-key (kbd "C-c b l") 'helm-mini)
-(global-set-key (kbd "C-c s o") 'helm-occur)
-(global-set-key (kbd "C-c r e") 'helm-resume)
+(bind-key* "C-c b l" 'helm-mini)
+(bind-key* "C-c s o" 'helm-occur)
+(bind-key* "C-c r e" 'helm-resume)
 
 ;; Create helm split inside the current window instead of seemingly randomly
 ;; taking over a different window
