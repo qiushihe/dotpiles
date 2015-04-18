@@ -107,9 +107,9 @@ else
     STARTUP+="  (cd working-directory)"
 
     # * Maximize the frame and ensure it's top-left aligned
-    STARTUP+="  (set-frame-parameter nil 'fullscreen 'maximized)"
-    STARTUP+="  (set-frame-parameter nil 'top 0)"
-    STARTUP+="  (set-frame-parameter nil 'left 0)"
+    # STARTUP+="  (set-frame-parameter nil 'fullscreen 'maximized)"
+    # STARTUP+="  (set-frame-parameter nil 'top 0)"
+    # STARTUP+="  (set-frame-parameter nil 'left 0)"
 
     STARTUP+=")"
 

@@ -62,9 +62,9 @@
 ;; Load non-managed packages
 (add-to-list 'load-path "~/.emacs.d/user-packages")
 (load-library "bind-key")
+(load-library "bindings")
 (load-library "line-number")
 (load-library "trim-white-space")
-(load-library "bindings")
 (load-library "matching-parenthesis")
 (load-library "switch-to-previous-buffer")
 (load-library "skip-esc-close-split")
@@ -92,6 +92,7 @@
 (el-get-bundle sass-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle org-mode)
+(el-get-bundle js2-mode)
 
 (el-get-bundle column-marker)
 (el-get-bundle flyspell)
