@@ -102,6 +102,7 @@
 (el-get-bundle buffer-move)
 (el-get-bundle company-mode)
 (el-get-bundle expand-region)
+(el-get-bundle ace-jump-mode)
 
 (el-get-bundle helm)
 (el-get-bundle helm-ag)
