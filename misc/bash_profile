@@ -25,3 +25,7 @@ export TERM=xterm-color
 
 alias ls='ls -G'
 alias ll='ls -hl'
+
+if [ -f ~/.bash_profile.local ]; then
+  source ~/.bash_profile.local
+fi
