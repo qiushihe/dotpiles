@@ -49,3 +49,4 @@ mutt/cache/*
 !mutt/cache/.gitkeep
 mutt/certificates/*
 !mutt/certificates/.gitkeep
+emacs/url/cache
