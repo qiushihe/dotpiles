@@ -95,7 +95,6 @@
 (el-get-bundle sass-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle org-mode)
-(el-get-bundle js2-mode)
 
 (el-get-bundle column-marker)
 (el-get-bundle flyspell)
