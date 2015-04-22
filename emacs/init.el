@@ -53,9 +53,6 @@
 ;; Thin cursor
 (setq-default cursor-type 'bar)
 
-;; Highlight current line
-(global-hl-line-mode)
-
 ;; Show full file path in frame title
 (setq frame-title-format '(buffer-file-name "%f" (dired-directory dired-directory "%b")))
 
