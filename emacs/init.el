@@ -53,6 +53,9 @@
 ;; Thin cursor
 (setq-default cursor-type 'bar)
 
+;; Highlight current line
+(global-hl-line-mode)
+
 ;; Show full file path in frame title
 (setq frame-title-format '(buffer-file-name "%f" (dired-directory dired-directory "%b")))
 
@@ -69,6 +72,7 @@
 (load-library "switch-to-previous-buffer")
 (load-library "skip-esc-close-split")
 (load-library "smarter-move-beginning-of-line")
+(load-library "maximize-frame")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
@@ -150,10 +154,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(linum-format (quote dynamic)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(column-marker-3 ((t (:foreground "dark red")))))
