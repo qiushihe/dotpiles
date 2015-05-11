@@ -115,6 +115,7 @@
 (el-get-bundle elscreen)
 (el-get-bundle elscreen-persist)
 
+(el-get-bundle magit)
 (el-get-bundle hackernews)
 
 (el-get-bundle color-theme-solarized)
