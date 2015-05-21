@@ -1,11 +1,10 @@
 packages: [
-  "package-sync"
-  "language-lisp"
-  "language-viml"
-
+  "editorconfig"
+  "file-icons"
   "highlight-line"
   "highlight-selected"
-
+  "language-lisp"
+  "language-viml"
+  "package-sync"
   "sublime-tabs"
-  "file-icons"
 ]

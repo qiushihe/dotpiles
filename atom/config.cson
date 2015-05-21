@@ -30,3 +30,12 @@
     hideIgnoredNames: false
     showOnRightSide: false
     sortFoldersBeforeFiles: true
+  "file-icons":
+    coloured: false
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "highlight-selected":
+    {}
+".ini.source":
+  editor:
+    preferredLineLength: 100
