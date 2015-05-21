@@ -1,0 +1,32 @@
+"*":
+  "exception-reporting":
+    userId: "0915b6e6-7d53-bdfb-6654-245ce3afb932"
+  welcome:
+    showOnStartup: false
+  core:
+    audioBeep: false
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+    disabledPackages: [
+      "tabs"
+      "tree-view"
+    ]
+  editor:
+    invisibles:
+      {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    preferredLineLength: 100
+    fontFamily: "Monaco"
+    fontSize: 12
+  "one-dark-ui":
+    layoutMode: "Compact"
+  tabs:
+    showIcons: true
+  "tree-view":
+    hideVcsIgnoredFiles: false
+    hideIgnoredNames: false
+    showOnRightSide: false
+    sortFoldersBeforeFiles: true

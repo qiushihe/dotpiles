@@ -58,6 +58,15 @@ Update NeoVim:
   $ brew install gnutls pt ispell
 ```
 
+## Setup atom
+
+```
+  $ rm -f ~/.atom
+  $ ln -sf [DOTPILE]/atom ~/.atom
+```
+
+Also install the `package-sync` package.
+
 ## Setup mutt
 
 ```

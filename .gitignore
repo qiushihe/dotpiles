@@ -34,6 +34,19 @@ nvim/filelists/*
 !nvim/filelists/.gitkeep
 
 ##########################
+# Atom
+##########################
+atom/storage
+atom/compile-cache
+atom/dev
+atom/.npm
+atom/.node-gyp
+atom/.apm/*
+!atom/.apm/.apmrc
+atom/packages/*
+!atom/packages/README.md
+
+##########################
 # Mutt
 ##########################
 
