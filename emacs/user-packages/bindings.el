@@ -10,9 +10,6 @@
 (global-unset-key (kbd "s-q"))
 (global-unset-key (kbd "s-k"))
 
-;; Rebind kill-this-buffer
-(bind-key* "C-c b d" 'kill-this-buffer)
-
 ;; Rebind create/delete frame
 (bind-key* "C-c f c" 'new-frame)
 (bind-key* "C-c f d" 'delete-frame)

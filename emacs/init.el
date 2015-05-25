@@ -4,6 +4,7 @@
 ;; Disable splash screen/message
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
+(setq initial-scratch-message "")
 
 ;; Disable lockfile for unsaved buffers
 (setq create-lockfiles nil)
@@ -76,6 +77,7 @@
 (load-library "skip-esc-close-split")
 (load-library "smarter-move-beginning-of-line")
 (load-library "maximize-frame")
+(load-library "kill-some-buffers")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
