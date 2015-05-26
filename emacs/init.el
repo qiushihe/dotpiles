@@ -132,12 +132,14 @@
 (add-hook 'after-make-frame-functions
   (lambda (frame)
     (select-frame frame)
-    (set-face-attribute 'fringe nil
-      :background (face-attribute 'default :background)
-      :foreground (face-attribute 'fringe :foreground))
-    (set-face-attribute 'linum nil
-      :background (face-attribute 'default :background)
-      :foreground (face-attribute 'linum :foreground) :slant 'normal)
+    (if (display-graphic-p) (progn
+      (set-face-attribute 'fringe frame
+        :background (face-attribute 'default :background)
+        :foreground (face-attribute 'fringe :foreground))
+      (set-face-attribute 'linum frame
+        :background (face-attribute 'default :background)
+        :foreground (face-attribute 'linum :foreground) :slant 'normal)
+    ))
   )
 )
 
