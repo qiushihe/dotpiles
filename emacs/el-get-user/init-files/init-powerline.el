@@ -61,30 +61,22 @@
 
 (setq powerline-default-separator 'arrow)
 
-(defun my/colour-opt (opt colour1 colour2)
+(defun my/colour-diff (colour1 colour2)
   (let*
     (
       (rgb1 (color-name-to-rgb colour1))
       (rgb2 (color-name-to-rgb colour2))
     )
     (color-rgb-to-hex
-      (funcall opt (nth 0 rgb1) (nth 0 rgb2))
-      (funcall opt (nth 1 rgb1) (nth 1 rgb2))
-      (funcall opt (nth 2 rgb1) (nth 2 rgb2))
+      (- (nth 0 rgb1) (nth 0 rgb2))
+      (- (nth 1 rgb1) (nth 1 rgb2))
+      (- (nth 2 rgb1) (nth 2 rgb2))
     )
   )
 )
 
-(defun my/correct-srgb (display-correct display-wrong spec-correct)
-  (let*
-    (
-      (display-diff (my/colour-opt '- display-correct spec-correct))
-      (offset-wrong (my/colour-opt '- display-wrong   display-diff))
-      (spec-diff    (my/colour-opt '- offset-wrong    spec-correct))
-      (correct-diff (my/colour-opt '+ spec-diff       display-diff))
-    )
-    (my/colour-opt '- spec-correct correct-diff)
-  )
+(defun my/correct-srgb (display-wrong spec-correct)
+  (my/colour-diff spec-correct (my/colour-diff display-wrong spec-correct))
 )
 
 (defun my-pl-background-color (orig-fun &rest args)
@@ -94,13 +86,28 @@
       (res (apply orig-fun args))
     )
     (cond
-      ((string= name "mode-line")           (my/correct-srgb "#92A1A1" "#A4B0B0" res))
-      ((string= name "powerline-active1")   (my/correct-srgb "#657B83" "#788E95" res))
-      ((string= name "powerline-active2")   (my/correct-srgb "#839496" "#96A5A6" res))
-      ((string= name "mode-line-inactive")  (my/correct-srgb "#657B83" "#788E95" res))
-      ((string= name "powerline-inactive1") (my/correct-srgb "#073642" "#014554" res))
-      ((string= name "powerline-inactive2") (my/correct-srgb "#586E75" "#6A8188" res))
-      (t res)
+      ((string= frame-background-mode 'dark)
+        (cond
+          ((string= name "mode-line")           (my/correct-srgb "#A4B0B0" res))
+          ((string= name "powerline-active1")   (my/correct-srgb "#788E95" res))
+          ((string= name "powerline-active2")   (my/correct-srgb "#96A5A6" res))
+          ((string= name "mode-line-inactive")  (my/correct-srgb "#788E95" res))
+          ((string= name "powerline-inactive1") (my/correct-srgb "#014554" res))
+          ((string= name "powerline-inactive2") (my/correct-srgb "#6A8188" res))
+          (t res)
+        )
+      )
+      (t
+        (cond
+          ((string= name "mode-line")           (my/correct-srgb "#6A8188" res))
+          ((string= name "powerline-active1")   (my/correct-srgb "#96A5A6" res))
+          ((string= name "powerline-active2")   (my/correct-srgb "#788E95" res))
+          ((string= name "mode-line-inactive")  (my/correct-srgb "#96A5A6" res))
+          ((string= name "powerline-inactive1") (my/correct-srgb "#F2ECDD" res))
+          ((string= name "powerline-inactive2") (my/correct-srgb "#A4B0B1" res))
+          (t res)
+        )
+      )
     )
   )
 )
