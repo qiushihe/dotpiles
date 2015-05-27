@@ -121,11 +121,10 @@
 (el-get-bundle elscreen-persist)
 
 (el-get-bundle color-theme-solarized)
-;; (el-get-bundle powerline)
+(el-get-bundle powerline)
 
 ;; Solarized - Set to dark theme
 (setq frame-background-mode 'dark)
-;(setq ns-use-srgb-colorspace nil)
 
 ;; Load theme
 (load-theme 'solarized t)
@@ -141,16 +140,6 @@
       (set-face-attribute 'linum frame
         :background (face-attribute 'default :background)
         :foreground (face-attribute 'linum :foreground) :slant 'normal)
-
-      ;; (set-face-attribute 'powerline-active1 nil
-      ;;   :background "red"
-      ;;   :foreground "dark red")
-      ;; (set-face-attribute 'powerline-active2 nil
-      ;;   :background "blue"
-      ;;   :foreground "dark blue")
-      ;; (set-face-attribute 'mode-line nil
-      ;;   :background "green"
-      ;;   :foreground "darkgreen")
     ))
   )
 )
