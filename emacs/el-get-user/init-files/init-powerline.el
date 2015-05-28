@@ -59,9 +59,7 @@
   )
 )
 
-;; Set sRGB fix theme name
-(setq powerline-srgb-offset-theme "solarized-dark")
-;; ... then apply sRGB colour fix advice before activating theme
-(advice-add 'pl/background-color :around #'powerline-srgb-offset-advice-pl-background-color)
+;; Apply sRGB colour fix for powerline and solarized
+(powerline-srgb-offset-activate "solarized-dark")
 
 (my-powerline-default-theme)

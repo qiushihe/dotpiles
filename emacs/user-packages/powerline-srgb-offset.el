@@ -1,3 +1,37 @@
+;;; powerline-srgb-offset.el --- Fix Powerline sRGB Colour for OS X
+
+;; Copyright (C) 2015 Billy He
+
+;; Author: Billy He <qiushihe@me.com>
+;; URL: https://github.com/qiushihe/dotpiles/blob/master/emacs/user-packages/powerline-srgb-offset.el
+
+;;; Commentary:
+;;
+;; Be sure to activate the fix *before* activating a powerline theme:
+;;
+;; (load-library "powerline-srgb-offset")
+;; (powerline-srgb-offset-activate "solarized-dark")
+;; (powerline-default-theme)
+;;
+;; To register colours for additional themes:
+;;
+;; (powerline-srgb-offset-add-theme
+;;   "solarized-light"
+;;     '('("mode-line" "#6A8188")
+;;     '("powerline-active1" "#96A5A6")
+;;     '("powerline-active2" "#788E95")
+;;     '("mode-line-inactive" "#96A5A6")
+;;     '("powerline-inactive1" "#F2ECDD")
+;;     '("powerline-inactive2" "#A4B0B1")))
+;;
+;; The colour values above should be the *wrong* colours displayed.
+
+;; Note: You may load this extension before powerline is loaded as long as powerline is loaded by
+;;       the time you activate the fix.
+;;
+
+;;; Code:
+
 (setq powerline-srgb-offset-themes (make-hash-table :test 'equal))
 
 (setq powerline-srgb-offset-theme nil)
@@ -31,6 +65,10 @@
     (colour (and theme (gethash (prin1-to-string name) theme))))
     (or (and colour (powerline-srgb-offset-fix-colour colour res)) res)))
 
+(defun powerline-srgb-offset-activate (theme)
+  (setq powerline-srgb-offset-theme theme)
+  (advice-add 'pl/background-color :around #'powerline-srgb-offset-advice-pl-background-color))
+
 (powerline-srgb-offset-add-theme
   "solarized-dark"
   '('("mode-line" "#A4B0B0")
@@ -48,3 +86,5 @@
     '("mode-line-inactive" "#96A5A6")
     '("powerline-inactive1" "#F2ECDD")
     '("powerline-inactive2" "#A4B0B1")))
+
+;;; powerline-srgb-offset.el ends here
