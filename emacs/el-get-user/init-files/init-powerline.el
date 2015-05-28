@@ -59,76 +59,9 @@
   )
 )
 
-(setq powerline-default-separator 'arrow)
-
-;; Create hash tables to hold the *incorrectly* displayed colours
-(setq my-pl-incorrect-colour-tables (make-hash-table :test 'equal))
-
-;; Set this variable to control which colour table to calculation
-;; colour corrections from
-(setq my-pl-use-incorrect-colour-table nil)
-
-(defun my-pl-set-incorrect-colour-table (name colours)
-  (let (
-    (table (make-hash-table :test 'equal))
-  )
-    (mapc (lambda (colour)
-      (puthash (nth 0 (nth 1 colour)) (nth 1 (nth 1 colour)) table)
-    ) colours)
-    (puthash name table my-pl-incorrect-colour-tables)
-  )
-)
-
-(defun my/colour-diff (colour1 colour2)
-  (let (
-    (rgb1 (color-name-to-rgb colour1))
-    (rgb2 (color-name-to-rgb colour2))
-  )
-    (color-rgb-to-hex
-      (- (nth 0 rgb1) (nth 0 rgb2))
-      (- (nth 1 rgb1) (nth 1 rgb2))
-      (- (nth 2 rgb1) (nth 2 rgb2))
-    )
-  )
-)
-
-(defun my/correct-srgb (display-wrong spec-correct)
-  (my/colour-diff spec-correct (my/colour-diff display-wrong spec-correct))
-)
-
-(defun my-pl-background-color (orig-fun &rest args)
-  (let* (
-    (name (nth 0 args))
-    (res (apply orig-fun args))
-    (colour-table (and
-      my-pl-use-incorrect-colour-table
-      (gethash my-pl-use-incorrect-colour-table my-pl-incorrect-colour-tables)
-    ))
-    (table-colour (and colour-table (gethash (prin1-to-string name) colour-table)))
-  )
-    (or (and table-colour (my/correct-srgb table-colour res)) res)
-  )
-)
-(advice-add 'pl/background-color :around #'my-pl-background-color)
-
-(my-pl-set-incorrect-colour-table "solarized-dark" '(
-  '("mode-line" "#A4B0B0")
-  '("powerline-active1" "#788E95")
-  '("powerline-active2" "#96A5A6")
-  '("mode-line-inactive" "#788E95")
-  '("powerline-inactive1" "#014554")
-  '("powerline-inactive2" "#6A8188")
-))
-
-(my-pl-set-incorrect-colour-table "solarized-light" '(
-  '("mode-line" "#6A8188")
-  '("powerline-active1" "#96A5A6")
-  '("powerline-active2" "#788E95")
-  '("mode-line-inactive" "#96A5A6")
-  '("powerline-inactive1" "#F2ECDD")
-  '("powerline-inactive2" "#A4B0B1")
-))
-
-(setq my-pl-use-incorrect-colour-table "solarized-dark")
+;; Set sRGB fix theme name
+(setq powerline-srgb-offset-theme "solarized-dark")
+;; ... then apply sRGB colour fix advice before activating theme
+(advice-add 'pl/background-color :around #'powerline-srgb-offset-advice-pl-background-color)
 
 (my-powerline-default-theme)

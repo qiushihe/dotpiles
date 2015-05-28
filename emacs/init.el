@@ -78,6 +78,7 @@
 (load-library "smarter-move-beginning-of-line")
 (load-library "maximize-frame")
 (load-library "kill-some-buffers")
+(load-library "powerline-srgb-offset")
 
 (load-library "normalize-indent")
 (normalize-indent-global-mode)
