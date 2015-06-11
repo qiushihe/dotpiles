@@ -100,6 +100,7 @@
 (el-get-bundle handlebars-mode)
 (el-get-bundle markdown-mode)
 (el-get-bundle sass-mode)
+(el-get-bundle scss-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle org-mode)
 (el-get-bundle web-mode)
@@ -150,6 +151,9 @@
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
 (add-to-list 'default-frame-alist '(font . "Monaco-14"))
+
+;; Manual file type association
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . scss-mode))
 
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
