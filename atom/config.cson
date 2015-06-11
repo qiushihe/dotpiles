@@ -20,13 +20,14 @@
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:
-    showIcons: true
     usePreviewTabs: true
   "file-icons":
     coloured: false
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
+    {}
+  "status-bar":
     {}
 ".ini.source":
   editor:
