@@ -29,6 +29,13 @@
     {}
   "status-bar":
     {}
+  minimap:
+    plugins:
+      "git-diff": true
+      "highlight-selected": true
+      selection: true
+      bookmarks: true
+      pigments: true
 ".ini.source":
   editor:
     preferredLineLength: 100

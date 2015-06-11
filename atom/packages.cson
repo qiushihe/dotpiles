@@ -1,9 +1,18 @@
 packages: [
+  "color-picker"
   "editorconfig"
   "file-icons"
   "highlight-line"
   "highlight-selected"
   "language-lisp"
   "language-viml"
+  "minimap"
+  "minimap-bookmarks"
+  "minimap-find-and-replace"
+  "minimap-git-diff"
+  "minimap-highlight-selected"
+  "minimap-pigments"
+  "minimap-selection"
   "package-sync"
+  "pigments"
 ]
