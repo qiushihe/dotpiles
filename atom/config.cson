@@ -9,10 +9,6 @@
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
-    disabledPackages: [
-      "tabs"
-      "tree-view"
-    ]
   editor:
     invisibles:
       {}
@@ -20,16 +16,12 @@
     showIndentGuide: true
     preferredLineLength: 100
     fontFamily: "Monaco"
-    fontSize: 12
+    fontSize: 14
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:
     showIcons: true
-  "tree-view":
-    hideVcsIgnoredFiles: false
-    hideIgnoredNames: false
-    showOnRightSide: false
-    sortFoldersBeforeFiles: true
+    usePreviewTabs: true
   "file-icons":
     coloured: false
   "highlight-line":

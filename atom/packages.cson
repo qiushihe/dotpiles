@@ -6,5 +6,4 @@ packages: [
   "language-lisp"
   "language-viml"
   "package-sync"
-  "sublime-tabs"
 ]

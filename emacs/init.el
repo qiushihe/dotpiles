@@ -149,7 +149,7 @@
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
-(add-to-list 'default-frame-alist '(font . "Monaco-12"))
+(add-to-list 'default-frame-alist '(font . "Monaco-14"))
 
 ;; Enable disabled commands
 (put 'scroll-left 'disabled nil)
