@@ -1,4 +1,5 @@
 packages: [
+  "atom-beautify"
   "color-picker"
   "editorconfig"
   "file-icons"

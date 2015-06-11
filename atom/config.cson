@@ -10,25 +10,21 @@
       "solarized-dark-syntax"
     ]
   editor:
-    invisibles:
-      {}
+    invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
     preferredLineLength: 100
     fontFamily: "Monaco"
     fontSize: 14
-  "one-dark-ui":
-    {}
+  "one-dark-ui": {}
   tabs:
     usePreviewTabs: true
   "file-icons":
     coloured: false
   "highlight-line":
     hideHighlightOnSelect: true
-  "highlight-selected":
-    {}
-  "status-bar":
-    {}
+  "highlight-selected": {}
+  "status-bar": {}
   minimap:
     plugins:
       "git-diff": true
@@ -36,6 +32,7 @@
       selection: true
       bookmarks: true
       pigments: true
+      "find-and-replace": true
 ".ini.source":
   editor:
     preferredLineLength: 100
