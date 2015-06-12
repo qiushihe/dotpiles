@@ -33,6 +33,7 @@
       bookmarks: true
       pigments: true
       "find-and-replace": true
+  "expand-region": {}
 ".ini.source":
   editor:
     preferredLineLength: 100

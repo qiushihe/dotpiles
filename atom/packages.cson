@@ -2,6 +2,7 @@ packages: [
   "atom-beautify"
   "color-picker"
   "editorconfig"
+  "expand-region"
   "file-icons"
   "highlight-line"
   "highlight-selected"
