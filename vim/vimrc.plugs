@@ -1,16 +1,19 @@
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'mhinz/vim-signify'
+
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-haml'
-Plug 'sjl/badwolf'
-Plug 'vim-scripts/AutoComplPop'
+Plug 'wavded/vim-stylus'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'mhinz/vim-signify'
+
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -23,6 +26,8 @@ Plug 'qiushihe/unite-filelist'
 
 "Plug '~/Projects/wmyy.vim'
 Plug 'qiushihe/wmyy.vim'
+
+Plug 'sjl/badwolf'
 call plug#end()
 
 " Configure lightline/vim-gitbranch
