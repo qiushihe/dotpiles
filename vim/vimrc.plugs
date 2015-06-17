@@ -6,6 +6,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mhinz/vim-signify'
+Plug 'terryma/vim-expand-region'
 
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-haml'
@@ -68,10 +69,6 @@ let g:vimwiki_list = [{
 " Configure Bbye
 map <leader>bd :Bdelete!<CR>
 
-" Configure badwolf
-let g:badwolf_darkgutter = 1
-colorscheme badwolf
-
 " Configure AutoComplPop
 " Disable AutoComplpop in unite buffers
 function NoOps(context)
@@ -117,3 +114,9 @@ nnoremap <leader><S-Up> :WmyySwapUp<CR>
 nnoremap <leader><S-Down> :WmyySwapDown<CR>
 nnoremap <leader><S-Left> :WmyySwapLeft<CR>
 nnoremap <leader><S-Right> :WmyySwapRight<CR>
+
+" Configure badwolf
+let g:badwolf_darkgutter = 1
+
+" Set active colour scheme
+colorscheme badwolf

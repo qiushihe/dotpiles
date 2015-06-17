@@ -1,5 +1,8 @@
 set nocompatible
 
+" Disable startup message
+set shortmess+=I
+
 " Disable swap files
 set noswapfile
 set nobackup
