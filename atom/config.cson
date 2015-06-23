@@ -4,18 +4,17 @@
   welcome:
     showOnStartup: false
   core:
-    audioBeep: false
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
+    audioBeep: false
   editor:
-    invisibles: {}
-    scrollPastEnd: true
+    fontFamily: "Monaco"
     showIndentGuide: true
     preferredLineLength: 100
-    fontFamily: "Monaco"
-    fontSize: 14
+    scrollPastEnd: true
+    invisibles: {}
   "one-dark-ui": {}
   tabs:
     usePreviewTabs: true
