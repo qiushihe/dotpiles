@@ -56,6 +56,7 @@ Update NeoVim:
   $ ln -sf [DOTPILE]/emacs ~/.emacs.d
   $ ln -sf [DOTPILE]/emacs/emacsl.sh /usr/local/bin/emacsl
   $ brew install gnutls pt ispell
+  $ ln -sf /usr/local/bin/pt /usr/local/bin/ag
 ```
 
 ## Setup atom
