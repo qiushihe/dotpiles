@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-bbye'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mhinz/vim-signify'
@@ -58,14 +56,6 @@ let NERDTreeWinSize = 36
 let NERDTreeShowHidden = 1
 map <leader>T :NERDTreeTabsToggle<CR>
 
-" Configure VimWiki
-let g:vimwiki_map_prefix = '<leader>vw'
-let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [{
-  \ 'path': '~/Dropbox/Wiki/',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md' }]
-
 " Configure Bbye
 map <leader>bd :Bdelete!<CR>
 
@@ -110,10 +100,10 @@ let g:signify_sign_delete = '_'
 let g:signify_sign_delete_first_line = '‾'
 
 " Configure Wmyy
-nnoremap <leader><S-Up> :WmyySwapUp<CR>
-nnoremap <leader><S-Down> :WmyySwapDown<CR>
-nnoremap <leader><S-Left> :WmyySwapLeft<CR>
-nnoremap <leader><S-Right> :WmyySwapRight<CR>
+nnoremap <leader><S-K> :WmyySwapUp<CR>
+nnoremap <leader><S-J> :WmyySwapDown<CR>
+nnoremap <leader><S-H> :WmyySwapLeft<CR>
+nnoremap <leader><S-L> :WmyySwapRight<CR>
 
 " Configure badwolf
 let g:badwolf_darkgutter = 1

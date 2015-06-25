@@ -36,14 +36,14 @@ map <leader>sv :vsplit<CR>
 map <leader>sh :split<CR>
 
 " Window Navigation
-map <leader><Up> <C-W>k
-map <leader><Down> <C-W>j
-map <leader><Left> <C-W>h
-map <leader><Right> <C-W>l
+map <leader>k <C-W>k
+map <leader>j <C-W>j
+map <leader>h <C-W>h
+map <leader>l <C-W>l
 
 " Window Resizing
-map <C-S-Up> <C-W>-
-map <C-S-Down> <C-W>+
-map <C-S-Left> <C-W><
-map <C-S-Right> <C-W>>
+map <C-S-K> <C-W>-
+map <C-S-J> <C-W>+
+map <C-S-H> <C-W><
+map <C-S-L> <C-W>>
 
