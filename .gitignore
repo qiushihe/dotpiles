@@ -62,3 +62,14 @@ mutt/cache/*
 mutt/certificates/*
 !mutt/certificates/.gitkeep
 emacs/url/cache
+
+##########################
+# Chatty
+##########################
+
+chatty/*.log.*
+chatty/cache
+chatty/logs
+chatty/exported
+chatty/login
+chatty/backup

@@ -77,3 +77,11 @@ Also install the `package-sync` package.
   $ ln -sf [DOTPILE]/mutt ~/.mutt
   $ ln -sf [DOTPILE]/mutt/mailcap ~/.mailcap
 ```
+
+## Setup Chatty (and livestreamer)
+
+```
+  $ easy_install -U livestreamer
+```
+
+And download Chatty from: http://getchatty.sourceforge.net
