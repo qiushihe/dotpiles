@@ -32,6 +32,9 @@
 ;; Disable ruby magic encoding comment
 (setq ruby-insert-encoding-magic-comment nil)
 
+;; Disable line truncation indicators
+(setf (cdr (assoc 'truncation fringe-indicator-alist)) '(nil nil))
+
 ;; Always show matching parenthesis
 (setq show-paren-delay 0)
 (show-paren-mode t)
