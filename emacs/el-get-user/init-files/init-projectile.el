@@ -9,30 +9,35 @@
   (helm-projectile-toggle 1)
 ))
 
-;; Advice projectile-root-bottom-up to short circuit and return the value
-;; of 'working-directory frame variable, defined by the emacsl script.
-;; This gets around the issue of projectile incorrectly assuming submodule
-;; root to be project root when inside a submodule in a project.
-;; This method of advising projectile-root-bottom-up allows dynamic project
-;; detection without having to create the .projectile file.
-;;
-;; TODO: Improve submodule detection with:
-;; if (cd ~/Projects/cart-checkout/atlas-common/frontend && cd "$(git rev-parse --show-toplevel 2> /dev/null)/.." && git rev-parse --is-inside-work-tree 2> /dev/null) | grep -q true; then echo "yes"; else echo "no"; fi
-;; if (cd ~/Downloads && git rev-parse --is-inside-work-tree 2> /dev/null) | grep -q true; then echo "yes"; else echo "no"; fi
 (defun my-projectile-path-is-git-repo (path)
   "Determine if the given path is for/inside a git repo."
-  (shell-command-to-string (format
+  (> (length (shell-command-to-string (format
     "if (cd %s 2> /dev/null && git rev-parse --is-inside-work-tree 2> /dev/null) | grep -q true; then printf 1; fi"
     path
-  ))
+  ))) 0)
 )
 
 (defun my-projectile-path-is-git-submodule (path)
   "Determine if the given path is for/inside a git submodule."
-  (shell-command-to-string (format
+  (> (length (shell-command-to-string (format
     "if (cd %s 2> /dev/null && cd \"$(git rev-parse --show-toplevel 2> /dev/null)/..\" && git rev-parse --is-inside-work-tree 2> /dev/null) | grep -q true; then printf 1; fi"
     path
-  ))
+  ))) 0)
+)
+
+(defun my-projectile-path-git-repo-root (path)
+  "Return the repo root path for a given path of/inside a git repo."
+  (replace-regexp-in-string "\n+$" "" (shell-command-to-string (format
+    "cd %s 2> /dev/null && git rev-parse --show-toplevel"
+    path
+  )))
+)
+
+(defun my-projectile-path-git-submodule-repo-root (path)
+  (if (my-projectile-path-is-git-submodule path)
+    (my-projectile-path-git-submodule-repo-root (my-projectile-path-parent-path path))
+    (my-projectile-path-git-repo-root path)
+  )
 )
 
 (defun my-projectile-path-parent-path (path)
@@ -48,11 +53,14 @@
 (defun my-projectile-root-bottom-up (orig-fun &rest args)
   "Advice for projectile root bottom-up searching function to work around an issue with git submodule detection."
   (let (
-    (working-directory (cwd-get-frame-working-directory (selected-frame)))
+    (dir (nth 0 args))
   )
-    (if working-directory
-      (my-projectile-path-with-trailing-slash working-directory)
-      (apply orig-fun args)
+    (if (my-projectile-path-is-git-submodule dir)
+      (my-projectile-path-with-trailing-slash (my-projectile-path-git-submodule-repo-root dir))
+      (if (my-projectile-path-is-git-repo dir)
+        (my-projectile-path-with-trailing-slash (my-projectile-path-git-repo-root dir))
+        (apply orig-fun args)
+      )
     )
   )
 )
