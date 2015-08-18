@@ -33,6 +33,9 @@
       pigments: true
       "find-and-replace": true
   "expand-region": {}
+  "merge-conflicts":
+    gitPath: "/usr/bin/git"
+  pigments: {}
 ".ini.source":
   editor:
     preferredLineLength: 100
