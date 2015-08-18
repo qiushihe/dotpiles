@@ -102,13 +102,6 @@ else
     # * Set frame working directory (see user-packages/current-working-directory.el)
     STARTUP+="  (cwd-set-frame-working-directory (selected-frame) \"`pwd`\")"
 
-    # * Declare a 'working-directory' frame-local variable (and it's okay to do that multiple times)
-    #   so that other plugins (such as my custom neotree toggle script) can use to find out what the
-    #   current working directory for this frame is.
-    STARTUP+="  (make-variable-frame-local 'working-directory)"
-    STARTUP+="  (modify-frame-parameters nil '((working-directory . \"`pwd`\")))"
-    STARTUP+="  (cd working-directory)"
-
     # * Maximize the frame and ensure it's top-left aligned
     # STARTUP+="  (set-frame-parameter nil 'fullscreen 'maximized)"
     # STARTUP+="  (set-frame-parameter nil 'top 0)"

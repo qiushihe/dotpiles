@@ -1,4 +1,3 @@
-;; Declare variables
 (make-variable-frame-local 'cwd-frame-working-dir)
 
 (add-hook 'after-make-frame-functions (lambda (frame)
@@ -16,30 +15,4 @@
   (frame-parameter frame 'cwd-frame-working-dir)
 )
 
-(add-hook 'window-configuration-change-hook (lambda ()
-  ;; (make-local-variable 'cwd-buffer-working-dir)
-
-  ;; (message "INSIDE window-configuration-change-hook: %s ... %s" cwd-buffer-working-dir (cwd-get-frame-working-directory (selected-frame)))
-  ;;(if (not cwd-buffer-working-dir)
-  ;;  (message "SETTING cwd-buffer-working-dir for %s to: %s" (buffer-name) (cwd-get-frame-working-directory (selected-frame)))
-  ;;  (setq cwd-buffer-working-dir (cwd-get-frame-working-directory (selected-frame)))
-  ;;)
-))
-
-(add-hook 'after-change-major-mode-hook (lambda ()
-  ;;(if (not cwd-buffer-working-dir)
-  ;;  (message "SETTING cwd-buffer-working-dir for %s to: %s" (buffer-name) (cwd-get-frame-working-directory (selected-frame)))
-  ;;  (setq cwd-buffer-working-dir (cwd-get-frame-working-directory (selected-frame)))
-  ;;)
-  ;; (defvar-local cwd-buffer-working-dir "LALA")
-  ;; (message "FOR %s cwd-buffer-working-dir is %s" (buffer-name) cwd-buffer-working-dir)
-
-  ;;(if (not (boundp 'cwd-buffer-working-dir))
-  ;;  (message "SETTING cwd-buffer-working-dir for %s to: %s" (buffer-name) (cwd-get-frame-working-directory (selected-frame)))
-  ;;  (defvar-local cwd-buffer-working-dir (cwd-get-frame-working-directory (selected-frame)))
-  ;;)
-))
-
-;; (defvar-local lala "LALA")
-;; (buffer-local-value 'lala  (current-buffer))
-;; (buffer-local-value 'cwd-buffer-working-dir  (current-buffer))
+(provide 'current-working-directory)

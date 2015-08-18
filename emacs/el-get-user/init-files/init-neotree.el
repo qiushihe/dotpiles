@@ -1,14 +1,18 @@
+(require 'current-working-directory) ; See user-packages/current-working-directory.el
+
 (setq neo-window-width 39)
 (setq neo-persist-show nil)
 
 (defun my-neotree-toggle ()
   (interactive)
-  (if (boundp 'working-directory)
-    (progn
-      (neotree-toggle)
-      (neo-buffer--change-root working-directory)
-    )
-    (progn
+  (let (
+    (working-directory (cwd-get-frame-working-directory (selected-frame)))
+  )
+    (if working-directory
+      (progn
+        (neotree-toggle)
+        (neo-buffer--change-root working-directory)
+      )
       (neotree-toggle)
     )
   )
