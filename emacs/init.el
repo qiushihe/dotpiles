@@ -79,8 +79,8 @@
 (load-library "maximize-frame")
 (load-library "kill-some-buffers")
 (load-library "powerline-srgb-offset")
-
 (load-library "normalize-indent")
+(load-library "current-working-directory")
 (normalize-indent-global-mode)
 
 ;; Managed packages via el-get

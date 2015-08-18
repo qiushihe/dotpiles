@@ -89,7 +89,7 @@ else
 
   # If this script is called without any argument ...
   if [ -z "$1" ]; then
-    # Then prepare a startup script that:
+    # Then prepare a startup script (which is run after init.el) that:
     STARTUP="(progn"
 
     # * Switch the new frame to the "scratch" buffer (so we're not looking at some random buffer
@@ -98,6 +98,9 @@ else
 
     # * Ensure the newly created frame has focus
     STARTUP+="  (select-frame-set-input-focus (selected-frame))"
+
+    # * Set frame working directory (see user-packages/current-working-directory.el)
+    STARTUP+="  (cwd-set-frame-working-directory (selected-frame) \"`pwd`\")"
 
     # * Declare a 'working-directory' frame-local variable (and it's okay to do that multiple times)
     #   so that other plugins (such as my custom neotree toggle script) can use to find out what the

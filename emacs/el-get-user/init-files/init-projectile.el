@@ -17,3 +17,14 @@
   )
 )
 (advice-add 'projectile-root-bottom-up :around #'my-projectile-root-bottom-up)
+
+;; Advice for projectile-switch-project-by-name to update the 'working-directory frame variable
+(defun my-projectile-switch-project-by-name (orig-fun &rest args)
+  (let (
+    (project-to-switch (car args))
+  )
+    (modify-frame-parameters nil (list (cons 'working-directory project-to-switch)))
+  )
+  (apply orig-fun args)
+)
+(advice-add 'projectile-switch-project-by-name :around #'my-projectile-switch-project-by-name)
