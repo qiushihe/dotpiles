@@ -108,7 +108,7 @@
 (el-get-bundle org-mode)
 (el-get-bundle web-mode)
 
-(el-get-bundle column-marker)
+(el-get-bundle fill-column-indicator)
 (el-get-bundle flyspell)
 (el-get-bundle neotree)
 (el-get-bundle projectile)
