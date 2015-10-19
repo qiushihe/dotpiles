@@ -13,8 +13,8 @@
     fontFamily: "Monaco"
     showIndentGuide: true
     preferredLineLength: 100
-    scrollPastEnd: true
     invisibles: {}
+    scrollPastEnd: true
   "one-dark-ui": {}
   tabs:
     usePreviewTabs: true
@@ -39,3 +39,4 @@
 ".ini.source":
   editor:
     preferredLineLength: 100
+    scrollPastEnd: true

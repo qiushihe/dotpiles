@@ -54,7 +54,7 @@ set title
 set colorcolumn=100
 
 " Set font
-set guifont=Monaco:h12
+set guifont=Monaco:h14
 
 " Set terminal color
 set t_Co=256
