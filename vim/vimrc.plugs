@@ -28,6 +28,7 @@ Plug 'qiushihe/unite-filelist'
 Plug 'qiushihe/wmyy.vim'
 
 Plug 'sjl/badwolf'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " Configure lightline/vim-gitbranch
@@ -109,5 +110,18 @@ nnoremap <leader><S-L> :WmyySwapRight<CR>
 " Configure badwolf
 let g:badwolf_darkgutter = 1
 
+" Configure solarized
+let g:solarized_termtrans = 1
+set background=dark
+
 " Set active colour scheme
-colorscheme badwolf
+colorscheme solarized
+
+" Fix gutter background colour with solarized
+fun! FixSignColumn()
+  highlight clear SignColumn
+  highlight link SignColumn LineNr
+endfun
+
+call FixSignColumn()
+au ColorScheme * call FixSignColumn()
