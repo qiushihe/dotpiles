@@ -7,9 +7,10 @@ Plug 'mhinz/vim-signify'
 Plug 'terryma/vim-expand-region'
 
 Plug 'kchmck/vim-coffee-script'
-Plug 'tpope/vim-haml'
 Plug 'wavded/vim-stylus'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-surround'
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
