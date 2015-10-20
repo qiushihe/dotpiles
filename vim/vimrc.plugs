@@ -11,6 +11,10 @@ Plug 'wavded/vim-stylus'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'svermeulen/vim-easyclip'
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -107,6 +111,10 @@ nnoremap <leader><S-J> :WmyySwapDown<CR>
 nnoremap <leader><S-H> :WmyySwapLeft<CR>
 nnoremap <leader><S-L> :WmyySwapRight<CR>
 
+" Configure easyclip
+let g:EasyClipUseSubstituteDefaults = 1
+let g:EasyClipAutoFormat = 1
+
 " Configure badwolf
 let g:badwolf_darkgutter = 1
 
@@ -118,10 +126,19 @@ set background=dark
 colorscheme solarized
 
 " Fix gutter background colour with solarized
-fun! FixSignColumn()
+fun! FixSolarizedStyles()
+  " Clear styling from lune-number column and sign column
+  highlight clear LineNr
   highlight clear SignColumn
-  highlight link SignColumn LineNr
+
+  " Signify links its styles to the following styles, so we change those
+  " styles to remove background
+  highlight DiffAdd guibg=bg
+  highlight DiffDelete guibg=bg
+  highlight SignifyLineDelete guibg=bg
+  highlight DiffChange guibg=bg
+  highlight SignifyLineChange guibg=bg
 endfun
 
-call FixSignColumn()
-au ColorScheme * call FixSignColumn()
+call FixSolarizedStyles()
+au ColorScheme * call FixSolarizedStyles()
