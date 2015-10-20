@@ -138,6 +138,9 @@ fun! FixSolarizedStyles()
   highlight SignifyLineDelete guibg=bg
   highlight DiffChange guibg=bg
   highlight SignifyLineChange guibg=bg
+
+  " Clear styling for VertSplit
+  highlight VertSplit guifg=fg guibg=bg ctermbg=0
 endfun
 
 call FixSolarizedStyles()
