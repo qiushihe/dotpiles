@@ -127,8 +127,11 @@ colorscheme solarized
 
 " Fix gutter background colour with solarized
 fun! FixSolarizedStyles()
-  " Clear styling from lune-number column and sign column
+  " Customize line-number column style
   highlight clear LineNr
+  highlight LineNr guifg=#586e75
+
+  " Clear style from sign column
   highlight clear SignColumn
 
   " Signify links its styles to the following styles, so we change those
@@ -140,7 +143,7 @@ fun! FixSolarizedStyles()
   highlight SignifyLineChange guibg=bg
 
   " Clear styling for VertSplit
-  highlight VertSplit guifg=fg guibg=bg ctermbg=0
+  highlight VertSplit guifg=#586e75 guibg=bg ctermbg=0
 endfun
 
 call FixSolarizedStyles()
