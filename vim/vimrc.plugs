@@ -9,18 +9,17 @@ Plug 'terryma/vim-expand-region'
 Plug 'kchmck/vim-coffee-script'
 Plug 'wavded/vim-stylus'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-Plug 'svermeulen/vim-easyclip'
+Plug 'tpope/vim-fugitive'
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
+Plug 'bling/vim-airline'
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
@@ -35,24 +34,10 @@ Plug 'sjl/badwolf'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-" Configure lightline/vim-gitbranch
-let g:lightline = {
-  \ 'component': {
-    \ 'gitbranch': '%{"\u2387 " . gitbranch#name()}',
-  \ }
-\ }
-
-let g:lightline.active = {
-  \ 'left': [
-    \ [ 'mode', 'paste' ],
-    \ [ 'gitbranch' ],
-    \ [ 'readonly', 'filename', 'modified' ]
-  \ ], 'right': [
-    \ [ 'lineinfo' ],
-	  \ [ 'percent' ],
-		\ [ 'fileformat', 'fileencoding', 'filetype' ]
-  \ ]
-\ }
+" Configure airline
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#bufferline#enabled = 0
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
