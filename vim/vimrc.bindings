@@ -25,6 +25,9 @@ map <leader>{ :tabprev<CR>
 map <leader>] :bnext<CR>
 map <leader>[ :bprevious<CR>
 
+" Create new buffer in current window
+map <leader>nb :enew<CR>
+
 " Close all windows
 map <leader>xc :qall<CR>
 
