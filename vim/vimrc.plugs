@@ -91,21 +91,21 @@ let g:signify_sign_delete = '_'
 let g:signify_sign_delete_first_line = '‾'
 
 " Configure Wmyy
-" nnoremap <leader>wt :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert filelist<CR>
-" nnoremap <leader>wb :WmyyNewWindow<CR> :enew<CR>
+nnoremap <leader>wt :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert filelist<CR>
+nnoremap <leader>wb :WmyyNewWindow<CR> :enew<CR>
 
-" nnoremap <leader>ws :WmyyNewWindow<CR>
-" nnoremap <leader>wd :WmyyCloseWindow<CR>
+nnoremap <leader>wn :WmyyNewWindow<CR>
+nnoremap <leader>wd :WmyyCloseWindow<CR>
 
-" nnoremap <leader>k :WmyyFocusUp<CR>
-" nnoremap <leader>j :WmyyFocusDown<CR>
-" nnoremap <leader>h :WmyyFocusLeft<CR>
-" nnoremap <leader>l :WmyyFocusRight<CR>
+nnoremap <leader>k :WmyyFocusUp<CR>
+nnoremap <leader>j :WmyyFocusDown<CR>
+nnoremap <leader>h :WmyyFocusLeft<CR>
+nnoremap <leader>l :WmyyFocusRight<CR>
 
-" nnoremap <leader><C-k> :WmyyMoveUp<CR>
-" nnoremap <leader><C-j> :WmyyMoveDown<CR>
-" nnoremap <leader><C-h> :WmyyMoveLeft<CR>
-" nnoremap <leader><C-l> :WmyyMoveRight<CR>
+nnoremap <leader><C-k> :WmyyMoveUp<CR>
+nnoremap <leader><C-j> :WmyyMoveDown<CR>
+nnoremap <leader><C-h> :WmyyMoveLeft<CR>
+nnoremap <leader><C-l> :WmyyMoveRight<CR>
 
 nnoremap <leader><S-K> :WmyySwapUp<CR>
 nnoremap <leader><S-J> :WmyySwapDown<CR>

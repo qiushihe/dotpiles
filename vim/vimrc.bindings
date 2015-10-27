@@ -32,20 +32,20 @@ map <leader>nb :enew<CR>
 map <leader>xc :qall<CR>
 
 " Close window
-map <leader>wd :close<CR>
+"map <leader>wd :close<CR>
 
 " Window Split
-map <leader>sv :vsplit<CR>
-map <leader>sh :split<CR>
+"map <leader>sv :vsplit<CR>
+"map <leader>sh :split<CR>
 
 " Window Navigation
-map <leader>k <C-W>k
-map <leader>j <C-W>j
-map <leader>h <C-W>h
-map <leader>l <C-W>l
+"map <leader>k <C-W>k
+"map <leader>j <C-W>j
+"map <leader>h <C-W>h
+"map <leader>l <C-W>l
 
 " Window Resizing
-map <C-k> <C-W>-
-map <C-j> <C-W>+
-map <C-h> <C-W><
-map <C-l> <C-W>>
+"map <C-k> <C-W>-
+"map <C-j> <C-W>+
+"map <C-h> <C-W><
+"map <C-l> <C-W>>
