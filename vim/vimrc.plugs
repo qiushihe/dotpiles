@@ -98,7 +98,6 @@ nnoremap <leader><S-L> :WmyySwapRight<CR>
 
 " Configure easyclip
 let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipAutoFormat = 1
 
 " Configure badwolf
 let g:badwolf_darkgutter = 1
