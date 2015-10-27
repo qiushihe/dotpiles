@@ -91,9 +91,6 @@ let g:signify_sign_delete = '_'
 let g:signify_sign_delete_first_line = '‾'
 
 " Configure Wmyy
-nnoremap <leader>wt :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert filelist<CR>
-nnoremap <leader>wb :WmyyNewWindow<CR> :enew<CR>
-
 nnoremap <leader>wn :WmyyNewWindow<CR>
 nnoremap <leader>wd :WmyyCloseWindow<CR>
 
@@ -111,6 +108,9 @@ nnoremap <leader><S-K> :WmyySwapUp<CR>
 nnoremap <leader><S-J> :WmyySwapDown<CR>
 nnoremap <leader><S-H> :WmyySwapLeft<CR>
 nnoremap <leader><S-L> :WmyySwapRight<CR>
+
+nnoremap <leader>wt :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert filelist<CR>
+nnoremap <leader>wb :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert buffer<CR>
 
 " Configure easyclip
 let g:EasyClipUseSubstituteDefaults = 1
