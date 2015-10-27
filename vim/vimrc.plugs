@@ -24,10 +24,10 @@ Plug 'bling/vim-airline'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 
-"Plug '~/Projects/unite-filelist'
+" Plug '~/Projects/unite-filelist'
 Plug 'qiushihe/unite-filelist'
 
-"Plug '~/Projects/wmyy.vim'
+" Plug '~/Projects/wmyy.vim'
 Plug 'qiushihe/wmyy.vim'
 
 Plug 'sjl/badwolf'
@@ -92,6 +92,8 @@ let g:signify_sign_delete_first_line = '‾'
 
 " Configure Wmyy
 " nnoremap <leader>wt :WmyyNewWindow<CR> :Unite -no-split -no-resize -start-insert filelist<CR>
+" nnoremap <leader>wb :WmyyNewWindow<CR> :enew<CR>
+
 " nnoremap <leader>ws :WmyyNewWindow<CR>
 " nnoremap <leader>wd :WmyyCloseWindow<CR>
 

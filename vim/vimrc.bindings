@@ -45,8 +45,7 @@ map <leader>h <C-W>h
 map <leader>l <C-W>l
 
 " Window Resizing
-map <C-S-K> <C-W>-
-map <C-S-J> <C-W>+
-map <C-S-H> <C-W><
-map <C-S-L> <C-W>>
-
+map <C-k> <C-W>-
+map <C-j> <C-W>+
+map <C-h> <C-W><
+map <C-l> <C-W>>
