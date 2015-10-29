@@ -22,7 +22,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'bling/vim-airline'
 
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/unite.vim', { 'frozen': 1 }
+Plug 'Shougo/unite.vim', { 'frozen': 1 } " at 4b8bb6c7b0200fb2d22d06d69cd28aa7c5392a0c
 
 " Plug '~/Projects/unite-filelist'
 Plug 'qiushihe/unite-filelist'
