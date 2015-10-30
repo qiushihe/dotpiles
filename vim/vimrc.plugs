@@ -16,7 +16,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-expand-region'
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -60,10 +59,6 @@ let behavs = { 'unite': [] }
 call add(behavs.unite, { 'command': "", 'meets': 'NoOps', 'repeat' : 0, 'onPopupClose': 'NoOps' })
 let g:acp_behavior = {}
 call extend(g:acp_behavior, behavs, 'keep')
-
-" Configure expand region
-nmap } <Plug>(expand_region_expand)
-nmap { <Plug>(expand_region_shrink)
 
 " Configure unite
 call unite#custom#source('file,file_rec,file_rec/async,file_mru,grep', 'ignore_globs', split(&wildignore, ','))
