@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 
-Plug 'moll/vim-bbye'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mhinz/vim-signify'
 Plug 'terryma/vim-expand-region'
@@ -24,6 +23,9 @@ Plug 'bling/vim-airline'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 
+" Plug '~/Projects/vim-bbye'
+Plug 'qiushihe/vim-bbye'
+
 " Plug '~/Projects/unite-filelist'
 Plug 'qiushihe/unite-filelist'
 
@@ -40,6 +42,8 @@ let g:airline_right_sep = ''
 let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':p:t'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Configure NerdTree/Tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -51,6 +55,8 @@ map <leader>T :NERDTreeTabsToggle<CR>
 
 " Configure Bbye
 map <leader>bd :Bdelete!<CR>
+map <leader>bad :Bdeleteall!<CR>
+map <leader>bed :Bdeleteexcept!<CR>
 
 " Configure AutoComplPop
 " Disable AutoComplpop in unite buffers

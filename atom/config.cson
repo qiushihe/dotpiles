@@ -36,6 +36,8 @@
   "merge-conflicts":
     gitPath: "/usr/bin/git"
   pigments: {}
+  "atom-beautify":
+    _analyticsUserId: "ab99a765-2c04-4af5-9aab-ba865d93636e"
 ".ini.source":
   editor:
     preferredLineLength: 100
