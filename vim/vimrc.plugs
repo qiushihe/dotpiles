@@ -4,6 +4,7 @@ Plug 'gmarik/Vundle.vim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mhinz/vim-signify'
 Plug 'terryma/vim-expand-region'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'kchmck/vim-coffee-script'
 Plug 'wavded/vim-stylus'
