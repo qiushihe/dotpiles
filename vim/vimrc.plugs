@@ -3,7 +3,6 @@ Plug 'gmarik/Vundle.vim'
 
 Plug 'vim-scripts/AutoComplPop'
 Plug 'mhinz/vim-signify'
-Plug 'terryma/vim-expand-region'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-surround'
