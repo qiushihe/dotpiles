@@ -1,43 +1,44 @@
 "*":
-  "exception-reporting":
-    userId: "0915b6e6-7d53-bdfb-6654-245ce3afb932"
-  welcome:
-    showOnStartup: false
+  "atom-beautify":
+    _analyticsUserId: "ab99a765-2c04-4af5-9aab-ba865d93636e"
   core:
+    audioBeep: false
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
-    audioBeep: false
   editor:
     fontFamily: "Monaco"
-    showIndentGuide: true
-    preferredLineLength: 100
     invisibles: {}
+    preferredLineLength: 100
     scrollPastEnd: true
-  "one-dark-ui": {}
-  tabs:
-    usePreviewTabs: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "0915b6e6-7d53-bdfb-6654-245ce3afb932"
+  "expand-region": {}
   "file-icons":
     coloured: false
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected": {}
-  "status-bar": {}
-  minimap:
-    plugins:
-      "git-diff": true
-      "highlight-selected": true
-      selection: true
-      bookmarks: true
-      pigments: true
-      "find-and-replace": true
-  "expand-region": {}
   "merge-conflicts":
     gitPath: "/usr/bin/git"
+  minimap:
+    plugins:
+      bookmarks: true
+      "find-and-replace": true
+      "git-diff": true
+      "highlight-selected": true
+      pigments: true
+      selection: true
+  "one-dark-ui": {}
   pigments: {}
-  "atom-beautify":
-    _analyticsUserId: "ab99a765-2c04-4af5-9aab-ba865d93636e"
+  "status-bar": {}
+  tabs:
+    usePreviewTabs: true
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
 ".ini.source":
   editor:
     preferredLineLength: 100

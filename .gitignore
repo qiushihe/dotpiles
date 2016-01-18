@@ -36,6 +36,7 @@ nvim/filelists/*
 ##########################
 # Atom
 ##########################
+atom/blob-store
 atom/storage
 atom/compile-cache
 atom/dev
