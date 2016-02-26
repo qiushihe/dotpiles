@@ -99,6 +99,17 @@
 
 (el-get-bundle el-get)
 
+;; Install el-get-lock before anything else so everything else after this point will be locked
+;; to a specific version.
+(el-get-bundle tarao/el-get-lock)
+(el-get-lock)
+
+;; Install helm before other packages because apparently some packages requires helm-config
+;; during installation for some reason.
+(el-get-bundle helm)
+(el-get-bundle helm-ag)
+(el-get-bundle helm-cmd-t)
+
 (el-get-bundle coffee-mode)
 (el-get-bundle handlebars-mode)
 (el-get-bundle markdown-mode)
@@ -117,10 +128,6 @@
 (el-get-bundle company-mode)
 (el-get-bundle expand-region)
 (el-get-bundle ace-jump-mode)
-
-(el-get-bundle helm)
-(el-get-bundle helm-ag)
-(el-get-bundle helm-cmd-t)
 
 (el-get-bundle elscreen)
 (el-get-bundle elscreen-persist)
