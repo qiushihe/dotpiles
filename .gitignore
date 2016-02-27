@@ -44,6 +44,7 @@ atom/.npm
 atom/.node-gyp
 atom/.apm/*
 atom/packages/*
+atom/blob-store
 !atom/packages/README.md
 
 ##########################
