@@ -9,8 +9,9 @@ fi
 
 if [ -d "$HOME/.nvm" ]
 then
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
+  # Install NVM from https://github.com/creationix/nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
 export PATH="${PATH}:./node_modules/.bin"
