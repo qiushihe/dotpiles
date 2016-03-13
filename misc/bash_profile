@@ -14,7 +14,7 @@ then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
-export PATH="${PATH}:./node_modules/.bin"
+# export PATH=$(npm bin):$PATH
 
 # Sublime Text Alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -a"
@@ -34,3 +34,4 @@ alias ll='ls -hl'
 if [ -f ~/.bash_profile.local ]; then
   source ~/.bash_profile.local
 fi
+

@@ -17,5 +17,6 @@ packages: [
   "minimap-selection"
   "package-sync"
   "pigments"
+  "react"
   "Stylus"
 ]

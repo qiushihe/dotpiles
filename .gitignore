@@ -36,6 +36,7 @@ nvim/filelists/*
 ##########################
 # Atom
 ##########################
+atom/blob-store
 atom/storage
 atom/compile-cache
 atom/dev
@@ -43,6 +44,7 @@ atom/.npm
 atom/.node-gyp
 atom/.apm/*
 atom/packages/*
+atom/blob-store
 !atom/packages/README.md
 
 ##########################
