@@ -26,16 +26,23 @@
   minimap:
     plugins:
       bookmarks: true
+      bookmarksDecorationsZIndex: 0
       "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
+      "git-diffDecorationsZIndex": 0
       "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
       pigments: true
+      pigmentsDecorationsZIndex: 0
       selection: true
+      selectionDecorationsZIndex: 0
   "one-dark-ui": {}
   pigments: {}
   "status-bar": {}
   tabs:
     usePreviewTabs: true
+  "tree-view": {}
   "vim-mode": {}
   welcome:
     showOnStartup: false
