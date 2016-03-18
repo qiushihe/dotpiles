@@ -21,6 +21,5 @@
 ;; Setup individual packages
 (load "~/.emacs.d/package-configs/helm")
 (load "~/.emacs.d/package-configs/projectile")
-
-;; TODO Install https://github.com/m2ym/direx-el instead of neotree
+(load "~/.emacs.d/package-configs/direx")
 (load "~/.emacs.d/package-configs/monokai")
