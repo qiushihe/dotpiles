@@ -14,3 +14,9 @@
   (require 'use-package))
 (require 'diminish)
 (require 'bind-key)
+
+;; Always automatically missing packages
+(setq use-package-always-ensure t)
+
+;; Setup individual packages
+(load "~/.emacs.d/package-configs/helm")
