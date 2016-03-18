@@ -5,7 +5,8 @@
 
 (add-hook 'after-change-major-mode-hook (lambda ()
   (require 'helm-projectile) ; Require so we can call helm-projectile-toggle
-  ;; Call helm-projectile-toggle instead of helm-projectile-on to avoid the annoying message
+  ;; Activate projectile for the current buffer. However, instead of calling helm-projectile-on
+  ;; which produces an annoying message, we call helm-projectile-toggle instead.
   (helm-projectile-toggle 1)
 ))
 
