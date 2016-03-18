@@ -21,3 +21,4 @@
 ;; Setup individual packages
 (load "~/.emacs.d/package-configs/helm")
 (load "~/.emacs.d/package-configs/projectile")
+(load "~/.emacs.d/package-configs/solarized")
