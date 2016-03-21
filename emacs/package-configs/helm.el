@@ -24,3 +24,9 @@
     ("C-c r e" . helm-resume)
   )
 )
+
+(use-package helm-ag
+  :config (progn
+    (setq helm-ag-base-command "/usr/local/bin/pt --nocolor --nogroup")
+  )
+)
