@@ -23,3 +23,5 @@
 (load "~/.emacs.d/package-configs/projectile")
 (load "~/.emacs.d/package-configs/direx")
 (load "~/.emacs.d/package-configs/monokai")
+(load "~/.emacs.d/package-configs/stylus-mode")
+(load "~/.emacs.d/package-configs/web-mode")
