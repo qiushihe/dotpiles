@@ -19,6 +19,7 @@
 (setq use-package-always-ensure t)
 
 ;; Setup individual packages
+(load "~/.emacs.d/package-configs/exec-path-from-shell")
 (load "~/.emacs.d/package-configs/editorconfig")
 (load "~/.emacs.d/package-configs/helm")
 (load "~/.emacs.d/package-configs/projectile")

@@ -27,6 +27,6 @@
 
 (use-package helm-ag
   :config (progn
-    (setq helm-ag-base-command "/usr/local/bin/pt --nocolor --nogroup")
+    (setq helm-ag-base-command "pt --nocolor --nogroup")
   )
 )
