@@ -19,9 +19,13 @@
 (setq use-package-always-ensure t)
 
 ;; Setup individual packages
+(load "~/.emacs.d/package-configs/editorconfig")
 (load "~/.emacs.d/package-configs/helm")
 (load "~/.emacs.d/package-configs/projectile")
 (load "~/.emacs.d/package-configs/direx")
-(load "~/.emacs.d/package-configs/monokai")
+
 (load "~/.emacs.d/package-configs/stylus-mode")
 (load "~/.emacs.d/package-configs/web-mode")
+
+;; (load "~/.emacs.d/package-configs/solarized")
+(load "~/.emacs.d/package-configs/monokai")
