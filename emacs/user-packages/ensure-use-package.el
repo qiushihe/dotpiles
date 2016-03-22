@@ -24,6 +24,7 @@
 (load "~/.emacs.d/package-configs/helm")
 (load "~/.emacs.d/package-configs/projectile")
 (load "~/.emacs.d/package-configs/direx")
+(load "~/.emacs.d/package-configs/git-gutter")
 
 (load "~/.emacs.d/package-configs/stylus-mode")
 (load "~/.emacs.d/package-configs/web-mode")
