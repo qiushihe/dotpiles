@@ -25,6 +25,10 @@
 (load "~/.emacs.d/package-configs/projectile")
 (load "~/.emacs.d/package-configs/neotree")
 (load "~/.emacs.d/package-configs/git-gutter")
+(load "~/.emacs.d/package-configs/flyspell")
+(load "~/.emacs.d/package-configs/company")
+(load "~/.emacs.d/package-configs/expand-region")
+(load "~/.emacs.d/package-configs/avy")
 
 (load "~/.emacs.d/package-configs/stylus-mode")
 (load "~/.emacs.d/package-configs/web-mode")
@@ -34,7 +38,3 @@
 
 ;; TODO
 ;; (el-get-bundle fill-column-indicator)
-;; (el-get-bundle flyspell)
-;; (el-get-bundle company-mode)
-;; (el-get-bundle expand-region)
-;; (el-get-bundle ace-jump-mode)
