@@ -31,3 +31,10 @@
 
 ;; (load "~/.emacs.d/package-configs/solarized")
 (load "~/.emacs.d/package-configs/monokai")
+
+;; TODO
+;; (el-get-bundle fill-column-indicator)
+;; (el-get-bundle flyspell)
+;; (el-get-bundle company-mode)
+;; (el-get-bundle expand-region)
+;; (el-get-bundle ace-jump-mode)

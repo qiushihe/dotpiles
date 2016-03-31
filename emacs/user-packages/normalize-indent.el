@@ -32,13 +32,12 @@
 )
 
 (defun normalize-indent-enter ()
-  "Simplified line-break bahaviour. May be bound to ENTER."
+  "Insert a newline character then insert a number of spaces and/or tabs that matches the spaces
+  and/or tabs from the previous line. May be bound to ENTER."
   (interactive)
-  ;(looking-back "^\\( +\\).*")
-  ;(newline)
-  ;(insert (match-string 1))
+  (looking-back "^\\([\s\t]+\\).*")
   (newline)
-  (indent-relative-maybe)
+  (insert (match-string 1))
 )
 
 (define-minor-mode normalize-indent-mode
