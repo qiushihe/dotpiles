@@ -15,7 +15,8 @@
           (if (facep 'linum)
             (set-face-attribute 'linum frame
               :background (face-attribute 'default :background)
-              :foreground (face-attribute 'linum :foreground) :slant 'normal))
+              :foreground (face-attribute 'linum :foreground) :slant 'normal)
+          )
         ))
       )
     )
