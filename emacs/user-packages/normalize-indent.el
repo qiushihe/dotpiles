@@ -37,7 +37,8 @@
   (interactive)
   (looking-back "^\\([\s\t]+\\).*")
   (newline)
-  (insert (match-string 1))
+  (if (match-string 1)
+    (insert (match-string 1)))
 )
 
 (define-minor-mode normalize-indent-mode
