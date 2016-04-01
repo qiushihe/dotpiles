@@ -15,13 +15,21 @@
 (normalize-indent-global-mode)
 
 ;; Open the quick-help file in a separate, small frame
-(bind-key* "C-c q h" (lambda()
+(bind-key* "C-c q h" (lambda ()
   (interactive)
   (let (
     (help-frame (make-frame '((width . 42) (height . 35))))
   ) (progn
     (select-frame help-frame)
     (find-file "~/.emacs.d/quick-help.txt")
-    (other-frame -1) ; Refocus previous frame
+
+    ;; Setup a local key bind to close the frame and delete the buffer
+    (local-set-key "q" (lambda ()
+      (interactive)
+      (my-kill-some-buffers)
+      (delete-frame)
+    ))
+
+    ;(other-frame -1) ; Refocus the previous frame
   ))
 ))
