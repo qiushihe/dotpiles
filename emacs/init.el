@@ -11,4 +11,17 @@
 (load-library "switch-to-previous-buffer")       ; Provides C-c b b
 (load-library "normalize-indent")                ; Provides normalize-indent-global-mode
 
+;; Enable normalized indentation mode
 (normalize-indent-global-mode)
+
+;; Open the quick-help file in a separate, small frame
+(bind-key* "C-c q h" (lambda()
+  (interactive)
+  (let (
+    (help-frame (make-frame '((width . 42) (height . 35))))
+  ) (progn
+    (select-frame help-frame)
+    (find-file "~/.emacs.d/quick-help.txt")
+    (other-frame -1) ; Refocus previous frame
+  ))
+))
