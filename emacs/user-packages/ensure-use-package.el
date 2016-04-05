@@ -29,6 +29,7 @@
 (load "~/.emacs.d/package-configs/company")
 (load "~/.emacs.d/package-configs/expand-region")
 (load "~/.emacs.d/package-configs/avy")
+(load "~/.emacs.d/package-configs/magit")
 
 (load "~/.emacs.d/package-configs/stylus-mode")
 (load "~/.emacs.d/package-configs/web-mode")
@@ -38,6 +39,3 @@
 
 ;; TODO
 ;; (el-get-bundle fill-column-indicator)
-
-(use-package magit
-  :pin melpa)
