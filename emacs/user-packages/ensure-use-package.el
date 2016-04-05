@@ -38,3 +38,6 @@
 
 ;; TODO
 ;; (el-get-bundle fill-column-indicator)
+
+(use-package magit
+  :pin melpa)
