@@ -1,6 +1,6 @@
 (require 'cl-lib)
 
-(defconst normalize-indent-version "0.1.0")
+(defconst normalize-indent-version "0.2.0")
 
 (defgroup normalize-indent nil
   "Normalize indentation behaviors."
@@ -11,93 +11,52 @@
   :type '(repeat symbol)
   :group 'normalize-indent)
 
-(defun normalize-indent-indent-with-space ()
-  "Simply insert 2 spaces for indentation. May be bound to TAB."
+(defun normalize-indent-indent-line ()
+  "If indent-tabs-mode and tab-width are set (i.e. via editorconfig), then insert either \t (as
+  indicated by indent-tabs-mode), or a certain number of spaces (according to tab-width). May be
+  bound to TAB."
   (interactive)
-  (insert "  "))
+  (if (boundp 'indent-tabs-mode)
+    (if indent-tabs-mode
+      (insert "\t")
+      (if (boundp 'tab-width)
+        (if (> tab-width 0)
+          (insert (make-string tab-width ?\s))
+          (indent-relative nil)
+        )
+        (indent-relative nil)
+      )
+    )
+    (indent-relative nil)
+  )
+)
 
 (defun normalize-indent-enter ()
-  "Simplified line-break bahaviour. May be bound to ENTER."
+  "Insert a newline character then insert a number of spaces and/or tabs that matches the spaces
+  and/or tabs from the previous line. May be bound to ENTER."
   (interactive)
+  (looking-back "^\\([\s\t]+\\).*")
   (newline)
-  (indent-relative-maybe))
-
-(defun normalize-indent-normalize-region (rs re fn)
-  "Fully extend the region enclosed by rs and re. At the start of the region (indicated by rs),
-  extend it to the beginning of line; At the end of the region (indicated by re), extend it to
-  the end of line. And once both the start and end of the region are extended, call fn with the
-  updated rs and re that matches the extended start and end of the region."
-  (goto-char rs)
-  (if (> rs (line-beginning-position))
-    (normalize-indent-normalize-region (line-beginning-position) re fn)
-    (progn
-      (goto-char re)
-      (if (< re (line-end-position))
-        (normalize-indent-normalize-region rs (line-end-position) fn)
-        (funcall fn rs re)))))
-
-(defun normalize-indent-outdent-region-r (rs re)
-  "Outdent lines touched by the given region by 2 spaces."
-  (goto-char rs)
-  (if (<= (point) re)
-    (progn
-      (goto-char (line-beginning-position))
-      (if (re-search-forward "^  " (line-end-position) t)
-        (progn
-          (replace-match "" nil t)
-          (next-line 1)
-          (normalize-indent-outdent-region-r (point) (- re 2)))
-        (if (re-search-forward "^ " (line-end-position) t)
-          (progn
-            (replace-match "" nil t)
-            (next-line 1)
-            (normalize-indent-outdent-region-r (point) (- re 1)))
-          (progn
-            (next-line 1)
-            (normalize-indent-outdent-region-r (point) re)))))))
-
-(defun normalize-indent-indent-region-r (rs re)
-  "Indent lines touched by the given region by 2 spaces."
-  (goto-char rs)
-  (if (<= (point) re)
-    (progn
-      (goto-char (line-beginning-position))
-      (insert "  ")
-      (next-line 1)
-      (normalize-indent-indent-region-r (point) (+ re 2)))))
-
-(defun normalize-indent-outdent-region ()
-  "Outdent lines touched by the given region."
-  (interactive)
-  (save-excursion
-	  (if (< (point) (mark)) (exchange-point-and-mark))
-    (normalize-indent-normalize-region (mark) (point) 'normalize-indent-outdent-region-r))
-  (setq deactivate-mark nil))
-
-(defun normalize-indent-indent-region ()
-  "Indent lines touched by the given region."
-  (interactive)
-  (save-excursion
-    (if (< (point) (mark)) (exchange-point-and-mark))
-    (normalize-indent-normalize-region (mark) (point) 'normalize-indent-indent-region-r))
-  (setq deactivate-mark nil))
+  (if (match-string 1)
+    (insert (match-string 1)))
+)
 
 (define-minor-mode normalize-indent-mode
   "Toggle normalized indentation mode"
   :init-value nil
-  :lighter " NIndent"
+  :lighter " nIndent"
   :global nil
   (if normalize-indent-mode
     (progn
-      (local-set-key "\t" 'normalize-indent-indent-with-space)
+      (local-set-key "\t" 'normalize-indent-indent-line)
       (local-set-key (kbd "RET") 'normalize-indent-enter)
-      (local-set-key (kbd "C-{") 'normalize-indent-outdent-region)
-      (local-set-key (kbd "C-}") 'normalize-indent-indent-region))
+    )
     (progn
       (local-unset-key "\t")
       (local-unset-key (kbd "RET"))
-      (local-unset-key (kbd "C-{"))
-      (local-unset-key (kbd "C-}")))))
+    )
+  )
+)
 
 ;; Define normalize-indent minor mode
 (define-globalized-minor-mode normalize-indent-global-mode
