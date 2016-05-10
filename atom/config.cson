@@ -38,6 +38,9 @@
       selection: true
       selectionDecorationsZIndex: 0
   "one-dark-ui": {}
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments: {}
   "status-bar": {}
   tabs:
