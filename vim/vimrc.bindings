@@ -49,3 +49,12 @@ map <C-k> <C-W>-
 map <C-j> <C-W>+
 map <C-h> <C-W><
 map <C-l> <C-W>>
+
+function! ExploreOrRexplore()
+  if exists(":Rexplore")
+    execute "Rexplore"
+  else
+    execute "Explore ."
+  endif
+endfunction
+map <leader>ex :call ExploreOrRexplore()<CR>
