@@ -132,11 +132,10 @@ filetype plugin indent on
 " Filetype associations
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" Create .netrwhist in $HOME
-let g:netrw_home=$HOME
-
-" Make netrw use tree view mode
-let g:netrw_liststyle=3
+" Netrw settings
+let g:netrw_home=$HOME  " Create .netrwhist in $HOME
+let g:netrw_liststyle=3 " Make netrw use tree view mode
+let g:netrw_banner=0    " Hide banner
 
 " Trim trailing whitespaces
 fun! <SID>StripTrailingWhitespaces()
