@@ -24,6 +24,10 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+'body':
+  'cmd-q': 'core:close'
+  'cmd-shift-q': 'application:quit'
+
 'atom-text-editor':
   'alt-up': 'expand-region:expand'
   'alt-down': 'expand-region:shrink'
