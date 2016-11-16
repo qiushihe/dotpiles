@@ -3,11 +3,11 @@
   # Working around an issue with the silver search not working correctly
   # with "~/" and must use absolute path.
   # TODO: Check with ag after v28 is released and see if the fix is included
-  excludesfile = /Users/billy/.gitignore_global
+	excludesfile = /Users/bhe36/.gitignore_global
 
 [user]
-  name = Billy He
-  email = qiushihe@me.com
+	name = Billy He
+	email = billy@metalabdesign.com
 
 [alias]
   co = checkout
@@ -45,3 +45,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	template = /Users/bhe36/.stCommitMsg
