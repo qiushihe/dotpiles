@@ -59,15 +59,6 @@ Update NeoVim:
   $ ln -sf /usr/local/bin/pt /usr/local/bin/ag
 ```
 
-## Setup atom
-
-```
-  $ rm -f ~/.atom
-  $ ln -sf [DOTPILE]/atom ~/.atom
-```
-
-Also install the `package-sync` package.
-
 ## Setup mutt
 
 ```
