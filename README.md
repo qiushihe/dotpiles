@@ -49,7 +49,7 @@ Update NeoVim:
   $ brew reinstall --HEAD neovim
 ```
 
-## Setup emacs
+## Setup Emacs
 
 ```
   $ rm -f ~/.emacs.d /usr/local/bin/emacsl
