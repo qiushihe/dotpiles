@@ -6,12 +6,12 @@
 
 SendMode Input
 
-; Prevent left Windows from doing anything by itself.
+; Prevent left Windows key from doing anything by itself.
 LWin::
 Return
 
 ; Map Mac-style movement keys
-; Note: There is no such thing sd "go to beginning/end of file" in Windows so here
+; Note: There is no such thing as "go to beginning/end of file" in Windows so here
 ;       we map Cmd-Up and Cmd-Down to page-up and page-down instead.
 #Up::SendInput {PgUp}
 #Down::SendInput {PgDn}
@@ -32,13 +32,13 @@ Lwin & Tab::AltTab
 ; Map Cmd-Space to search/launcher
 Lwin & Space::#s
 
-; Map the rest of latter/number/whatnot from Cmd-* to Ctrl-*
+; Map the rest of letters/numbers/whatnot from Cmd-* to Ctrl-*
 ; But really, what I really want to do is:
 ;   - Replace Lwin with Lctrl for all keys
 ;   - Ensure Cmd-tab still works
-; ... however due to the unique way things are implemented what I want
+; ... however due to the unique way things are implemented, what I want
 ; can't be done. So I just have to map each keys individually, which is
-; far less elegent, is you ask me.
+; far less elegent, if you ask me.
 
 Lwin & a::Send {Ctrl down}a{Ctrl up}
 Lwin & b::Send {Ctrl down}b{Ctrl up}
