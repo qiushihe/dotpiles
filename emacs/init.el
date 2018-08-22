@@ -33,3 +33,21 @@
     ;(other-frame -1) ; Refocus the previous frame
   ))
 ))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(git-gutter:ask-p nil)
+ '(git-gutter:hide-gutter t)
+ '(git-gutter:verbosity 0)
+ '(linum-format (quote dynamic))
+ '(package-selected-packages
+   (quote
+    (monokai-theme web-mode stylus-mode magit avy expand-region company git-gutter helm-projectile helm-ag helm editorconfig exec-path-from-shell use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
