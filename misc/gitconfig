@@ -1,9 +1,6 @@
 [core]
   filemode = false
-  # Working around an issue with the silver search not working correctly
-  # with "~/" and must use absolute path.
-  # TODO: Check with ag after v28 is released and see if the fix is included
-	excludesfile = /Users/bhe36/.gitignore_global
+  excludesfile = ~/.gitignore_global
 
 [user]
 	name = Billy He
@@ -33,12 +30,12 @@
 [color "status"]
   added = yellow
   changed = green
-  untracked = cyan 
+  untracked = cyan
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [filter "lfs"]
