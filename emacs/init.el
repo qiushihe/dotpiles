@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/user-packages")
 
+(load-library "echo-keystrokes")
 (load-library "ensure-use-package")
 (load-library "default-settings")
 (load-library "default-bindings")
