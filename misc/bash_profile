@@ -14,6 +14,10 @@ then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
+if [ -x "$(command -v direnv)" ]; then
+  eval "$(direnv hook bash)"
+fi
+
 # export PATH=$(npm bin):$PATH
 
 # Sublime Text Alias
