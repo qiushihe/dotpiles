@@ -9,6 +9,7 @@ emacs/recentf
 emacs/.mc-lists.el
 emacs/**/*.elc
 emacs/elpa
+emacs/quelpa
 emacs/.cache
 
 ##########################

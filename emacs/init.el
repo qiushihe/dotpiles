@@ -1,7 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/user-packages")
 
 (load-library "echo-keystrokes")
-(load-library "ensure-use-package")
+; (load-library "ensure-use-package")
+(load-library "ensure-packages")
 (load-library "default-settings")
 (load-library "default-bindings")
 (load-library "kill-some-buffers")               ; Provides C-c b d
@@ -43,9 +44,9 @@
  '(git-gutter:hide-gutter t)
  '(git-gutter:verbosity 0)
  '(linum-format (quote dynamic))
- '(package-selected-packages
-   (quote
-    (monokai-theme web-mode stylus-mode magit avy expand-region company git-gutter helm-projectile helm-ag helm editorconfig exec-path-from-shell use-package))))
+  '(package-selected-packages
+     (quote
+       (quelpa-use-package quelpa monokai-theme web-mode stylus-mode magit avy expand-region company git-gutter helm-projectile helm-ag helm editorconfig exec-path-from-shell use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

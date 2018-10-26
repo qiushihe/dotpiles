@@ -1,3 +1,5 @@
+(require 'bind-key)
+
 ;; Unbind some OSX-specific bindings
 (global-unset-key (kbd "s-s"))
 (global-unset-key (kbd "s-a"))
