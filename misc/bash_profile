@@ -14,6 +14,12 @@ then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
+if [ -d "$HOME/go" ]
+then
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOPATH/bin
+fi
+
 if [ -x "$(command -v direnv)" ]; then
   eval "$(direnv hook bash)"
 fi
