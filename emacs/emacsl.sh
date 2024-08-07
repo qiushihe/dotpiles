@@ -77,36 +77,26 @@ else
 
   # First check if the server is running or not
   get_server
-  # ... and if the server is not running, indicates that we want to wait for the server to finish
-  # starting up later on. Not sure why this is necessary but it is otherwise emacsclient will be
-  # launched too early.
+  # ... and if the server is not running, indicates that we want to wait for
+  # the server to finish starting up later on. Not sure why this is necessary
+  # but it is otherwise emacsclient will be launched too early.
   if [ -z "$SERVER_PID" ]; then WAIT_FOR_START=1; fi
 
   # Ensure the server is running
   start_server
-  # ... and if the server wasn't running to start with, wait 1 second for it to finish starting up.
+  # ... and if the server wasn't running to start with, wait 1 second for it to
+  # finish starting up.
   if [ -n "$WAIT_FOR_START" ]; then sleep 1; fi
 
   # If this script is called without any argument ...
   if [ -z "$1" ]; then
     # Then prepare a startup script (which is run after init.el) that:
-    STARTUP="(progn"
-
-    # * Switch the new frame to the "scratch" buffer (so we're not looking at some random buffer
-    #   every time a new frame is created by this script)
-    STARTUP+="  (switch-to-buffer \"*scratch*\")"
-
+    # * Switch the new frame to the "scratch" buffer (so we're not looking at
+    #   some random buffer every time a new frame is created by this script)
     # * Ensure the newly created frame has focus
+    STARTUP="(progn"
+    STARTUP+="  (switch-to-buffer \"*scratch*\")"
     STARTUP+="  (select-frame-set-input-focus (selected-frame))"
-
-    # * Set frame working directory (see user-packages/current-working-directory.el)
-    # STARTUP+="  (cwd-set-frame-working-directory (selected-frame) \"`pwd`\")"
-
-    # * Maximize the frame and ensure it's top-left aligned
-    # STARTUP+="  (set-frame-parameter nil 'fullscreen 'maximized)"
-    # STARTUP+="  (set-frame-parameter nil 'top 0)"
-    # STARTUP+="  (set-frame-parameter nil 'left 0)"
-
     STARTUP+=")"
 
     # ... and launch emacsclient with the startup script
