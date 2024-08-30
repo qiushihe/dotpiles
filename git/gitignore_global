@@ -4,10 +4,25 @@
 *.swp
 .#*
 *.o
-.DS_Store
 .*_cache
 .*-cache
 *.log
+
+# macOS
+.DS_Store
+
+# SASS/CSS
 *.scssc
 *.sassc
+
+# Emacs
 .projectile
+
+# Language Server Protocol
+.lsp
+
+# Clojure
+.clj-kondo
+
+# Python
+allure-results
